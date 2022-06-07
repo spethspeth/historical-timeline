@@ -42,7 +42,7 @@ caligula = Event.new(
   name: "Caligula",
   description: "Murdered in a conspiracy involving the Praetorian Guard and senators",
   start_date: Date.new(37, 3, 18),
-  end_date: Date.new(41, 2, 24)
+  end_date: Date.new(41, 1, 24)
 )
 caligula.user = testuser
 caligula.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'caligula.jpg')), filename: 'caligula.png', content_type: 'image.png')
