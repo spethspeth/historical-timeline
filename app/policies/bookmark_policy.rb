@@ -1,10 +1,9 @@
 class BookmarkPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
-    scope.all
+    def resolve
+      scope.all
+    end
   end
 
   def create?
