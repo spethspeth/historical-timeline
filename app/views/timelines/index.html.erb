@@ -1,0 +1,14 @@
+<% @timelines.each do |timeline| %>
+  <p><%= timeline.name %></p>
+  <p><%= timeline.description %></p>
+  <p><%= timeline.start_date %></p>
+  <p><%= timeline.end_date %></p>
+  <p><%= timeline.user_id %></p>
+  <% timeline.events.each do |event| %>
+    <p><%= event.name %></p>
+    <p><%= event.description %></p>
+    <p><%= event.start_date %></p>
+    <p><%= event.end_date %></p>
+    <p><%= event.user_id %></p>
+  <% end %>
+<% end %>
