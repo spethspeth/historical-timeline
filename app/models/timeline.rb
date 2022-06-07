@@ -8,8 +8,16 @@ class Timeline < ApplicationRecord
   has_many :users, through: :bookmarks
 
   pg_search_scope :timeline_search,
-                  against: %i[name description],
-                  associated_against: { events: %i[name description] }
+                  against: {
+                    name: 'A',
+                    description: 'B'
+                  },
+                  associated_against: {
+                    events: {
+                      name: 'A',
+                      description: 'B'
+                    }
+                  }
 
   validates :name, presence: true
   validates :description, presence: true
