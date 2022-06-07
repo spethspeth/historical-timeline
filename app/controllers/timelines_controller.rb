@@ -29,4 +29,35 @@ class TimelinesController < ApplicationController
   def timeline_params
     params.require(:timeline).permit(:name, :description, :start_date, :end_date)
   end
+
+  def hasher
+    eventarray = events.map do |event|
+      eventhash = {
+        start_date: {
+          month: event.start_date.mon,
+          day: event.start_date.day,
+          year: event.start_date.year
+        },
+        end_date: {
+          month: event.end_date.mon,
+          day: event.end_date.day,
+          year: event.end_date.year
+        },
+        text: {
+          headline: event.name,
+          text: event.description
+        }
+      }
+      eventarray << eventhash
+    end
+    timelinehash = {
+      title: {
+        text: {
+          headline: name,
+          text: description
+        }
+      },
+      events: eventarray
+    }
+  end
 end
