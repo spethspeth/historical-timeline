@@ -34,6 +34,9 @@ class TimelinesController < ApplicationController
   def hasher(timeline)
     eventarray = timeline.events.map do |event|
       {
+        media: {
+          url: url_for(event.photo)
+        },
         start_date: {
           month: event.start_date.mon,
           day: event.start_date.day,
