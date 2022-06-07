@@ -1,2 +1,10 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Welcome to Almanac</h1>
+<% if user_signed_in?%>
+<h1>Insert here searchbar</h1>
+<% else %>
+  <%= link_to "Login", new_user_session_path%>
+  <div>
+    <p>Are you new here?</p>
+    <%= link_to "Sign up", new_user_registration_path%>
+  </div>
+<% end %>
