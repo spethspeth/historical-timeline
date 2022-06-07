@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources 'timelines' do
     resources 'bookmarks', only: :create
   end
-  resources 'events', only: %i[new create show edit delete]
+  resources 'events', only: %i[index new create show edit update destroy]
 end

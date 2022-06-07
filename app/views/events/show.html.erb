@@ -8,7 +8,10 @@
 </ul>
 
 <tr>
-  <% if current_user == event.user || current_user.admin %>
-  <td><% link_to 'Edit', edit_event_path(@event)  %></td>
-  <td><% link_to 'Destroy', @event, method: delete, data: { confirm: 'Are you sure ?' } %></td>
+  <% if policy(@event).edit? %>
+    <td><%= link_to 'Edit', edit_event_path(@event)  %></td>
+  <% end %>
+  <% if policy(@event).destroy? %>
+    <td><%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure ?' } %></td>
+  <% end %>
 </tr>
