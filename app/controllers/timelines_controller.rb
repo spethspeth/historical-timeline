@@ -4,10 +4,7 @@ class TimelinesController < ApplicationController
   def index
     @timelines = policy_scope(Timeline)
     if params[:query].present?
-      sql_query = "
-        timelines.name ILIKE :query
-        OR timelines.description ILIKE :query"
-      @timelines = Timeline.where(sql_query, query: "%#{params[:query]}%")
+      @timelines = Timeline.timeline_search(params[:query])
     else
       @timelines = Timeline.all
     end
