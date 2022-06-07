@@ -5,8 +5,9 @@ class BookmarkPolicy < ApplicationPolicy
     #   scope.all
     # end
   end
+
   def create?
-    return true
+    true
   end
 
   def update?
