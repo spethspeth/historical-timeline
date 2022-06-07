@@ -4,6 +4,7 @@ class EventPolicy < ApplicationPolicy
     # def resolve
     #   scope.all
     # end
+    scope.where(user: user)
   end
 
   def create?

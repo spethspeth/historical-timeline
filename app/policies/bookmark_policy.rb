@@ -4,6 +4,7 @@ class BookmarkPolicy < ApplicationPolicy
     # def resolve
     #   scope.all
     # end
+    scope.all
   end
 
   def create?
