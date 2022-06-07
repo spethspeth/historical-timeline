@@ -69,3 +69,5 @@ gem 'pundit'
 # Add TimelineJS3
 gem 'timelineJS3-rails', '~> 1.0.0'
 
+# Add PG Search
+gem 'pg_search'
