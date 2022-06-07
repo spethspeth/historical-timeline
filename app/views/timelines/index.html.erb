@@ -1,0 +1,15 @@
+<% @timelines.each do |timeline| %>
+  <p><%= timeline.name %></p>
+  <p><%= timeline.description %></p>
+  <p><%= timeline.start_date.strftime("Start date: %d/%m/%Y") %></p>
+  <p><%= timeline.end_date.strftime("End date: %d/%m/%Y") %></p>
+  <p><%= timeline.user_id %></p>
+  <% timeline.events.each do |event| %>
+    <p><%= event.name %></p>
+    <p><%= event.description %></p>
+    <p><%= event.start_date.strftime("Start date: %d/%m/%Y") %></p>
+    <p><%= event.end_date.strftime("End date: %d/%m/%Y") %></p>
+    <p><%= event.user_id %></p>
+    <%= image_tag event.photo %>
+  <% end %>
+<% end %>

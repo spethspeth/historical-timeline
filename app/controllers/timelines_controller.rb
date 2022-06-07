@@ -2,7 +2,7 @@ class TimelinesController < ApplicationController
   before_action :set_timeline, only: %i[show]
 
   def index
-    @timelines = Timeline.all
+    @timelines = policy_scope(Timeline)
   end
 
   def show

@@ -1,6 +1,10 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
 
+  def index
+    @events = policy_scope(Event)
+  end
+
   def new
     @event = Event.new
     authorize @event
@@ -25,7 +29,7 @@ class EventsController < ApplicationController
 
   def update
     @event.update(event_params)
-    redirect_to event_path(@event)
+    redirect_to events_path(@event)
   end
 
   def destroy
