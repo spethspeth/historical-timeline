@@ -1,0 +1,14 @@
+<h1>An envent</h1>
+
+<ul>
+  <li> <%=@event.name%> </li>
+  <li> <%=@event.description%> </li>
+  <li> <%=@event.start_date%> </li>
+  <li> <%=@event.end_date%> </li>
+</ul>
+
+<tr>
+  <% if current_user == event.user || current_user.admin %>
+  <td><% link_to 'Edit', edit_event_path(@event)  %></td>
+  <td><% link_to 'Destroy', @event, method: delete, data: { confirm: 'Are you sure ?' } %></td>
+</tr>
