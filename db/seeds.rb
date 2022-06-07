@@ -73,7 +73,37 @@ julioclaudians.start_date = julioclaudians.events.first.start_date
 julioclaudians.end_date = julioclaudians.events.last.end_date
 julioclaudians.save!
 
+sovietunion = Timeline.new(
+  name: "Leaders of Soviet Union (1922-1991)",
+  description: "This timeline includes persons who held the top leadership position of the Soviet Union from its founding in 1922 until its 1991 dissolution."
+)
 
+sovietunion.user = testuser
+
+lenin = Event.new(
+  name: "Vladimir Lenin",
+  description: "Ever since the Bolsheviks inception, Lenin had served as their de facto leader. After the Russian Revolution, Lenin became leader of the Russian Soviet Federative Socialist Republic (RSFSR) from 1917 and leader of the Union of Soviet Socialist Republics (USSR) from 1922 until his death.",
+  start_date: Date.new(1922, 12, 30),
+  end_date: Date.new(1924, 1, 21)
+)
+lenin.user = testuser
+lenin.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'sovietleaders', 'lenin.jpg')), filename: 'lenin.png', content_type: 'image.png')
+lenin.save!
+
+stalin = Event.new(
+  name: "Iosif Stalin",
+  description: "Following the death of Lenin, Stalin initially ruled as part of a troika alongside Grigory Zinoviev and Lev Kamenev. However, by April 1925, this arrangement broke down as Stalin consolidated power to become the Soviet Union's absolute dictator. He also held the post of the Minister of Defence from 19 July 1941 to 3 March 1947 and chaired the State Defense Committee during World War II.",
+  start_date: Date.new(1924, 1, 21),
+  end_date: Date.new(1953, 3, 5)
+)
+stalin.user = testuser
+stalin.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'sovietleaders', 'stalin.jpg')), filename: 'stalin.png', content_type: 'image.png')
+stalin.save!
+
+sovietunion.events = [lenin, stalin]
+sovietunion.start_date = sovietunion.events.first.start_date
+sovietunion.end_date = sovietunion.events.last.end_date
+sovietunion.save!
 # Admin
 
 User.create({ email: "admin@htl.com", password: "123456", password_confirmation: "123456", admin: true })

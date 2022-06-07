@@ -1,6 +1,21 @@
 <h1>Welcome to Almanac</h1>
+<div>
 <% if user_signed_in?%>
-<h1>Insert here searchbar</h1>
+  <%= form_tag timelines_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    required: true,
+    class: "form-control",
+    placeholder: "Find a timeline"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+</div>
+
+<div class="mt-3">
+  <%=link_to "Go to all the timelines", timelines_path, class: "btn btn-primary"%>
+</div>
+
 <% else %>
   <%= link_to "Login", new_user_session_path%>
   <div>
