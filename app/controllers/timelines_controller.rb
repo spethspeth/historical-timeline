@@ -6,6 +6,7 @@ class TimelinesController < ApplicationController
   end
 
   def show
+    @timelinejson = hasher(set_timeline)
   end
 
   def new
@@ -30,9 +31,9 @@ class TimelinesController < ApplicationController
     params.require(:timeline).permit(:name, :description, :start_date, :end_date)
   end
 
-  def hasher
-    eventarray = events.map do |event|
-      eventhash = {
+  def hasher(timeline)
+    eventarray = timeline.events.map do |event|
+      {
         start_date: {
           month: event.start_date.mon,
           day: event.start_date.day,
@@ -48,16 +49,16 @@ class TimelinesController < ApplicationController
           text: event.description
         }
       }
-      eventarray << eventhash
     end
     timelinehash = {
       title: {
         text: {
-          headline: name,
-          text: description
+          headline: timeline.name,
+          text: timeline.description
         }
       },
       events: eventarray
     }
+    return timelinehash
   end
 end
