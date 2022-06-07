@@ -72,3 +72,8 @@ julioclaudians.events = [augustus, tiberius, caligula, claudius, nero]
 julioclaudians.start_date = julioclaudians.events.first.start_date
 julioclaudians.end_date = julioclaudians.events.last.end_date
 julioclaudians.save!
+
+
+# Admin
+
+User.create({ email: "admin@htl.com", password: "123456", password_confirmation: "123456", admin: true })

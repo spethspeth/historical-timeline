@@ -1,11 +1,18 @@
 class EventsController < ApplicationController
+  before_action :set_event, only: %i[show edit update destroy]
+
   def new
     @event = Event.new
+    authorize @event
+  end
+
+  def show
   end
 
   def create
     @event = Event.new(event_params)
     @event.user = current_user
+    authorize @event
     if @event.save
       redirect_to event_path(@event)
     else
@@ -14,22 +21,24 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])
   end
 
   def update
-    @event = Event.find(params[:id])
     @event.update(event_params)
     redirect_to event_path(@event)
   end
 
   def destroy
-    @event = Event.find(params[:id])
     @event.destroy
     redirect_to event_path
   end
 
   private
+
+  def set_event
+    @event = Event.find(params[:id])
+    authorize @event
+  end
 
   def event_params
     params.require(:event).permit(:name, :description, :start_date, :end_date)

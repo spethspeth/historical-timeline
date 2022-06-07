@@ -63,5 +63,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# Authorization with Pundit
+gem 'pundit'
+
 # Add TimelineJS3
 gem 'timelineJS3-rails', '~> 1.0.0'
+
