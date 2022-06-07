@@ -1,5 +1,5 @@
 <% @timelines.each do |timeline| %>
-  <p><%= timeline.name %></p>
+  <p><%= link_to timeline.name, timeline_path(timeline) %></p>
   <p><%= timeline.description %></p>
   <p><%= timeline.start_date.strftime("Start date: %d/%m/%Y") %></p>
   <p><%= timeline.end_date.strftime("End date: %d/%m/%Y") %></p>
