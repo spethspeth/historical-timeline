@@ -72,4 +72,8 @@ gem 'timelineJS3-rails', '~> 1.0.0'
 # Add PG Search
 gem 'pg_search'
 
+#Add Cloudinary
 gem 'cloudinary', '~> 1.16.0'
+
+#Add jQuery
+gem 'jquery-rails'
