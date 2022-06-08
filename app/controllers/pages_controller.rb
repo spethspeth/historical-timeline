@@ -7,7 +7,7 @@ class PagesController < ApplicationController
 
   def dashboard
   end
-  
+
   def timelineviewer
     @bookmarks = Bookmark.where(user_id: current_user)
 
@@ -19,28 +19,16 @@ class PagesController < ApplicationController
 
   private
 
-  # This method exists to combine 2 timelines into a single hash to pass to TimelineJS.
-  # It is clunky and should probably have a way to receive an arbitrary number of timelines by passing an array of them
-
-  def combiner(timeline1, timeline2)
-    timelinehash = {
-      title: {
-        text: {
-          headline: "Your timeline",
-          text: "Here you can view events from #{timeline1.name} and #{timeline2.name}!"
-        }
-      },
-      events: [eventer(timeline1), eventer(timeline2)].flatten
-    }
-    return timelinehash
-  end
-
   # This helper method iterates over the events of a user timeline and turns them into an array of hashes
 
-  def eventer(timeline)
+  def eventer(timeline, counter)
+    colorarray = ["blue", "red", "green", "yellow"]
     eventarray = timeline.events.map do |event|
       {
         group: "#{timeline.name}",
+        background: {
+          color: colorarray[counter]
+        },
         media: {
           url: url_for(event.photo)
         },
@@ -62,4 +50,26 @@ class PagesController < ApplicationController
     end
     return eventarray
   end
+end
+
+  # This method exists to combine 2 timelines into a single hash to pass to TimelineJS.
+  # It is clunky and should probably have a way to receive an arbitrary number of timelines by passing an array of them
+
+def combiner(*args)
+  counter = 0
+  totaleventarray = []
+  args.each do |timeline|
+    totaleventarray << eventer(timeline, counter)
+    counter += 1
+  end
+  timelinehash = {
+    title: {
+      text: {
+        headline: "Your timeline",
+        text: "Here you can view events from your chosen timelines!"
+      }
+    },
+    events: totaleventarray.flatten
+  }
+  return timelinehash
 end
