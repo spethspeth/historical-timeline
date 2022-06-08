@@ -4,4 +4,8 @@ class PagesController < ApplicationController
   def home
     @timelines = policy_scope(Timeline)
   end
+
+  def dashboard
+
+  end
 end

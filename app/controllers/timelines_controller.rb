@@ -12,6 +12,7 @@ class TimelinesController < ApplicationController
 
   def show
     @timelinejson = hasher(set_timeline)
+    # @bookmark = Bookmark.new
   end
 
   def new
