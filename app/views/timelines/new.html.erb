@@ -1,8 +1,15 @@
 <h1>New Timeline</h1>
 
-<%= simple_form_for(@timeline) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.association :events, as: :check_boxes %>
-  <%= f.submit %>
-<% end %>
+<div data-controller="form">
+  <%= simple_form_for(@timeline) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.association :events, input_html: { class: "js-matcher-multiple"} %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
+<div class="mt-3">
+  <p>Want to add a new event?</p>
+  <p><%=link_to "New Event", new_event_path, class:"btn btn-primary"%></p>
+</div>
