@@ -9,8 +9,8 @@ class PagesController < ApplicationController
     @bookmarks = Bookmark.where(user_id: current_user)
 
     # The following 2 timelines are assigned for testing purposes only:
-    @timeline1 = (Timeline.find(1))
-    @timeline2 = (Timeline.find(2))
+    @timeline1 = Timeline.find(1)
+    @timeline2 = Timeline.find(2)
     @combinedtimeline = combiner(@timeline1, @timeline2)
   end
 
@@ -24,7 +24,7 @@ class PagesController < ApplicationController
       title: {
         text: {
           headline: "Your timeline",
-          text: "Here you can view events from #{timeline1.name} and #{timeline2.name}!!"
+          text: "Here you can view events from #{timeline1.name} and #{timeline2.name}!"
         }
       },
       events: [eventer(timeline1), eventer(timeline2)].flatten

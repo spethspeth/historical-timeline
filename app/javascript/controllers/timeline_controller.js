@@ -6,8 +6,7 @@ export default class extends Controller {
   additionalOptions = {
     start_at_end: false,
     default_bg_color: {r:155, g:17, b:30},
-    timenav_height: 600,
-    hash_bookmark: true
+    use_bc: true
   }
 
   connect() {
