@@ -1,8 +1,17 @@
 <h1>Edit the Timeline</h1>
 
-<%= simple_form_for(@timeline) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.association :events, label_method: :name, as: :check_boxes, collection: Event.all  %>
-  <%= f.submit %>
-<% end %>
+<tr>
+  <td>
+    <%= simple_form_for(@timeline) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.submit %>
+    <% end %>
+  </td>
+  <td>
+    <%= simple_form_for(@eventstimeline, method: :post, url: timeline_eventstimelines_path(@timeline)) do |f| %>
+      <%= f.input :event, collection: @events  %>
+      <%= f.submit %>
+    <% end %>
+  </td>
+</tr>
