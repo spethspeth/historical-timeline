@@ -6,17 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# Roman emperors section:
+
 testuser = User.new(
   email: "testuser@testuser.com",
   password: "augustus",
   password_confirmation: "augustus"
 )
 
-julioclaudians = Timeline.new(
-  name: "Julio-Claudian dynasty (27 BC – AD 68)",
-  description: "The Julio-Claudian dynasty comprised the first five Roman emperors: Augustus, Tiberius, Caligula, Claudius, and Nero."
+# Julio claudian dynasty (reigns):
+
+romanemperors = Timeline.new(
+  name: "Roman emperors",
+  description: "The Roman emperors were the rulers of the Roman Empire from the granting of the name and title Augustus to Octavian by the Roman Senate in 27 BC onwards. Augustus maintained a facade of Republican rule, rejecting monarchical titles but calling himself princeps senatus (first man of the Senate) and princeps civitatis (first citizen of the state). The title of Augustus was conferred on his successors to the imperial position, and emperors gradually grew more monarchical and authoritarian."
 )
-julioclaudians.user = testuser
+romanemperors.user = testuser
 
 augustus = Event.new(
   name: "Augustus",
@@ -68,10 +72,76 @@ nero.user = testuser
 nero.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'nero.jpg')), filename: 'nero.png', content_type: 'image.png')
 nero.save!
 
-julioclaudians.events = [augustus, tiberius, caligula, claudius, nero]
-julioclaudians.start_date = julioclaudians.events.first.start_date
-julioclaudians.end_date = julioclaudians.events.last.end_date
-julioclaudians.save!
+romanemperors.events = [augustus, tiberius, caligula, claudius, nero]
+romanemperors.start_date = romanemperors.events.first.start_date
+romanemperors.end_date = romanemperors.events.last.end_date
+romanemperors.save!
+
+# Julio Claudian emperors' lifetimes
+
+emperorslives = Timeline.new(
+  name: "Lifetimes of the Roman Emperors",
+  description: "This timeline chronicles the lifetimes of the Roman Emperors"
+)
+emperorslives.user = testuser
+
+augustuslife = Event.new(
+  name: "Augustus",
+  description: "Born as Gaius Octavius; first elected Roman consul on 19 August 43 BC. Died of natural causes",
+  start_date: Date.new(-62, 9, 23),
+  end_date: Date.new(14, 8, 19)
+)
+augustuslife.user = testuser
+augustuslife.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'augustus.jpg')), filename: 'augustus.png', content_type: 'image.png')
+augustuslife.save!
+
+tiberiuslife = Event.new(
+  name: "Tiberius",
+  description: "Died probably of natural causes, allegedly murdered at the instigation of Caligula",
+  start_date: Date.new(-41, 11, 16),
+  end_date: Date.new(37, 3, 16)
+)
+tiberiuslife.user = testuser
+tiberiuslife.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'tiberius.jpg')), filename: 'tiberius.png', content_type: 'image.png')
+tiberiuslife.save!
+
+caligulalife = Event.new(
+  name: "Caligula",
+  description: "Murdered in a conspiracy involving the Praetorian Guard and senators",
+  start_date: Date.new(12, 8, 31),
+  end_date: Date.new(41, 1, 24)
+)
+caligulalife.user = testuser
+caligulalife.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'caligula.jpg')), filename: 'caligula.png', content_type: 'image.png')
+caligulalife.save!
+
+claudiuslife = Event.new(
+  name: "Claudius",
+  description: "Probably poisoned by his wife Agrippina, in favor of her son Nero",
+  start_date: Date.new(-9, 8, 1),
+  end_date: Date.new(54, 10, 13)
+)
+claudiuslife.user = testuser
+claudiuslife.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'claudius.jpg')), filename: 'claudius.png', content_type: 'image.png')
+claudiuslife.save!
+
+nerolife = Event.new(
+  name: "Nero",
+  description: "Committed suicide after being deserted by the Praetorian Guard and sentenced to death by the Senate",
+  start_date: Date.new(37, 12, 15),
+  end_date: Date.new(68, 6, 9)
+)
+nerolife.user = testuser
+nerolife.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'nero.jpg')), filename: 'nero.png', content_type: 'image.png')
+nerolife.save!
+
+emperorslives.events = [augustuslife, tiberiuslife, caligulalife, claudiuslife, nerolife]
+emperorslives.start_date = emperorslives.events.first.start_date
+emperorslives.end_date = emperorslives.events.last.end_date
+emperorslives.save!
+
+
+# Soviet union section:
 
 sovietunion = Timeline.new(
   name: "Leaders of Soviet Union (1922-1991)",
