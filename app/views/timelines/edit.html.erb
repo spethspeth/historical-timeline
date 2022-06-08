@@ -1,8 +1,8 @@
-<h1>New Timeline</h1>
+<h1>Edit the Timeline</h1>
 
 <%= simple_form_for(@timeline) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.association :events, as: :check_boxes %>
+  <%= f.association :events, label_method: :name, as: :check_boxes, collection: Event.all  %>
   <%= f.submit %>
 <% end %>
