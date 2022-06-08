@@ -5,6 +5,9 @@ class PagesController < ApplicationController
     @timelines = policy_scope(Timeline)
   end
 
+  def dashboard
+  end
+  
   def timelineviewer
     @bookmarks = Bookmark.where(user_id: current_user)
 
