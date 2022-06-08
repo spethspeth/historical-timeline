@@ -3,3 +3,10 @@
   </div>
 </div>
 <%= link_to "Edit Timeline", edit_timeline_path(@timeline)%>
+<tr>
+  <% if @bookmark.empty? %>
+    <td> <%= link_to 'Bookmark it', timeline_bookmarks_path(@timeline), method: :post %> </td>
+  <% else %>
+    <td> <%= link_to 'Unbookmark it', timeline_bookmark_path(@timeline), method: :delete %> </td>
+  <% end%>
+</tr>
