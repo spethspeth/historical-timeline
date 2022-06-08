@@ -12,7 +12,7 @@ class TimelinesController < ApplicationController
 
   def show
     @timelinejson = hasher(set_timeline)
-    # @bookmark = Bookmark.new
+    @bookmark = Bookmark.where(user: current_user, timeline: @timeline)
   end
 
   def new
