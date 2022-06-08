@@ -1,5 +1,5 @@
 class TimelinesController < ApplicationController
-  before_action :set_timeline, only: %i[show]
+  before_action :set_timeline, only: %i[show edit update destroy]
 
   def index
     @timelines = policy_scope(Timeline)
@@ -23,8 +23,22 @@ class TimelinesController < ApplicationController
   def create
     @timeline = Timeline.new(timeline_params)
     @timeline.user = current_user
+    @timeline.events = timeline_params[:events]
     authorize @timeline
     @timeline.save ? (redirect_to timeline_path(@timeline)) : (render :new)
+  end
+
+  def edit
+  end
+
+  def update
+    @timeline.update(timeline_params)
+    @timeline.save ? (redirect_to timeline_path(@timeline)) : (render :edit)
+  end
+
+  def destroy
+    @timeline.delete
+    redirect_to timelines_path
   end
 
   private
@@ -35,7 +49,7 @@ class TimelinesController < ApplicationController
   end
 
   def timeline_params
-    params.require(:timeline).permit(:name, :description, :start_date, :end_date)
+    params.require(:timeline).permit(:name, :description, events: [])
   end
 
   def hasher(timeline)
