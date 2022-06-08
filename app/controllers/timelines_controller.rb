@@ -23,7 +23,6 @@ class TimelinesController < ApplicationController
   def create
     @timeline = Timeline.new(timeline_params)
     @timeline.user = current_user
-    @timeline.events = timeline_params[:events]
     authorize @timeline
     @timeline.save ? (redirect_to timeline_path(@timeline)) : (render :new)
   end
@@ -49,7 +48,7 @@ class TimelinesController < ApplicationController
   end
 
   def timeline_params
-    params.require(:timeline).permit(:name, :description, events: [])
+    params.require(:timeline).permit(:name, :description, event_ids: [])
   end
 
   def hasher(timeline)
