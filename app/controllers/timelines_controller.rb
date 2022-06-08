@@ -58,7 +58,7 @@ class TimelinesController < ApplicationController
     eventarray = timeline.events.map do |event|
       {
         media: {
-          url: url_for(event.photo)
+          url: url_for(event.photo) # fix needed here! The program breaks if there is no photo! Also, make sure to have the picture on cloudinary
         },
         start_date: {
           month: event.start_date.mon,
