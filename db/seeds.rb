@@ -13,7 +13,7 @@ testuser = User.new(
   password: "augustus",
   password_confirmation: "augustus"
 )
-
+testuser.save!
 # Julio claudian dynasty (reigns):
 
 romanemperors = Timeline.new(

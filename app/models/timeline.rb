@@ -17,7 +17,8 @@ class Timeline < ApplicationRecord
                       name: 'A',
                       description: 'B'
                     }
-                  }
+                  },
+                  using: { tsearch: { prefix: true } }
 
   validates :name, presence: true
   validates :description, presence: true
