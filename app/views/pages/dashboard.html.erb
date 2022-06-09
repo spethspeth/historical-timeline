@@ -1,0 +1,46 @@
+<h1>Dashboard</h1>
+
+<div>
+  <div>
+    <h2>My event</h2>
+    <div>
+      <% unless @events.empty? %>
+        <ul>
+          <% @events.each do |event| %>
+            <li><%= link_to event.name, event_path(event)%></li>
+          <% end %>
+        </ul>
+        <% else %>
+        <p>You don't have events.</p>
+      <% end %>
+    </div>
+  </div>
+  <div>
+    <h2>My timelines</h2>
+    <div>
+      <% unless @timelines.empty? %>
+        <ul>
+          <% @timelines.each do |timeline| %>
+            <li><%= link_to timeline.name, timeline_path(timeline)%></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>You don't have events.</p>
+      <% end %>
+    </div>
+  </div>
+  <div>
+    <h2>The timelines I bookmarked</h2>
+    <div>
+      <% unless @bookmarks.empty? %>
+        <ul>
+          <% @bookmarks.each do |bookmark| %>
+            <li><%= link_to bookmark.timeline.name, timeline_path(bookmark.timeline)%></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>You don't have events.</p>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 class TimelinesController < ApplicationController
-  before_action :set_timeline, only: %i[show]
+  before_action :set_timeline, only: %i[show edit update destroy]
 
   def index
     @timelines = policy_scope(Timeline)
@@ -12,10 +12,12 @@ class TimelinesController < ApplicationController
 
   def show
     @timelinejson = hasher(set_timeline)
+    @bookmark = Bookmark.where(user: current_user, timeline: @timeline)
   end
 
   def new
     @timeline = Timeline.new
+    authorize @timeline
   end
 
   def create
@@ -23,6 +25,19 @@ class TimelinesController < ApplicationController
     @timeline.user = current_user
     authorize @timeline
     @timeline.save ? (redirect_to timeline_path(@timeline)) : (render :new)
+  end
+
+  def edit
+  end
+
+  def update
+    @timeline.update(timeline_params)
+    @timeline.save ? (redirect_to timeline_path(@timeline)) : (render :edit)
+  end
+
+  def destroy
+    @timeline.destroy
+    redirect_to timelines_path
   end
 
   private
@@ -33,14 +48,14 @@ class TimelinesController < ApplicationController
   end
 
   def timeline_params
-    params.require(:timeline).permit(:name, :description, :start_date, :end_date)
+    params.require(:timeline).permit(:name, :description, event_ids: [])
   end
 
   def hasher(timeline)
     eventarray = timeline.events.map do |event|
       {
         media: {
-          url: url_for(event.photo)
+          url: url_for(event.photo) # fix needed here! The program breaks if there is no photo! Also, make sure to have the picture on cloudinary
         },
         start_date: {
           month: event.start_date.mon,

@@ -3,7 +3,8 @@
 <%= simple_form_for(@event) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.input :start_date, as: :date%>
-  <%= f.input :end_date,as: :date %>
+  <%= f.input :start_date, as: :date, start_year: Date.today.year - 1000, end_year: Date.today.year - 12%>
+  <%= f.input :end_date, as: :date, start_year: Date.today.year - 1000, end_year: Date.today.year - 12 %>
+  <%= f.input :photo, as: :file%>
   <%= f.submit %>
 <% end %>

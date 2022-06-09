@@ -1,0 +1,13 @@
+// Calculation for height of timeline = 100vh - navbar height
+
+#timeline-embed {
+  height: calc(100vh - 66px) !important;
+}
+
+// .tl-storyslider {
+//   height: 70% !important;
+// }
+//
+// .tl-timenav {
+//   height: 170px !important;
+// }
