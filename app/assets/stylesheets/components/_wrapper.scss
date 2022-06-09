@@ -1,0 +1,8 @@
+.global-wrapper {
+  width: 1080px;
+  padding: 35px;
+  margin: 60px auto;
+  box-shadow: 5px 0px 20px #ccc;
+  overflow: hidden;
+  background-color: $background-color !important;
+}
