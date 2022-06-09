@@ -74,6 +74,3 @@ gem 'pg_search'
 
 #Add Cloudinary
 gem 'cloudinary', '~> 1.16.0'
-
-#Add jQuery
-gem 'jquery-rails'
