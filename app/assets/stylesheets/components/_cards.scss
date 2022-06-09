@@ -1,0 +1,49 @@
+.card-1 {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.);
+}
+
+.card-1 > img {
+  height: 300px;
+  width: 500px;
+  object-fit: cover;
+}
+
+.card-2 {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.);
+}
+
+.card-2 > img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.card-3 {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-3 > img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+}
+
+.card-3 h4 {
+  margin: 0;
+  font-size: 12px;
+  font-style: bold;
+  font-family: $headers-font;
+  color: #1B1B19;
+}
+
+.card-3 p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}

@@ -1,9 +1,55 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Spectral:300,400,500,600,700,800');
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: "Spectral", "Helvetica", "sans-serif";
+$headers-font: "Anton", "sans-serif";
+$h1-font: "Spectral", "Helvetica", "sans-serif";
+$timeline-font: "Spectral", "Helvetica", "sans-serif";
+
+//Titles config
+// Global Style
+
+h1 {
+  font-family: $h1-font;
+  color: #1B1B19;
+}
+
+h2 {
+ font-size: 18px;
+ font-style: normal;
+ font-family: $headers-font;
+ color: #1B1B19;
+}
+
+h3 {
+  font-size: 14px;
+  font-style: normal;
+  font-family: $headers-font;
+  color: #1B1B19;
+}
+
+h4 {
+  font-size: 12px;
+  font-style: normal;
+  font-family: $headers-font;
+  color: #1B1B19;
+}
+
+p {
+  font-size: 12px;
+  font-style: normal;
+  font-family: $body-font;
+  color: #1B1B19;
+}
+
+.p-quote {
+  font-size: 10px;
+  font-style: italic;
+  font-family: $body-font;
+  color: #1B1B19;
+}
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

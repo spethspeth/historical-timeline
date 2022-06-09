@@ -1,0 +1,40 @@
+.big-btn {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $font-color;
+  transition: background 0.3s ease;
+}
+
+.big-btn:hover {
+  background: #C7C2B8;
+  color: $font-color;
+}
+
+.click-btn {
+  color: $body-font;
+  border: 1px solid $border-color;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.click-btn:hover {
+  opacity: 1;
+}
+
+.submit-btn {
+  color: $body-font;
+  border: 1px solid $border-color;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.submit-btn:hover {
+  opacity: 1;
+}

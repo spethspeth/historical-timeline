@@ -1,1 +1,67 @@
-<h1>Dashboard</h1>
+<h2>My Dashboard</h2>
+<%# First row  %>
+  <div class="d-flex dashboard-first-box">
+    <%# Your Timeline %>
+      <div class="homepage-card-container">
+        <h3>My timelines</h3>
+        <div>
+          <% unless @timelines.empty? %>
+            <ul>
+              <% @timelines.each do |timeline| %>
+                <li><%= link_to timeline.name, timeline_path(timeline)%></li>
+              <% end %>
+            </ul>
+          <% else %>
+            <p>You don't have events.</p>
+          <% end %>
+        </div>
+      </div>
+    <%# Your Bookmarks %>
+      <div class="homepage-card-container">
+        <h3>My Bookmarks</h3>
+        <div>
+          <% unless @bookmarks.empty? %>
+            <ul>
+              <% @bookmarks.each do |bookmark| %>
+                <li><%= link_to bookmark.timeline.name, timeline_path(bookmark.timeline)%></li>
+              <% end %>
+            </ul>
+          <% else %>
+            <p>You don't have events.</p>
+          <% end %>
+        </div>
+      </div>
+  </div>
+<%# Second row %>
+  <div class="d-flex dashboard-second-box">
+  <%# Your Reviews %>
+    <%# <div class="homepage-card-container">
+        <h3>My Bookmarks</h3>
+        <div>
+          <% unless @bookmarks.empty? %>
+            <%# <ul>
+              <% @bookmarks.each do |bookmark| %>
+                <%# <li><%= link_to bookmark.timeline.name, timeline_path(bookmark.timeline)</li> %>
+              <%# <% end %>
+            <%# </ul> %>
+          <%# <% else %>
+            <%# <p>You don't have events.</p> %>
+          <%# <% end %>
+        <%# </div> %>
+    <%# </div> %>
+  <%#  %>
+    <div class="d-flex dashboard-events-container">
+      <h3>My Events</h3>
+      <div>
+        <% unless @events.empty? %>
+          <ul>
+            <% @events.each do |event| %>
+              <li><%= link_to event.name, event_path(event)%></li>
+            <% end %>
+          </ul>
+          <% else %>
+          <p>You don't have events.</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
