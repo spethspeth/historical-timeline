@@ -1,6 +1,7 @@
 
 .dashboard-first-box {
-
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .dashboard-card-container {
@@ -9,6 +10,8 @@
 
 .dashboard-cards {
   display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
   border: 1px solid black
 }
 
@@ -29,7 +32,8 @@
 
 
 .dashboard-second-box {
-  display: flex;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
 }
 
 .dashboard-comment-left-container {
