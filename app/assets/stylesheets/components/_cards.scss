@@ -26,12 +26,21 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 25px;
+  margin: 3px 3px;
+  box-shadow: 0 0 15px rgb(76, 74, 74);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .card-3 > img {
   height: 150px;
   width: 150px;
-  object-fit: cover;
+  border-radius: 25px;
+  margin: 3px 3px;
+  box-shadow: 0 0 15px rgb(76, 74, 74);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .card-3 h4 {
