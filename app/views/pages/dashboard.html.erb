@@ -6,13 +6,20 @@
         <h3>My timelines</h3>
         <div class="dashboard-cards">
           <% unless @timelines.empty? %>
-            <div class="card_3">
-              <% @timelines.each do |timeline| %>
-                <%= link_to timeline.name, timeline_path(timeline)%>
+            <% @timelines.each do |timeline| %>
+              <%= link_to timeline_path(timeline) do %>
+                <div class="dashboard-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path timeline.events.first.photo.key, height: 300, crop: :fill %>')">
+                  <div class="dashboard-card-information ps-3 d-flex justify-content-space-between">
+                    <div class="dashboard-card-informations">
+                      <div class="name"><h3><%= timeline.name %></h3></div>
+                      <div class="price"><p><%= timeline.start_date %> <%= timeline.end_date %></p></div>
+                    </div>
+                  </div>
+                </div>
               <% end %>
-            </div>
+            <% end %>
           <% else %>
-            <p>You don't have events.</p>
+            <p>You don't have timelines.</p>
           <% end %>
         </div>
       </div>
@@ -21,13 +28,20 @@
         <h3>My Bookmarks</h3>
         <div class="dashboard-cards">
           <% unless @bookmarks.empty? %>
-            <ul>
-              <% @bookmarks.each do |bookmark| %>
-                <li><%= link_to bookmark.timeline.name, timeline_path(bookmark.timeline)%></li>
+            <% @bookmarks.each do |bookmark| %>
+              <%= link_to timeline_path(bookmark.timeline) do %>
+                <div class="dashboard-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path bookmark.timeline.events.first.photo.key, height: 300, crop: :fill %>')">
+                  <div class="dashboard-card-information ps-3 d-flex justify-content-space-between">
+                    <div class="dashboard-card-informations">
+                      <div class="name"><h3><%= bookmark.timeline.name %></h3></div>
+                      <div class="price"><p><%= bookmark.timeline.start_date %> <%= bookmark.timeline.end_date %></p></div>
+                    </div>
+                  </div>
+                </div>
               <% end %>
-            </ul>
+            <% end %>
           <% else %>
-            <p>You don't have events.</p>
+            <p>You don't have bookmarks.</p>
           <% end %>
         </div>
       </div>
@@ -53,11 +67,22 @@
       <h3>My Events</h3>
       <div class="dashboard-cards">
         <% unless @events.empty? %>
-          <ul>
-            <% @events.each do |event| %>
-              <li><%= link_to event.name, event_path(event)%></li>
+          <% @events.each do |event| %>
+              <%= link_to event_path(event) do %>
+                <% unless event.photo.key %>
+                  <div class="dashboard-card">
+                <% else %>
+                  <div class="dashboard-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path event.photo.key, height: 300, crop: :fill %>')">
+                <% end %>
+                  <div class="dashboard-card-information ps-3 d-flex justify-content-space-between">
+                    <div class="dashboard-card-informations">
+                      <div class="name"><h3><%= event.name %></h3></div>
+                      <div class="price"><p><%= event.start_date %> <%= event.end_date %></p></div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
             <% end %>
-          </ul>
           <% else %>
           <p>You don't have events.</p>
         <% end %>
