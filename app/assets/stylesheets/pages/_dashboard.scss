@@ -32,7 +32,7 @@
 
 
 .dashboard-second-box {
-  display: grid !important;
+  display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
@@ -40,12 +40,10 @@
   flex-grow: 0.5;
 }
 
-.dashboard-card-title {
 
-}
-
-.dashboard-card-description {
-
+.dashboard-card-informations {
+  display: flex;
+  color: $font-color-second;
 }
 
 .dashboard-events-containers {
