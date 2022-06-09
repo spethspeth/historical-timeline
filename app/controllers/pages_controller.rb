@@ -26,17 +26,16 @@ class PagesController < ApplicationController
 
   def eventer(timeline, counter)
     colorarray = ["red", "blue", "green", "yellow"]
-    # thumbsarray is just a proof of concept for assigning thumbnails based on origin timeline, it is dumb but it works
-    thumbsarray = ["app/assets/images/number_thumbnails/1.png", "app/assets/images/number_thumbnails/2.png", "app/assets/images/number_thumbnails/3.png", "app/assets/images/number_thumbnails/4.png"]
     eventarray = timeline.events.map do |event|
       {
         group: "#{timeline.name}",
+        unique_id: "color#{counter + 1}",
         background: {
           color: colorarray[counter]
         },
         media: {
           url: url_for(event.photo),
-          thumbnail: thumbsarray[counter]
+          thumbnail: url_for(event.photo)
         },
         start_date: {
           month: event.start_date.mon,

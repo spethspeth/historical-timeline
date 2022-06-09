@@ -4,6 +4,27 @@
   height: calc(100vh - 66px) !important;
 }
 
+// #2-marker .tl-timemarker-timespan{
+//   background-color: blue !important;
+//   height: 40px !important;
+// }
+
+[id^="color1"] > div.tl-timemarker-content-container.tl-timemarker-content-container-long.tl-timemarker-content-container-small > div {
+  background-color: red !important;
+  color: white !important;
+  height: 30px !important;
+}
+
+[id^="color2"] > div.tl-timemarker-content-container.tl-timemarker-content-container-long.tl-timemarker-content-container-small > div {
+  background-color: blue !important;
+  color: white !important;
+  height: 30px !important;
+}
+
+// #1-marker > div > .tl-timemarker-content.tl-timemarker-content-small {
+//   background-color: red !important;
+//   color: white !important;
+// }
 // .tl-storyslider {
 //   height: 70% !important;
 // }
