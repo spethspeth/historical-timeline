@@ -18,6 +18,7 @@ class TimelinesController < ApplicationController
   def new
     @timeline = Timeline.new
     authorize @timeline
+    @event = Event.new
   end
 
   def create
