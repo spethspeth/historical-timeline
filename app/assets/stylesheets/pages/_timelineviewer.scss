@@ -4,31 +4,28 @@
   height: calc(100vh - 66px) !important;
 }
 
-// #2-marker .tl-timemarker-timespan{
-//   background-color: blue !important;
-//   height: 40px !important;
-// }
-
-[id^="color1"] > div.tl-timemarker-content-container.tl-timemarker-content-container-long.tl-timemarker-content-container-small > div {
-  background-color: red !important;
+[id^="color1"] .tl-timemarker-content.tl-timemarker-content-small {
+  background-color: $bkgd-timeline-one-color !important;
   color: white !important;
-  height: 30px !important;
+
 }
 
-[id^="color2"] > div.tl-timemarker-content-container.tl-timemarker-content-container-long.tl-timemarker-content-container-small > div {
-  background-color: blue !important;
+[id^="color2"] .tl-timemarker-content.tl-timemarker-content-small {
+  background-color: $bkgd-timeline-two-color !important;
   color: white !important;
-  height: 30px !important;
+
 }
 
-// #1-marker > div > .tl-timemarker-content.tl-timemarker-content-small {
-//   background-color: red !important;
-//   color: white !important;
-// }
-// .tl-storyslider {
-//   height: 70% !important;
-// }
-//
-// .tl-timenav {
-//   height: 170px !important;
-// }
+[id^="color3"] .tl-timemarker-content.tl-timemarker-content-small {
+  background-color: $bkgd-timeline-three-color !important;
+  color: white !important;
+
+}
+
+.tl-timegroup .tl-timegroup-message {
+  color: #1B1B19 !important;
+}
+
+.tl-timegroup.tl-timegroup-alternate .tl-timegroup-message {
+  color: #1B1B19 !important;
+}

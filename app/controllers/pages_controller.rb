@@ -25,7 +25,7 @@ class PagesController < ApplicationController
   # This helper method iterates over the events of a user timeline and turns them into an array of hashes
 
   def eventer(timeline, counter)
-    colorarray = ["red", "blue", "green", "yellow"]
+    colorarray = ["#1B1B19", "#982226", "#959595"]
     eventarray = timeline.events.map do |event|
       {
         group: "#{timeline.name}",
