@@ -6,6 +6,9 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @timelines = Timeline.where(user: current_user)
+    @events = Event.where(user: current_user)
+    @bookmarks = Bookmark.where(user: current_user)
   end
 
   def timelineviewer
