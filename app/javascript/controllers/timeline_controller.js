@@ -5,7 +5,7 @@ export default class extends Controller {
 
   additionalOptions = {
     start_at_end: false,
-    default_bg_color: {r:155, g:17, b:30},
+    default_bg_color: {r:199, g:194, b:184},
     use_bc: true
   }
 
