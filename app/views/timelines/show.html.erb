@@ -4,13 +4,11 @@
 </div>
 <tr>
   <% if policy(@timeline).edit? %>
-    <td><%= link_to 'Edit', edit_event_path(@timeline)  %></td>
+    <td><%= link_to 'Edit', edit_timeline_path(@timeline)  %></td>
   <% end %>
   <% if policy(@timeline).destroy? %>
-    <td><%= link_to 'Destroy', @etimeline, method: :delete, data: { confirm: 'Are you sure ?' } %></td>
+    <td><%= link_to 'Destroy', @timeline, method: :delete, data: { confirm: 'Are you sure ?' } %></td>
   <% end %>
-</div>
-<tr>
   <% if @bookmark.empty? %>
     <td> <%= link_to 'Bookmark it', timeline_bookmarks_path(@timeline), method: :post %> </td>
   <% else %>
