@@ -22,7 +22,9 @@ class PagesController < ApplicationController
   # This helper method iterates over the events of a user timeline and turns them into an array of hashes
 
   def eventer(timeline, counter)
-    colorarray = ["blue", "red", "green", "yellow"]
+    colorarray = ["red", "blue", "green", "yellow"]
+    # thumbsarray is just a proof of concept for assigning thumbnails based on origin timeline, it is dumb but it works
+    thumbsarray = ["app/assets/images/number_thumbnails/1.png", "app/assets/images/number_thumbnails/2.png", "app/assets/images/number_thumbnails/3.png", "app/assets/images/number_thumbnails/4.png"]
     eventarray = timeline.events.map do |event|
       {
         group: "#{timeline.name}",
@@ -30,7 +32,8 @@ class PagesController < ApplicationController
           color: colorarray[counter]
         },
         media: {
-          url: url_for(event.photo)
+          url: url_for(event.photo),
+          thumbnail: thumbsarray[counter]
         },
         start_date: {
           month: event.start_date.mon,
