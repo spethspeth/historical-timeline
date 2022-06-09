@@ -2,24 +2,24 @@
 <%# First row  %>
   <div class="d-flex dashboard-first-box">
     <%# Your Timeline %>
-      <div class="homepage-card-container">
+      <div class="dashboard-card-container">
         <h3>My timelines</h3>
-        <div>
+        <div class="dashboard-cards">
           <% unless @timelines.empty? %>
-            <ul>
+            <div class="card_3">
               <% @timelines.each do |timeline| %>
-                <li><%= link_to timeline.name, timeline_path(timeline)%></li>
+                <%= link_to timeline.name, timeline_path(timeline)%>
               <% end %>
-            </ul>
+            </div>
           <% else %>
             <p>You don't have events.</p>
           <% end %>
         </div>
       </div>
     <%# Your Bookmarks %>
-      <div class="homepage-card-container">
+      <div class="dashboard-card-container">
         <h3>My Bookmarks</h3>
-        <div>
+        <div class="dashboard-cards">
           <% unless @bookmarks.empty? %>
             <ul>
               <% @bookmarks.each do |bookmark| %>
@@ -35,24 +35,23 @@
 <%# Second row %>
   <div class="d-flex dashboard-second-box">
   <%# Your Reviews %>
-    <%# <div class="homepage-card-container">
-        <h3>My Bookmarks</h3>
-        <div>
-          <% unless @bookmarks.empty? %>
-            <%# <ul>
+    <div class="dashboard-card-container">
+        <h3>My Reviews</h3>
+        <div class="dashboard-cards">
+          <%# unless @bookmarks.empty? %>
+        <%# <ul>
               <% @bookmarks.each do |bookmark| %>
-                <%# <li><%= link_to bookmark.timeline.name, timeline_path(bookmark.timeline)</li> %>
-              <%# <% end %>
-            <%# </ul> %>
-          <%# <% else %>
-            <%# <p>You don't have events.</p> %>
-          <%# <% end %>
-        <%# </div> %>
-    <%# </div> %>
-  <%#  %>
-    <div class="d-flex dashboard-events-container">
+        <%#      <li><%= link_to bookmark.timeline.name, timeline_path(bookmark.timeline)</li> %>
+        <%#      <% end %>
+        <%# </ul>
+          <% else %>
+            <p>You don't have reviews.</p>
+        <%#  <% end %>
+        </div>
+    </div>
+    <div class="dashboard-events-container">
       <h3>My Events</h3>
-      <div>
+      <div class="dashboard-cards">
         <% unless @events.empty? %>
           <ul>
             <% @events.each do |event| %>
