@@ -36,7 +36,7 @@ class TimelinesController < ApplicationController
   end
 
   def destroy
-    @timeline.delete
+    @timeline.destroy
     redirect_to timelines_path
   end
 
