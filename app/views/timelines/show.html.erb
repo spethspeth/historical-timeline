@@ -4,7 +4,7 @@
 </div>
 <tr>
   <% if policy(@timeline).edit? %>
-    <td><%= link_to 'Edit', edit_event_path(@timeline)  %></td>
+    <td><%= link_to 'Edit', edit_timeline_path(@timeline)  %></td>
   <% end %>
   <% if policy(@timeline).destroy? %>
     <td><%= link_to 'Destroy', @etimeline, method: :delete, data: { confirm: 'Are you sure ?' } %></td>

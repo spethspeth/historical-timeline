@@ -3,7 +3,7 @@ class Timeline < ApplicationRecord
 
   belongs_to :user
   has_many :bookmarks
-  has_many :events_timelines
+  has_many :events_timelines, dependent: :destroy
   has_many :events, through: :events_timelines
   has_many :users, through: :bookmarks
 

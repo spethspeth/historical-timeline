@@ -28,14 +28,11 @@ class TimelinesController < ApplicationController
   end
 
   def edit
-    @events = Event.all
-    @eventstimeline = EventsTimeline.new
   end
 
   def update
     @timeline.update(timeline_params)
     @timeline.save ? (redirect_to timeline_path(@timeline)) : (render :edit)
-    raise
   end
 
   def destroy
