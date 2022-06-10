@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-  respond_to :js, :html
   before_action :set_event, only: %i[show edit update destroy]
 
   def index
@@ -18,14 +17,8 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
     authorize @event
-    respond_to do |format|
-      if @event.save
-        format.html { redirect_to edit_event_path(@event) }
-        format.json
-      else
-        format.html { render "timelines/new" }
-        format.json
-      end
+    if @event.save
+      redirect_to event_path(@event)
     end
   end
 
