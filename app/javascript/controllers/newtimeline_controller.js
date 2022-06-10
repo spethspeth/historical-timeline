@@ -18,7 +18,7 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
-        console.log(data)
+        document.querySelector("body").insertAdjacentHTML("afterbegin", data.flash)
       })
   }
 }
