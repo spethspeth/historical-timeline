@@ -2,3 +2,9 @@
   <div data-controller="timeline" data-timeline-dates-value="<%=@combinedtimeline.to_json%>">
   </div>
 </div>
+<div id="bookmark-selector">
+  <%= simple_form_for(@timelines) do |f| %>
+    <%= f.input :events, input_html: { class: "js-matcher-multiple"} %>
+    <%= f.submit %>
+  <% end %>
+</div>

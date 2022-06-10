@@ -28,4 +28,10 @@ const initSelect2 = () => {
   });
 };
 
+const bookmarkSelector = () => {
+  $(".js-bookmark-dropdown").select2({
+  });
+};
+
 export { initSelect2 }
+export { bookmarkSelector }
