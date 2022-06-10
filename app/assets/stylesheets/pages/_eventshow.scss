@@ -31,6 +31,7 @@
 }
 
 .fp-item {
+  color: black;
   background-color: #efefef;
   display: flex;
   flex-direction: column;
@@ -43,4 +44,11 @@
 .image-event {
   background-size: cover;
   background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+#event-description {
+  color: black;
+  font-family: $body-font;
 }
