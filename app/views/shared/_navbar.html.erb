@@ -1,4 +1,65 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class = "navbar">
+  <div class="navbar-top-container">
+    <div class="nav-searchbar">
+      <div class="cntr">
+        <div class="cntr-innr">
+          <label class="search" for="inpt_search">
+            <input id="inpt_search" type="text"/>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="head">
+      <div class="nav-header"><h1><%= link_to "Almanac.lol", root_path, class: "nav-link" %><h1>
+      </div>
+    </div>
+
+    <div class="login-container">
+      <div class="social-medias icons">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+          <div id="social-test">
+            <ul class="social">
+              <li><a href="https://facebook.com/natgeo"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+              <li><a href="https://twitter.com/natgeo"><i class="fa fa-twitter" aria-hidden="true"></a></i></li>
+              <li><a href="https://instagram.com/natgeo"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.youtube.com/c/NaTGeo"><i class="fa fa-youtube" aria-hidden="true"></a></i></li>
+            </ul>
+          </div>
+      </div>
+      <ul class="navbar-nav me-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item dropdown">
+            <%if current_user.avatar.present?%>
+              <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%else%>
+              <%= image_tag "round-avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
+            <%end%>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
+              <%= link_to "Create Your Timeline", new_timeline_path, class: "dropdown-item" %>
+              <%= link_to "My dashboard", dashboard_path, class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="navbar-bottom-container">
+    <div class="subhead">
+      <%= date = Date.today.to_s(:long_ordinal) %>
+    </div>
+  </div>
+</div>
+
+<!-- OLD NAV BAR-->
+<!-- <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
@@ -35,4 +96,4 @@
       </ul>
     </div>
   </div>
-</div>
+</div> -->

@@ -1,1 +1,12 @@
 // Specific CSS for your home-page
+.homepage-right-container {
+  justify-content: center;
+}
+
+h6 {
+  font-size: 40px !important;
+  text-align: center;
+  font-style: normal;
+  font-family: $h1-font;
+  color: #1B1B19;
+}

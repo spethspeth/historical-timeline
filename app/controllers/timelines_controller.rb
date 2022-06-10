@@ -18,13 +18,20 @@ class TimelinesController < ApplicationController
   def new
     @timeline = Timeline.new
     authorize @timeline
+    @event = Event.new
   end
 
   def create
     @timeline = Timeline.new(timeline_params)
     @timeline.user = current_user
     authorize @timeline
-    @timeline.save ? (redirect_to timeline_path(@timeline)) : (render :new)
+    respond_to do |format|
+      if @timeline.save
+        format.json # Follow the classic Rails flow and look for a create.json view
+      else
+        format.json # Follow the classic Rails flow and look for a create.json view
+      end
+    end
   end
 
   def edit
@@ -48,14 +55,14 @@ class TimelinesController < ApplicationController
   end
 
   def timeline_params
-    params.require(:timeline).permit(:name, :description, event_ids: [])
+    params.require(:timeline).permit(:name, :description, :photo, event_ids: [])
   end
 
   def hasher(timeline)
     eventarray = timeline.events.map do |event|
       {
         media: {
-          url: url_for(event.photo) # fix needed here! The program breaks if there is no photo! Also, make sure to have the picture on cloudinary
+          url: url_for(event.photo)
         },
         start_date: {
           month: event.start_date.mon,

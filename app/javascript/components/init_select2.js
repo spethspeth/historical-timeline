@@ -21,7 +21,7 @@ const matchEvent = (params, data) => {
 const initSelect2 = () => {
   $(".js-matcher-multiple").select2({
     closeOnSelect: false,
-    placeholder: "Select an event",
+    placeholder: "Select an event from our Database",
     minimumInputLength: 3,
     selectOnClose: true,
     matcher: matchEvent

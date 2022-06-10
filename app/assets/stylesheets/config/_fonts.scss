@@ -3,10 +3,10 @@
 @import url('https://fonts.googleapis.com/css?family=Spectral:300,400,500,600,700,800');
 
 // Define fonts for body and headers
-$body-font: "Spectral", "Helvetica", "sans-serif";
+$body-font: "Spectral", "serif";
 $headers-font: "Anton", "sans-serif";
-$h1-font: "Spectral", "Helvetica", "sans-serif";
-$timeline-font: "Spectral", "Helvetica", "sans-serif";
+$h1-font: "Spectral", "serif";
+$timeline-font: "Spectral", "serif";
 
 //Titles config
 // Global Style
@@ -14,6 +14,9 @@ $timeline-font: "Spectral", "Helvetica", "sans-serif";
 h1 {
   font-family: $h1-font;
   color: #1B1B19;
+  font-size: 80px !important;
+  font-weight: 900 !important;
+  text-transform: uppercase;
 }
 
 h2 {

@@ -2,16 +2,21 @@
   <div data-controller="timeline" data-timeline-dates-value="<%=@timelinejson.to_json%>">
   </div>
 </div>
-<tr>
-  <% if policy(@timeline).edit? %>
-    <td><%= link_to 'Edit', edit_timeline_path(@timeline)  %></td>
-  <% end %>
-  <% if policy(@timeline).destroy? %>
-    <td><%= link_to 'Destroy', @timeline, method: :delete, data: { confirm: 'Are you sure ?' } %></td>
-  <% end %>
-  <% if @bookmark.empty? %>
-    <td> <%= link_to 'Bookmark it', timeline_bookmarks_path(@timeline), method: :post %> </td>
-  <% else %>
-    <td> <%= link_to 'Unbookmark it', timeline_bookmark_path(@timeline), method: :delete %> </td>
-  <% end%>
-</tr>
+<div class = "text-center mt-3">
+    <% if @bookmark.empty? %>
+      <td> <%= link_to 'Bookmark it', timeline_bookmarks_path(@timeline), method: :post, class: "submit-btn"  %> </td>
+    <% else %>
+      <td> <%= link_to 'Unbookmark it', timeline_bookmark_path(@timeline), method: :delete, class: "submit-btn"  %> </td>
+    <% end%>
+<div class = "mt-3">
+    <% if policy(@timeline).edit? %>
+      <div data-controller="edittimeline">
+            <button class = "submit-btn" data-action="click->edittimeline#display">Edit</button>
+              <div data-edittimeline-target="form" class="d-none">
+                <%= render "timelines/edit" %>
+              </div>
+          </div>
+      <%#= link_to 'Edit', edit_timeline_path(@timeline), class: "submit-btn"  %>
+    <% end %>
+</div>
+</div>

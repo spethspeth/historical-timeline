@@ -1,3 +1,23 @@
-<% @timelines.each do |timeline| %>
-  <p><%= link_to timeline.name, timeline_path(timeline) %></p>
-<% end %>
+<h2><span style="color:#BF1E2E; font-weight:400; font-style: initial;">•</span> Choose from <span style="color:#BF1E2E; font-weight:600; font-size:1.42rem;"><%=@timelines.size%></span> timelines <span style="color:#BF1E2E; font-weight:400;font-style: initial;">•</span></h2>
+  <div class="cols-container">
+  <div class="cols">
+    <%@timelines.each do |timeline|%>
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+         <%= link_to timeline_path(timeline) do %>
+          <div class="card-index">
+            <div class="front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path timeline.photo.key %>')">
+              <div class="inner">
+                <p><%=timeline.name%></p>
+              </div>
+            </div>
+            <div class="back">
+              <div class="inner">
+                <p><%=timeline.description%></p>
+              </div>
+            </div>
+          </div>
+        <%end%>
+        </div>
+    <%end%>
+  </div>
+</div>

@@ -19,8 +19,6 @@ class EventsController < ApplicationController
     authorize @event
     if @event.save
       redirect_to event_path(@event)
-    else
-      render :new
     end
   end
 
@@ -45,6 +43,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :description, :start_date, :end_date)
+    params.require(:event).permit(:name, :description, :start_date, :end_date, :photo)
   end
 end

@@ -1,7 +1,7 @@
 .card-1 {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.);
+  box-shadow: 0 0 15px rgba(0,0,0,0);
 }
 
 .card-1 > img {
@@ -13,7 +13,7 @@
 .card-2 {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.);
+  box-shadow: 0 0 15px rgba(0,0,0,0);
 }
 
 .card-2 > img {
@@ -26,21 +26,12 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 25px;
-  margin: 3px 3px;
-  box-shadow: 0 0 15px rgb(76, 74, 74);
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .card-3 > img {
   height: 150px;
   width: 150px;
-  border-radius: 25px;
-  margin: 3px 3px;
-  box-shadow: 0 0 15px rgb(76, 74, 74);
-  background-repeat: no-repeat;
-  background-size: cover;
+  object-fit: cover;
 }
 
 .card-3 h4 {
@@ -55,4 +46,10 @@
   font-size: 12px;
   opacity: .7;
   margin: 0;
+}
+
+.card-event .card-content .card-title {
+  display: block;
+  line-height: 32px;
+  margin-bottom: 8px;
 }
