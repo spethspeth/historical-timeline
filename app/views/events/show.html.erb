@@ -27,12 +27,9 @@
               </div>
           </div>
         <% end %>
-
-        <% if policy(@event).destroy? %>
-        <%= link_to 'Delete', @event, method: :delete, data: { confirm: 'Are you sure ?' }, class: "submit-btn" %>
-        <% end %>
-
-        <%= link_to "Dashboard", dashboard_path, class: "submit-btn" %>
+        <div class = "mt-3">
+          <%= link_to "Dashboard", dashboard_path, class: "submit-btn" %>
+        </div>
       </div>
     </div>
   </div>
