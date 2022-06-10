@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 import { initSelect2 } from '../components/init_select2';
+import { search } from '../components/searchbar';
 
 document.addEventListener("turbolinks:load", function() {
   initSelect2();
