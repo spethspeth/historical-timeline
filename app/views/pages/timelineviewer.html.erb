@@ -2,3 +2,9 @@
   <div data-controller="timeline" data-timeline-dates-value="<%=@combinedtimeline.to_json%>">
   </div>
 </div>
+<div id="bookmark-selector">
+  <%= simple_form_for(Bookmark.new, url: timelineviewer_path, method: "GET") do |f| %>
+    <%= f.input :bookmarks, collection: @bookmarks.map { |bookmark| [bookmark.timeline.name, bookmark.timeline.id ] }, input_html: {multiple: true} %>
+    <%= f.submit %>
+  <% end %>
+</div>

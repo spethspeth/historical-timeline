@@ -12,12 +12,19 @@ class PagesController < ApplicationController
   end
 
   def timelineviewer
+    if params[:bookmark]
+      @selected = params[:bookmark][:bookmarks].map.with_index do |b, i|
+        unless i.zero?
+          Timeline.find(b)
+        end
+      end.reject { |a| a.nil? }
+    else
+      @selected = Timeline.first(2)
+    end
     @bookmarks = Bookmark.where(user_id: current_user)
-
     # The following 2 timelines are assigned for testing purposes only:
-    @timeline1 = Timeline.find(1)
-    @timeline2 = Timeline.find(2)
-    @combinedtimeline = combiner(@timeline1, @timeline2)
+
+    @combinedtimeline = combiner(@selected)
   end
 
   private
@@ -60,7 +67,7 @@ end
   # This method exists to combine 2 timelines into a single hash to pass to TimelineJS.
   # It is clunky and should probably have a way to receive an arbitrary number of timelines by passing an array of them
 
-def combiner(*args)
+def combiner(args)
   counter = 0
   totaleventarray = []
   args.each do |timeline|
