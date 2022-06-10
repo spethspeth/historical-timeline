@@ -1,13 +1,14 @@
 <div class="text-center">
 <h1>New Timeline</h1>
-<%= simple_form_for(@timeline, remote: true) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.association :events, input_html: { class: "js-matcher-multiple"} %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit class: "submit-btn"%>
-<% end %>
-
+<div data-controller="newtimeline">
+  <%= simple_form_for(@timeline, remote: true, data: { newtimeline_target: "form", action: "submit->newtimeline#submitForm" }) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.association :events, input_html: { class: "js-matcher-multiple"} %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit class: "submit-btn"%>
+  <% end %>
+</div>
 
 <div class="mt-3">
   <div data-controller="newevent">

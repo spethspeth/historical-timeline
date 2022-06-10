@@ -25,7 +25,13 @@ class TimelinesController < ApplicationController
     @timeline = Timeline.new(timeline_params)
     @timeline.user = current_user
     authorize @timeline
-    @timeline.save ? (redirect_to timeline_path(@timeline)) : (render :new)
+    respond_to do |format|
+      if @timeline.save
+        format.json # Follow the classic Rails flow and look for a create.json view
+      else
+        format.json # Follow the classic Rails flow and look for a create.json view
+      end
+    end
   end
 
   def edit
