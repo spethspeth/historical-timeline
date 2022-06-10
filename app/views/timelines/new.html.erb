@@ -1,5 +1,5 @@
+<div class="text-center">
 <h1>New Timeline</h1>
-
 <%= simple_form_for(@timeline, remote: true) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
@@ -19,4 +19,5 @@
   <div class="mt-3">
     <%= link_to "Dashboard", dashboard_path, class: "submit-btn" %>
   </div>
+</div>
 </div>
