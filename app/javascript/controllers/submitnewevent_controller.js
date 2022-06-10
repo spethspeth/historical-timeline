@@ -2,7 +2,7 @@ import { Controller } from "stimulus"
 import { csrfToken } from "@rails/ujs"
 
 export default class extends Controller {
-  static targets = ["form"]
+  static targets = ["form", "reviewbutton"]
 
   connect() {
     console.log(this.element)
