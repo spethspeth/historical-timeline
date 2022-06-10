@@ -1,13 +1,14 @@
-.big-btn {
-  color: white;
+.Hpg-btn {
+  color:$font-color-second !important;
+  font-size: 24px;
   padding: 8px 24px;
   border-radius: 4px;
-  background: $font-color;
+  background: $font-color !important;
   transition: background 0.3s ease;
 }
 
-.big-btn:hover {
-  background: #C7C2B8;
+.Hpg-btn:hover {
+  background: $font-color;
   color: $font-color;
 }
 
