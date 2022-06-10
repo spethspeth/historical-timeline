@@ -2,6 +2,7 @@
 .dashboard-first-box {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
 }
 
 .dashboard-card-container {
@@ -9,25 +10,29 @@
 }
 
 .dashboard-cards {
+  height: fit-content;
+  margin: 2.5%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
-  border: 1px solid black
+  border: 1px solid $border-color;
+  border-radius: 2px;
 }
 
 .dashboard-card {
-  background-size: cover;
-  background-position: center;
-  height: 180px;
-  display: flex;
+  height: fit-content;
+  //background-size: cover;
+  //background-position: center;
+  margin: 2%;
+  width: 100%;
+  //display: flex;
   justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  //align-items: center;
+  //color: white;
+  //font-size: 24px;
+  //font-weight: bold;
+  //text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  //box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 
@@ -38,6 +43,7 @@
 
 .dashboard-comment-left-container {
   flex-grow: 0.5;
+
 }
 
 

@@ -6,6 +6,7 @@ class Timeline < ApplicationRecord
   has_many :events_timelines, dependent: :destroy
   has_many :events, through: :events_timelines
   has_many :users, through: :bookmarks
+  has_one_attached :photo
 
   pg_search_scope :timeline_search,
                   against: {
@@ -22,6 +23,5 @@ class Timeline < ApplicationRecord
 
   validates :name, presence: true
   validates :description, presence: true
-
-  has_one_attached :photo
+  validates :photo, presence: true
 end

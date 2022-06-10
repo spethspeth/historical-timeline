@@ -1,18 +1,23 @@
+<div class="text-center">
 <h1>New Timeline</h1>
-
-<%= simple_form_for(@timeline) do |f| %>
+<%= simple_form_for(@timeline, remote: true) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.association :events, input_html: { class: "js-matcher-multiple"} %>
-  <%= f.submit %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit class: "submit-btn"%>
 <% end %>
 
 
 <div class="mt-3">
   <div data-controller="newevent">
-    <button data-action="click->newevent#display">New Event</button>
-      <div class="mt-3 d-none" data-newevent-target="form">
+    <button class = "submit-btn" data-action="click->newevent#display">Add a new Event</button>
+      <div data-newevent-target="form" class="d-none">
         <%= render "events/new" %>
       </div>
   </div>
+  <div class="mt-3">
+    <%= link_to "Dashboard", dashboard_path, class: "submit-btn" %>
+  </div>
+</div>
 </div>

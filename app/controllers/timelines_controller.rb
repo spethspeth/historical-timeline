@@ -49,14 +49,14 @@ class TimelinesController < ApplicationController
   end
 
   def timeline_params
-    params.require(:timeline).permit(:name, :description, event_ids: [])
+    params.require(:timeline).permit(:name, :description, :photo, event_ids: [])
   end
 
   def hasher(timeline)
     eventarray = timeline.events.map do |event|
       {
         media: {
-          url: url_for(event.photo) # fix needed here! The program breaks if there is no photo! Also, make sure to have the picture on cloudinary
+          url: url_for(event.photo)
         },
         start_date: {
           month: event.start_date.mon,

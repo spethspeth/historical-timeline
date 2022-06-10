@@ -1,0 +1,15 @@
+ <div class="text-center">
+  <%= simple_form_for(@event) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :start_date, as: :date%>
+    <%= f.input :end_date,as: :date %>
+    <%= f.input :photo, as: :file%>
+    <%= f.submit class: "submit-btn" %>
+  <% end %>
+</div>
+<div class="mt-3 text-center">
+  <% if policy(@event).destroy? %>
+    <%= link_to 'Delete', @event, method: :delete, data: { confirm: 'Are you sure ?' }, class: "submit-btn" %>
+  <% end %>
+</div>

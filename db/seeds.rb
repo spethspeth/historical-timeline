@@ -21,6 +21,7 @@ romanemperors = Timeline.new(
   description: "The Roman emperors were the rulers of the Roman Empire from the granting of the name and title Augustus to Octavian by the Roman Senate in 27 BC onwards. Augustus maintained a facade of Republican rule, rejecting monarchical titles but calling himself princeps senatus (first man of the Senate) and princeps civitatis (first citizen of the state). The title of Augustus was conferred on his successors to the imperial position, and emperors gradually grew more monarchical and authoritarian."
 )
 romanemperors.user = testuser
+romanemperors.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'roman_empire.jpg')), filename: 'roman_empire.jpg', content_type: 'romanempire.png')
 
 augustus = Event.new(
   name: "Augustus",
@@ -138,6 +139,7 @@ nerolife.save!
 emperorslives.events = [augustuslife, tiberiuslife, caligulalife, claudiuslife, nerolife]
 emperorslives.start_date = emperorslives.events.first.start_date
 emperorslives.end_date = emperorslives.events.last.end_date
+emperorslives.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'nero.jpg')), filename: 'nero.png', content_type: 'image.png')
 emperorslives.save!
 
 
@@ -149,6 +151,7 @@ sovietunion = Timeline.new(
 )
 
 sovietunion.user = testuser
+sovietunion.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'sovietleaders', 'urss.jpg')), filename: 'urss.jpgg', content_type: 'iurss.jpg')
 
 lenin = Event.new(
   name: "Vladimir Lenin",

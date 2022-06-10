@@ -13,7 +13,7 @@
 }
 
 .click-btn {
-  color: $body-font;
+  color: $font-color;
   border: 1px solid $border-color;
   padding: 8px 24px;
   border-radius: 50px;
@@ -23,11 +23,12 @@
 }
 
 .click-btn:hover {
+  color: $font-color;
   opacity: 1;
 }
 
 .submit-btn {
-  color: $body-font;
+  color: $font-color;
   border: 1px solid $border-color;
   padding: 8px 24px;
   border-radius: 50px;
@@ -37,5 +38,23 @@
 }
 
 .submit-btn:hover {
+  color: $font-color;
+  opacity: 1;
+}
+
+.click-btn-card {
+  color: white;
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  position: fixed;
+  bottom: 2px;
+}
+
+.click-btn-card:hover {
+  color: white;
   opacity: 1;
 }
