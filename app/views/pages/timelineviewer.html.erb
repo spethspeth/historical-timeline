@@ -1,10 +1,17 @@
-<div id="timeline-embed">
-  <div data-controller="timeline" data-timeline-dates-value="<%=@combinedtimeline.to_json%>">
+<div data-controller="timelinesubmitter">
+  <div id="timeline-embed">
+    <div data-controller="timeline" data-timeline-dates-value="<%=@combinedtimeline.to_json%>">
+    </div>
   </div>
-</div>
-<div id="bookmark-selector">
-  <%= simple_form_for(@timelines) do |f| %>
-    <%= f.input :events, input_html: { class: "js-matcher-multiple"} %>
-    <%= f.submit %>
-  <% end %>
+  <div id="bookmark-selector">
+    <form>
+      <% @bookmarks.each_with_index do |bookmark, i| %>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id=<%= "inlineRadio#{i + 1}" %> value=<%= "option#{i + 1}" %> data-timelinesubmitter-target="bookmarkcheck">
+          <label class="form-check-label" for=<%= "inlineRadio#{i + 1}" %>><%= bookmark.timeline.name %></label>
+        </div>
+      <% end %>
+      <button type="button" class="btn btn-primary mb-2" data-action="click->timelinesubmitter#submit" data-timelinesubmitter-target="button">View timelines</button>
+    </form>
+  </div>
 </div>

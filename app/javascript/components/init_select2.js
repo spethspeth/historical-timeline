@@ -28,6 +28,8 @@ const initSelect2 = () => {
   });
 };
 
+// bookmarkSelector is just some placeholder code for the bookmark submission form on the timeline viewer, just leave it here for now
+
 const bookmarkSelector = () => {
   $(".js-bookmark-dropdown").select2({
   });

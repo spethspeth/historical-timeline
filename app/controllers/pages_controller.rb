@@ -13,7 +13,7 @@ class PagesController < ApplicationController
 
   def timelineviewer
     @bookmarks = Bookmark.where(user_id: current_user)
-
+    @selected = []
     # The following 2 timelines are assigned for testing purposes only:
     @timeline1 = Timeline.find(1)
     @timeline2 = Timeline.find(2)
