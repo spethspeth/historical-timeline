@@ -1,4 +1,4 @@
- <%= simple_form_for(@event, remote: true, data: { reviewevent_target: "review" }) do |f| %>
+ <%= simple_form_for(@event) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :start_date, as: :date%>
