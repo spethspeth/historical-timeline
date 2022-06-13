@@ -1,7 +1,12 @@
-<% if @timelines.size > 1%>
-<h2 class="text-center"><span class="red-dot">•</span> Choose from <span class="red-dot"><%=@timelines.size%></span> timelines <span class="red-dot">•</span></h2>
+<% if @timelines.size == 0 %>
+  <h2 class="text-center"><span class="red-dot">•</span> No matching timelines <span class="red-dot">•</span></h2>
+  <div class="text-center mt-3">
+    <td> <%= link_to "Create your own", new_timeline_path, class: "click-btn" %> <span class="red-dot">•</span> Or <span class="red-dot">•</span> </td>  <%= link_to "See all the timelines", timelines_path, class: "click-btn" %>
+  </div>
+<% elsif @timelines.size > 1%>
+  <h2 class="text-center"><span class="red-dot">•</span> Choose from <span class="red-dot"><%=@timelines.size%></span> timelines <span class="red-dot">•</span></h2>
 <% else %>
-<h2 class="text-center"><span class="red-dot">•</span> <span class="red-dot"><%=@timelines.size%></span> timeline <span class="red-dot">•</span></h2>
+  <h2 class="text-center"><span class="red-dot">•</span> <span class="red-dot"><%=@timelines.size%></span> timeline <span class="red-dot">•</span></h2>
 <% end %>
 <div class="cards-container">
   <div class="cards">
