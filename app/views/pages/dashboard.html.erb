@@ -8,15 +8,9 @@
           <% unless @timelines.empty? %>
             <% @timelines.each do |timeline| %>
               <%= link_to timeline_path(timeline), :class => 'dashboard-card' do %>
-               <!-- <div class="card-3">
-                  <div class="card-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path timeline.events.first.photo.key, height: 300, crop: :fill %>')">
-                    <h4><%= timeline.name %></h4>
-                    <p><%= timeline.start_date %> <%= timeline.end_date %></p>
-                  </div>
-                </div> -->
                 <div ontouchstart="this.classList.toggle('hover');">
                   <div class="card-index dashboard-card">
-                    <div class="front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path timeline.events.first.photo.key %>')">
+                    <div class="front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path timeline.photo.key %>')">
                       <div class="inner">
                         <p><%=timeline.name%></p>
                       </div>
@@ -44,15 +38,9 @@
           <% unless @bookmarks.empty? %>
             <% @bookmarks.each do |bookmark| %>
               <%= link_to timeline_path(bookmark.timeline), :class => 'dashboard-card' do %>
-                <!--<div class="card-3">
-                  <div class="card-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path bookmark.timeline.events.first.photo.key, height: 300, crop: :fill %>')">
-                  </div>
-                  <h4><%= bookmark.timeline.name %></h4>
-                  <p><%= bookmark.timeline.start_date %> <%= bookmark.timeline.end_date %></p>
-                </div> -->
                 <div ontouchstart="this.classList.toggle('hover');">
                   <div class="card-index">
-                    <div class="front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path bookmark.timeline.events.first.photo.key %>')">
+                    <div class="front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path bookmark.timeline.photo.key %>')">
                       <div class="inner">
                         <p><%=bookmark.timeline.name%></p>
                       </div>
