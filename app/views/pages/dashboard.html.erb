@@ -8,17 +8,13 @@
           <% unless @timelines.empty? %>
             <% @timelines.each do |timeline| %>
               <%= link_to timeline_path(timeline), :class => 'dashboard-card' do %>
-                <div ontouchstart="this.classList.toggle('hover');">
-                  <div class="d-card-index dashboard-card">
-                    <div class="d-front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path timeline.photo.key %>')">
-                      <div class="inner">
-                        <p><%=timeline.name%></p>
-                      </div>
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                     <div class="flip-card-front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path timeline.photo.key %>')">
+                      <h2 id="card-title"><%=timeline.name%></h2>
                     </div>
-                    <div class="d-back">
-                      <div class="d-inner">
-                        <p><%=timeline.description%></p>
-                      </div>
+                    <div class="flip-card-back">
+                      <p id="card-description"><%=timeline.description%></p>
                     </div>
                   </div>
                 </div>
@@ -38,17 +34,13 @@
           <% unless @bookmarks.empty? %>
             <% @bookmarks.each do |bookmark| %>
               <%= link_to timeline_path(bookmark.timeline), :class => 'dashboard-card' do %>
-                <div ontouchstart="this.classList.toggle('hover');">
-                  <div class="d-card-index">
-                    <div class="d-front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path bookmark.timeline.photo.key %>')">
-                      <div class="d-inner">
-                        <p><%=bookmark.timeline.name%></p>
-                      </div>
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                     <div class="flip-card-front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path bookmark.timeline.photo.key %>')">
+                      <h2 id="card-title"><%=bookmark.timeline.name%></h2>
                     </div>
-                    <div class="d-back">
-                      <div class="d-inner">
-                        <p><%=bookmark.timeline.description%></p>
-                      </div>
+                    <div class="flip-card-back">
+                      <p id="card-description"><%=bookmark.timeline.description%></p>
                     </div>
                   </div>
                 </div>
@@ -102,17 +94,13 @@
                     <h4><%= event.name %></h4>
                     <p><%= event.start_date %> <%= event.end_date %></p>
                   </div> -->
-                <div ontouchstart="this.classList.toggle('hover');">
-                  <div class="d-card-index">
-                    <div class="d-front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path event.photo.key %>')">
-                      <div class="d-inner">
-                        <p><%=event.name%></p>
-                      </div>
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                     <div class="flip-card-front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path event.photo.key %>')">
+                      <h2 id="card-title"><%=event.name%></h2>
                     </div>
-                    <div class="d-back">
-                      <div class="d-inner">
-                        <p><%=event.description%></p>
-                      </div>
+                    <div class="flip-card-back">
+                      <p id="card-description"><%=event.description%></p>
                     </div>
                   </div>
                 </div>
