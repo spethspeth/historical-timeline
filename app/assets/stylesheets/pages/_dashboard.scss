@@ -172,9 +172,9 @@ h1.logo {
     top: 0;
     left: 0;
     width: 100%;
-  color:#fff;
-  text-align:left;
-  font-weight: 600;
+    color:#fff;
+    text-align:left;
+    font-weight: 600;
 
 }
 .d-back:after{
@@ -187,7 +187,7 @@ h1.logo {
     content: '';
     display: block;
     opacity: .5;
-    background-color: #000;
+    background-color: $background;
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
     border-radius: 7px;
@@ -353,4 +353,8 @@ h1.logo {
 
 .d-card-product .d-card-product-infos {
   padding: 16px;
+}
+
+#d-inner-title {
+  color: white;
 }
