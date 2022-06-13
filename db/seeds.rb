@@ -237,7 +237,7 @@ cantabrianwars.user = testuser
 cantabrianwars.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'wars', 'cantabrianwars.jpg')), filename: 'cantabrianwars.png', content_type: 'cantabrianwars.png')
 cantabrianwars.save!
 
-romanwars.events = [battleofactium]
+romanwars.events = [battleofactium, cantabrianwars]
 romanwars.start_date = romanwars.events.first.start_date
 romanwars.end_date = romanwars.events.last.end_date
 romanwars.save!
