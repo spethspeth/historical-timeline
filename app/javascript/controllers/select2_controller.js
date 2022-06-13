@@ -2,11 +2,11 @@ import { Controller }  from "@hotwired/stimulus"
 import $ from 'jquery'
 import 'select2'
 
+import "select2/dist/css/select2.min.css"
+
 export default class extends Controller {
 
   connect() {
-    console.log("new select2")
-
     const matchEvent = (params, data) => {
       if ($.trim(params.term) === '') {
         return data;
@@ -24,19 +24,13 @@ export default class extends Controller {
       return null;
     };
 
-    const select = () => {
-      $(this.element).select2({
-        closeOnSelect: false,
-        placeholder: "Select an event from our Database",
-        minimumInputLength: 3,
-        selectOnClose: true,
-        matcher: matchEvent
-      })
-    }
-
-    $(document).ready(function() {
-      console.log("I am ready!")
-      select()
+    $(this.element).select2({
+      closeOnSelect: false,
+      placeholder: "Select an event from our Database",
+      minimumInputLength: 3,
+      selectOnClose: true,
+      allowClear: true,
+      matcher: matchEvent
     })
   }
 }
