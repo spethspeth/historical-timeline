@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_07_102236) do
+ActiveRecord::Schema.define(version: 2022_06_13_124629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,17 @@ ActiveRecord::Schema.define(version: 2022_06_07_102236) do
     t.index ["timeline_id"], name: "index_events_timelines_on_timeline_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "comment"
+    t.integer "ratting"
+    t.bigint "user_id", null: false
+    t.bigint "timeline_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["timeline_id"], name: "index_reviews_on_timeline_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "timelines", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -103,5 +114,6 @@ ActiveRecord::Schema.define(version: 2022_06_07_102236) do
   add_foreign_key "events", "users"
   add_foreign_key "events_timelines", "events"
   add_foreign_key "events_timelines", "timelines"
+  add_foreign_key "reviews", "users"
   add_foreign_key "timelines", "users"
 end

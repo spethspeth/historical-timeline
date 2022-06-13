@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :timelines
   has_many :events
   has_many :timelines, through: :bookmarks
+  has_many :reviews
 end
