@@ -25,7 +25,7 @@ romanemperors.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'image
 
 augustus = Event.new(
   name: "Augustus",
-  description: "Born as Gaius Octavius; first elected Roman consul on 19 August 43 BC. Died of natural causes",
+  description: "Grandnephew and adopted son of Julius Caesar. Gradually acquired further power through grants from, and constitutional settlements with, the Roman Senate. Born as Gaius Octavius; first elected Roman consul on 19 August 43 BC. Died of natural causes",
   start_date: Date.new(-26, 1, 27),
   end_date: Date.new(14, 8, 19)
 )
@@ -35,7 +35,7 @@ augustus.save!
 
 tiberius = Event.new(
   name: "Tiberius",
-  description: "Died probably of natural causes, allegedly murdered at the instigation of Caligula",
+  description: "Stepson, former son-in-law and adopted son of Augustus. Died probably of natural causes, allegedly murdered at the instigation of Caligula",
   start_date: Date.new(14, 9, 17),
   end_date: Date.new(37, 3, 16)
 )
@@ -45,7 +45,7 @@ tiberius.save!
 
 caligula = Event.new(
   name: "Caligula",
-  description: "Murdered in a conspiracy involving the Praetorian Guard and senators",
+  description: "Grandnephew and adopted heir of Tiberius, great-grandson of Augustus. Murdered in a conspiracy involving the Praetorian Guard and senators",
   start_date: Date.new(37, 3, 18),
   end_date: Date.new(41, 1, 24)
 )
@@ -55,7 +55,7 @@ caligula.save!
 
 claudius = Event.new(
   name: "Claudius",
-  description: "Probably poisoned by his wife Agrippina, in favor of her son Nero",
+  description: "Uncle of Caligula, grandnephew of Augustus, proclaimed emperor by the Praetorian Guard and accepted by the Senate. Probably poisoned by his wife Agrippina, in favor of her son Nero",
   start_date: Date.new(41, 1, 24),
   end_date: Date.new(54, 10, 13)
 )
@@ -65,7 +65,7 @@ claudius.save!
 
 nero = Event.new(
   name: "Nero",
-  description: "Committed suicide after being deserted by the Praetorian Guard and sentenced to death by the Senate",
+  description: "Grandnephew, stepson, son-in-law and adopted son of Claudius, great-great-grandson of Augustus. Committed suicide after being deserted by the Praetorian Guard and sentenced to death by the Senate",
   start_date: Date.new(54, 10, 13),
   end_date: Date.new(68, 6, 9)
 )
@@ -73,7 +73,137 @@ nero.user = testuser
 nero.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'nero.jpg')), filename: 'nero.png', content_type: 'image.png')
 nero.save!
 
-romanemperors.events = [augustus, tiberius, caligula, claudius, nero]
+galba = Event.new(
+  name: "Galba",
+  description: "Governor of Hispania Tarraconensis, revolted against Nero and seized power after his suicide, with support of the Senate and Praetorian Guard. Murdered by soldiers of the Praetorian Guard in a coup led by Otho",
+  start_date: Date.new(68, 6, 8),
+  end_date: Date.new(69, 1, 15)
+)
+galba.user = testuser
+galba.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'galba.jpg')), filename: 'galba.png', content_type: 'image.png')
+galba.save!
+
+otho = Event.new(
+  name: "Otho",
+  description: "Seized power through a coup against Galba. Committed suicide after losing the Battle of Bedriacum to Vitellius",
+  start_date: Date.new(69, 1, 15),
+  end_date: Date.new(69, 4, 16)
+)
+otho.user = testuser
+otho.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'otho.jpg')), filename: 'otho.png', content_type: 'image.png')
+otho.save!
+
+vitellius = Event.new(
+  name: "Vitellius",
+  description: "Governor of Germania Inferior, proclaimed emperor by the Rhine legions on 2 January in opposition to Galba and Otho, later recognized by the Senate. Murdered by Vespasian's troops",
+  start_date: Date.new(69, 4, 19),
+  end_date: Date.new(69, 12, 20)
+)
+vitellius.user = testuser
+vitellius.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'vitellius.png')), filename: 'vitellius.png', content_type: 'image.png')
+vitellius.save!
+
+vespasian = Event.new(
+  name: "Vespasian",
+  description: "Seized power with support of the eastern legions, in opposition to Vitellius. Died of natural causes",
+  start_date: Date.new(69, 7, 1),
+  end_date: Date.new(79, 6, 23)
+)
+vespasian.user = testuser
+vespasian.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'vespasian.jpg')), filename: 'vespasian.png', content_type: 'image.png')
+vespasian.save!
+
+titus = Event.new(
+  name: "Titus",
+  description: "Son of Vespasian. Died of natural causes",
+  start_date: Date.new(79, 6, 24),
+  end_date: Date.new(81, 9, 13)
+)
+titus.user = testuser
+titus.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'titus.jpg')), filename: 'titus.png', content_type: 'image.png')
+titus.save!
+
+domitian = Event.new(
+  name: "Domitian",
+  description: "Brother of Titus and son of Vespasian. Assassinated in a conspiracy of court officials, possibly involving Nerva",
+  start_date: Date.new(81, 9, 14),
+  end_date: Date.new(96, 9, 18)
+)
+domitian.user = testuser
+domitian.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'domitian.jpg')), filename: 'domitian.png', content_type: 'image.png')
+domitian.save!
+
+nerva = Event.new(
+  name: "Nerva",
+  description: "Proclaimed emperor after the murder of Domitian. First of the 'Five Good Emperors'. Died of natural causes.",
+  start_date: Date.new(96, 9, 18),
+  end_date: Date.new(98, 1, 27)
+)
+nerva.user = testuser
+nerva.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'nerva.jpg')), filename: 'nerva.png', content_type: 'image.png')
+nerva.save!
+
+trajan = Event.new(
+  name: "Trajan",
+  description: "Adopted son of Nerva. First non-Italian emperor. His reign marked the geographical peak of the empire. Died of natural causes.",
+  start_date: Date.new(98, 1, 28),
+  end_date: Date.new(117, 8, 11)
+)
+trajan.user = testuser
+trajan.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'trajan.jpg')), filename: 'trajan.png', content_type: 'image.png')
+trajan.save!
+
+hadrian = Event.new(
+  name: "Hadrian",
+  description: "Cousin of Trajan, allegedly adopted on his deathbed. Ended Roman expansionism. Died of natural causes.",
+  start_date: Date.new(117, 8, 11),
+  end_date: Date.new(138, 7, 10)
+)
+hadrian.user = testuser
+hadrian.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'hadrian.jpg')), filename: 'hadrian.png', content_type: 'image.png')
+hadrian.save!
+
+antoninuspius = Event.new(
+  name: "Antoninus Pius",
+  description: "Adopted son of Hadrian. Died of natural causes.",
+  start_date: Date.new(138, 7, 10),
+  end_date: Date.new(161, 3, 7)
+)
+antoninuspius.user = testuser
+antoninuspius.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'antoninuspius.jpg')), filename: 'antoninuspius.png', content_type: 'image.png')
+antoninuspius.save!
+
+marcusaurelius = Event.new(
+  name: "Marcus Aurelius",
+  description: "Son-in-law and adopted son of Antoninus Pius. Reigned jointly with his adoptive brother, Lucius Verus, the first time multiple emperors shared power. Last of the 'Five Good Emperors'; also one of the most representative Stoic philosophers. Died of natural causes.",
+  start_date: Date.new(161, 3, 7),
+  end_date: Date.new(180, 3, 17)
+)
+marcusaurelius.user = testuser
+marcusaurelius.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'marcusaurelius.jpg')), filename: 'marcusaurelius.png', content_type: 'image.png')
+marcusaurelius.save!
+
+luciusverus = Event.new(
+  name: "Lucius Verus",
+  description: "Adopted son of Antoninus Pius, joint emperor with his adoptive brother, Marcus Aurelius. Died of natural causes.",
+  start_date: Date.new(161, 3, 7),
+  end_date: Date.new(169, 1, 31)
+)
+luciusverus.user = testuser
+luciusverus.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'luciusverus.jpg')), filename: 'luciusverus.png', content_type: 'image.png')
+luciusverus.save!
+
+commodus = Event.new(
+  name: "Commodus",
+  description: "Son of Marcus Aurelius. First emperor to be elevated during predecessor's lifetime. Strangled to death in a conspiracy involving his praetorian prefect, Laetus, and mistress, Marcia.",
+  start_date: Date.new(176, 11, 27),
+  end_date: Date.new(192, 12, 31)
+)
+commodus.user = testuser
+commodus.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'commodus.jpg')), filename: 'commodus.png', content_type: 'image.png')
+commodus.save!
+
+romanemperors.events = [augustus, tiberius, caligula, claudius, nero, galba, otho, vitellius, vespasian, titus, domitian, nerva, trajan, hadrian, antoninuspius, marcusaurelius, luciusverus, commodus]
 romanemperors.start_date = romanemperors.events.first.start_date
 romanemperors.end_date = romanemperors.events.last.end_date
 romanemperors.save!
