@@ -67,16 +67,24 @@
   <%# Your Reviews %>
     <div class="dashboard-card-container">
         <h3 class="d-title-center">My Reviews</h3>
-        <div class="dashboard-cards">
-          <%# unless @bookmarks.empty? %>
-        <%# <ul>
-              <% @bookmarks.each do |bookmark| %>
-        <%#      <li><%= link_to bookmark.timeline.name, timeline_path(bookmark.timeline)</li> %>
-        <%#      <% end %>
-        <%# </ul>
+        <div class="dashboard-reviews-cards">
+          <% unless @reviews.empty? %>
+            <ul>
+              <% @reviews.each do |review| %>
+                <%= link_to timeline_path(review.timeline) do  %>
+                  <div class="d-card-product">
+                    <img src="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path review.timeline.photo.key %>')" />
+                    <div class="d-card-product-infos">
+                      <h2> Ratting : <%= review.ratting %></h2>
+                      <p> <%= review.comment raise %> </p>
+                    </div>
+                  </div>
+                <% end%>
+              <% end %>
+            </ul>
           <% else %>
             <p>You don't have reviews.</p>
-        <%#  <% end %>
+          <% end %>
         </div>
     </div>
     <div class="dashboard-card-container">
