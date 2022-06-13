@@ -7,6 +7,7 @@ class Timeline < ApplicationRecord
   has_many :events, through: :events_timelines
   has_many :users, through: :bookmarks
   has_one_attached :photo
+  has_many :reviews
 
   pg_search_scope :timeline_search,
                   against: {

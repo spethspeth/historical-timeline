@@ -31,6 +31,16 @@
   border-radius: 2px;
 }
 
+.dashboard-reviews-cards {
+  flex-grow: 1;
+  height: fit-content;
+  margin: 2.5%;
+  display: grid;
+  background-color: $background;
+  border: 1px solid $border-color;
+  border-radius: 2px;
+}
+
 .dashboard-card {
   height: fit-content;
   //background-size: cover;
@@ -308,3 +318,39 @@ h1.logo {
 //   }
 
 // }
+
+.d-card-product {
+  overflow: hidden;
+  height: 120px;
+  background: $background;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border: 1px solid $border-color;
+  border-radius: 2px;
+  padding-bottom: 10px;
+}
+
+.d-card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.d-card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.d-card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.d-card-product .d-card-product-infos {
+  padding: 16px;
+}
