@@ -5,9 +5,7 @@
       <%= f.input :name %>
       <%= f.input :description %>
       <%= f.association :events, input_html: { data: { controller: "select2" } } %>
-      <div class ="form-action">
-        <%= f.button :submit, "Save Timeline", class: "submit-btn" %>
-      </div>
+      <%= f.button :submit, "Save Timeline", class: "submit-btn" %>
     </div>
 <% end %>
 </div>
