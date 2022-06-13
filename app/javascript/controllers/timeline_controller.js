@@ -6,7 +6,11 @@ export default class extends Controller {
   additionalOptions = {
     start_at_end: false,
     default_bg_color: {r:199, g:194, b:184},
-    use_bc: true
+    use_bc: true,
+    timenav_height_percentage: 60,
+    initial_zoom: 1,
+    duration: 500,
+    timenav_position: "top"
   }
 
   connect() {

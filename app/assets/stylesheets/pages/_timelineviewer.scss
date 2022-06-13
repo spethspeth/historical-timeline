@@ -4,19 +4,19 @@
   height: calc(100vh - 66px) !important;
 }
 
-[id^="color1"] .tl-timemarker-content.tl-timemarker-content-small {
+[id^="color1"] .tl-timemarker-content.tl-timemarker-content-small, [id^="color1"] .tl-timemarker-content.tl-timemarker-content {
   background-color: $bkgd-timeline-one-color !important;
   color: white !important;
 
 }
 
-[id^="color2"] .tl-timemarker-content.tl-timemarker-content-small {
+[id^="color2"] .tl-timemarker-content.tl-timemarker-content-small, [id^="color2"] .tl-timemarker-content.tl-timemarker-content {
   background-color: $bkgd-timeline-two-color !important;
   color: white !important;
 
 }
 
-[id^="color3"] .tl-timemarker-content.tl-timemarker-content-small {
+[id^="color3"] .tl-timemarker-content.tl-timemarker-content-small, [id^="color3"] .tl-timemarker-content.tl-timemarker-content {
   background-color: $bkgd-timeline-three-color !important;
   color: white !important;
 
@@ -32,4 +32,16 @@
 
 #bookmark-selector {
   padding: 16px;
+}
+
+[id^="color1"].tl-timemarker-active ::after {
+  background-color: $bkgd-timeline-one-color !important;
+}
+
+[id^="color2"].tl-timemarker-active ::after {
+  background-color: $bkgd-timeline-two-color !important;
+}
+
+[id^="color3"].tl-timemarker-active ::after {
+  background-color: $bkgd-timeline-three-color !important;
 }

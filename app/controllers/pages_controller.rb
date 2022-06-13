@@ -22,8 +22,6 @@ class PagesController < ApplicationController
       @selected = Timeline.first(2)
     end
     @bookmarks = Bookmark.where(user_id: current_user)
-    # The following 2 timelines are assigned for testing purposes only:
-
     @combinedtimeline = combiner(@selected)
   end
 
@@ -64,8 +62,7 @@ class PagesController < ApplicationController
   end
 end
 
-  # This method exists to combine 2 timelines into a single hash to pass to TimelineJS.
-  # It is clunky and should probably have a way to receive an arbitrary number of timelines by passing an array of them
+# This method exists to combine 2 timelines into a single hash:
 
 def combiner(args)
   counter = 0
@@ -77,8 +74,8 @@ def combiner(args)
   timelinehash = {
     title: {
       text: {
-        headline: "Your timeline",
-        text: "Here you can view events from your chosen timelines!"
+        headline: "Your timelines",
+        text: "Here you can view events from your chosen timelines! Use the arrow buttons to scroll through events, or click on them for more information."
       }
     },
     events: totaleventarray.flatten
