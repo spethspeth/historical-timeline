@@ -1,25 +1,18 @@
 // Calculation for height of timeline = 100vh - navbar height
 
-#timeline-embed {
-  height: calc(100vh - 66px) !important;
-}
-
-[id^="color1"] .tl-timemarker-content.tl-timemarker-content-small, [id^="color1"] .tl-timemarker-content.tl-timemarker-content {
+[id^="color1"] .tl-timemarker-content.tl-timemarker-content-small, [id^="color1"] .tl-timemarker-content {
   background-color: $bkgd-timeline-one-color !important;
   color: white !important;
-
 }
 
-[id^="color2"] .tl-timemarker-content.tl-timemarker-content-small, [id^="color2"] .tl-timemarker-content.tl-timemarker-content {
+[id^="color2"] .tl-timemarker-content.tl-timemarker-content-small, [id^="color2"] .tl-timemarker-content {
   background-color: $bkgd-timeline-two-color !important;
   color: white !important;
-
 }
 
-[id^="color3"] .tl-timemarker-content.tl-timemarker-content-small, [id^="color3"] .tl-timemarker-content.tl-timemarker-content {
+[id^="color3"] .tl-timemarker-content.tl-timemarker-content-small, [id^="color3"] .tl-timemarker-content {
   background-color: $bkgd-timeline-three-color !important;
   color: white !important;
-
 }
 
 .tl-timegroup .tl-timegroup-message {
@@ -44,4 +37,16 @@
 
 [id^="color3"].tl-timemarker-active ::after {
   background-color: $bkgd-timeline-three-color !important;
+}
+
+
+// The following rules only apply to the show page:
+
+.timelineshowpagewrapper .tl-timemarker-content.tl-timemarker-content {
+  background-color: $bkgd-timeline-one-color !important;
+  color: white !important;
+}
+
+.timelineshowpagewrapper .tl-timemarker-active ::after {
+  background-color: $bkgd-timeline-one-color !important;
 }
