@@ -25,13 +25,11 @@ class TimelinesController < ApplicationController
     @timeline = Timeline.new(timeline_params)
     @timeline.user = current_user
     authorize @timeline
-    respond_to do |format|
       if @timeline.save
-        format.json # Follow the classic Rails flow and look for a create.json view
+        redirect_to dashboard_path
       else
-        format.json # Follow the classic Rails flow and look for a create.json view
+        render :new
       end
-    end
   end
 
   def edit

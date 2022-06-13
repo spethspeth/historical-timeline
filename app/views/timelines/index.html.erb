@@ -1,23 +1,23 @@
-<h2><span style="color:#BF1E2E; font-weight:400; font-style: initial;">•</span> Choose from <span style="color:#BF1E2E; font-weight:600; font-size:1.42rem;"><%=@timelines.size%></span> timelines <span style="color:#BF1E2E; font-weight:400;font-style: initial;">•</span></h2>
-  <div class="cols-container">
-  <div class="cols">
-    <%@timelines.each do |timeline|%>
-        <div class="col" ontouchstart="this.classList.toggle('hover');">
-         <%= link_to timeline_path(timeline) do %>
-          <div class="card-index">
-            <div class="front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path timeline.photo.key %>')">
-              <div class="inner">
-                <p><%=timeline.name%></p>
-              </div>
+<% if @timelines.size > 1%>
+<h2 class="text-center"><span class="red-dot">•</span> Choose from <span class="red-dot"><%=@timelines.size%></span> timelines <span class="red-dot">•</span></h2>
+<% else %>
+<h2 class="text-center"><span class="red-dot">•</span> <span class="red-dot"><%=@timelines.size%></span> timeline <span class="red-dot">•</span></h2>
+<% end %>
+<div class="cards-container">
+  <div class="cards">
+    <% @timelines.each do |timeline| %>
+      <%= link_to timeline_path(timeline) do %>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path timeline.photo.key %>')">
+              <h2 id="card-title"><%=timeline.name%></h2>
             </div>
-            <div class="back">
-              <div class="inner">
-                <p><%=timeline.description%></p>
-              </div>
+            <div class="flip-card-back">
+              <p id="card-description"><%=timeline.description%></p>
             </div>
           </div>
-        <%end%>
         </div>
-    <%end%>
+      <% end %>
+    <% end %>
   </div>
 </div>
