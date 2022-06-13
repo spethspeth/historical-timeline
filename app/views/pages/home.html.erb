@@ -74,23 +74,49 @@
     </div>
   </div>
 
-<div class="homepage-second-big-container">
-  <div class="homepage-quote-container">
-    <div class="card_2">
-    </div>
-    <div class="quote">
-    </div>
+<div class="d-flex row justify-content-space-between homepage-second-big-container">
+  <div class="d-flex row justify-content-space-around homepage-cards-container col-6">
+    <% @timelines.sample(3).each do |timeline| %>
+      <div class="d-flex card_3 col-4">
+        <%= link_to timeline_path(timeline) do %>
+          <div class="flip-card-1">
+            <div class="flip-card-inner-1">
+             <div class="flip-card-front-1"
+                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path timeline.photo.key %>')">
+                <!-- <h2 id="card-title"><%=timeline.name%></h2> -->
+              </div>
+              <div class="card-title-description-homepage">
+                <h2 id="card-title-1"><%=timeline.name%></h2>
+                <p id="card-description-homepage-1"><%=timeline.description%></p>
+              </div>
+              <!-- <div class="flip-card-back-1">
+                <h2 id="card-title-1"><%=timeline.name%></h2>
+                 <p id="card-description-1"><%=timeline.description%></p>
+              </div> -->
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
-  <div class="homepage-cards-container">
-    <div class="card_3">
+
+  <div class="d-flex row homepage-quote-podcast-container col-6 col-lg-6">
+    <div class="d-flex quote col-6">
+      <div class="p-quote">
+        <h5> "Thanks to Almanac, my students love history now!" Stephen, Amsterdam Primary School</h5>
+      </div>
+    </div>
+    <div class="d-flex row podcast col-6">
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/show/4yGc7Y9q3mPdwj3IhIVWDG?utm_source=generator" width="100%" height="232" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
     </div>
   </div>
 </div>
 
-<div class="d-flex justify-content-space-between flex-direction-row infos">
+<div class="d-flex justify-content-space-between foot-infos">
   <div class="f-text">
     <p>©2022 almanac</p>
   </div>
+  <br>
   <div class="f-links">
     <ul>
       <%= link_to "Contact us", "/"%>

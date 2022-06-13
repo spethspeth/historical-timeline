@@ -45,14 +45,30 @@ p {
   font-style: normal;
   font-family: $body-font;
   color: #1B1B19;
+  text-align: start;
+  text-transform: none;
 }
 
-.p-quote {
-  font-size: 10px;
+h5 {
+  font-size: 52px;
   font-style: italic;
   font-family: $body-font;
   color: #1B1B19;
+  text-align: center;
+  justify-content: center;
+  border-style: double;
+  padding: 55px 55px;
 }
+
+h6 {
+  font-size: 40px !important;
+  text-align: center;
+  font-style: normal;
+  font-family: $h1-font;
+  color: #1B1B19;
+}
+
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
