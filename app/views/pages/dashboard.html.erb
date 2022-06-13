@@ -1,22 +1,22 @@
-<h2>My Dashboard</h2>
+<h2 class="d-title-center">My Dashboard</h2>
 <%# First row  %>
   <div class="dashboard-first-box">
     <%# Your Timeline %>
       <div class="dashboard-card-container">
-        <h3>My timelines</h3>
+        <h3 class="d-title-center">My timelines</h3>
         <div class="dashboard-cards">
           <% unless @timelines.empty? %>
             <% @timelines.each do |timeline| %>
               <%= link_to timeline_path(timeline), :class => 'dashboard-card' do %>
                 <div ontouchstart="this.classList.toggle('hover');">
-                  <div class="card-index dashboard-card">
-                    <div class="front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path timeline.photo.key %>')">
+                  <div class="d-card-index dashboard-card">
+                    <div class="d-front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path timeline.photo.key %>')">
                       <div class="inner">
                         <p><%=timeline.name%></p>
                       </div>
                     </div>
-                    <div class="back">
-                      <div class="inner">
+                    <div class="d-back">
+                      <div class="d-inner">
                         <p><%=timeline.description%></p>
                       </div>
                     </div>
@@ -33,20 +33,20 @@
       </div>
     <%# Your Bookmarks %>
       <div class="dashboard-card-container">
-        <h3>My Bookmarks</h3>
+        <h3 class="d-title-center">My Bookmarks</h3>
         <div class="dashboard-cards">
           <% unless @bookmarks.empty? %>
             <% @bookmarks.each do |bookmark| %>
               <%= link_to timeline_path(bookmark.timeline), :class => 'dashboard-card' do %>
                 <div ontouchstart="this.classList.toggle('hover');">
-                  <div class="card-index">
-                    <div class="front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path bookmark.timeline.photo.key %>')">
-                      <div class="inner">
+                  <div class="d-card-index">
+                    <div class="d-front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path bookmark.timeline.photo.key %>')">
+                      <div class="d-inner">
                         <p><%=bookmark.timeline.name%></p>
                       </div>
                     </div>
-                    <div class="back">
-                      <div class="inner">
+                    <div class="d-back">
+                      <div class="d-inner">
                         <p><%=bookmark.timeline.description%></p>
                       </div>
                     </div>
@@ -66,7 +66,7 @@
   <div class="dashboard-second-box">
   <%# Your Reviews %>
     <div class="dashboard-card-container">
-        <h3>My Reviews</h3>
+        <h3 class="d-title-center">My Reviews</h3>
         <div class="dashboard-cards">
           <%# unless @bookmarks.empty? %>
         <%# <ul>
@@ -79,8 +79,8 @@
         <%#  <% end %>
         </div>
     </div>
-    <div class="dashboard-events-container">
-      <h3>My Events</h3>
+    <div class="dashboard-card-container">
+      <h3 class="d-title-center">My Events</h3>
       <div class="dashboard-cards">
         <% unless @events.empty? %>
           <% @events.each do |event| %>
@@ -96,14 +96,14 @@
                     <p><%= event.start_date %> <%= event.end_date %></p>
                   </div> -->
                 <div ontouchstart="this.classList.toggle('hover');">
-                  <div class="card-index">
-                    <div class="front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path event.photo.key %>')">
-                      <div class="inner">
+                  <div class="d-card-index">
+                    <div class="d-front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path event.photo.key %>')">
+                      <div class="d-inner">
                         <p><%=event.name%></p>
                       </div>
                     </div>
-                    <div class="back">
-                      <div class="inner">
+                    <div class="d-back">
+                      <div class="d-inner">
                         <p><%=event.description%></p>
                       </div>
                     </div>

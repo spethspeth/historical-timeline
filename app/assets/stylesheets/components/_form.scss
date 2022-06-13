@@ -1,0 +1,49 @@
+
+.form-sign-up-container {
+  width: 60%;
+  padding: 10px;
+  margin: auto;
+  margin-top: 30px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.form-padding {
+  padding-top: 10px;
+}
+
+.form-actions {
+ text-align: center;
+}
+
+.form-actions:hover {
+  color: $link-color;
+ }
+
+.form-sign-up {
+  background: $background;
+  padding: 10px 20px;
+  margin-top: 50px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  border-color: $border-color;
+  width: 95%;
+  margin: auto;
+  margin-top: 10px;
+  div {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+  }
+
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 20px
+  }
+}
