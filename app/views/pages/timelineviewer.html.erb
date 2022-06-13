@@ -4,7 +4,7 @@
 </div>
 <div id="bookmark-selector">
   <%= simple_form_for(Bookmark.new, url: timelineviewer_path, method: "GET") do |f| %>
-    <%= f.input :bookmarks, collection: @bookmarks.map { |bookmark| [bookmark.timeline.name, bookmark.timeline.id ] }, input_html: {multiple: true} %>
-    <%= f.submit %>
+    <%= f.input :bookmarks, collection: @bookmarks.map { |bookmark| [bookmark.timeline.name, bookmark.timeline.id ] }, input_html: { multiple: true, data: { controller: "select2timeline", select2_option_value: {tags:true}} } %>
+    <%= f.button :submit, "Load Timelines", class: "submit-btn" %>
   <% end %>
 </div>
