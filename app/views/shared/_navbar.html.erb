@@ -37,7 +37,7 @@
             <%end%>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
-              <%= link_to "Create Your Timeline", new_timeline_path, class: "dropdown-item" %>
+              <%= link_to "Create Your Timeline", new_timeline_path, class: "dropdown-item", data: { turbolinks: false } %>
               <%= link_to "My dashboard", dashboard_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
