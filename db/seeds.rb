@@ -14,7 +14,8 @@ testuser = User.new(
   password_confirmation: "augustus"
 )
 testuser.save!
-# Julio claudian dynasty (reigns):
+
+# Roman emperors (reigns):
 
 romanemperors = Timeline.new(
   name: "Roman emperors",
@@ -208,7 +209,41 @@ romanemperors.start_date = romanemperors.events.first.start_date
 romanemperors.end_date = romanemperors.events.last.end_date
 romanemperors.save!
 
-# Julio Claudian emperors' lifetimes
+# Wars of the Roman Empire
+
+romanwars = Timeline.new(
+  name: "Wars of the Roman Empire",
+  description: "The wars fought by the Roman Empire, starting with the Battle of Actium (31 BC)"
+)
+romanwars.user = testuser
+romanwars.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'wars', 'battleofactium.jpg')), filename: 'battleofactium.jpg', content_type: 'battleofactium.png')
+
+battleofactium = Event.new(
+  name: "The Battle of Actium",
+  description: "The Battle of Actium was a naval battle fought between a maritime fleet led by Octavian and the combined fleets of both Mark Antony and Cleopatra VII Philopator. The battle took place on 2 September 31 BC in the Ionian Sea, near the former Roman colony of Actium, Greece, and was the climax of over a decade of rivalry between Octavian and Antony.",
+  start_date: Date.new(-30, 9, 2),
+)
+battleofactium.user = testuser
+battleofactium.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'wars', 'battleofactium.jpg')), filename: 'battleofactium.png', content_type: 'battleofactium.png')
+battleofactium.save!
+
+cantabrianwars = Event.new(
+  name: "Cantabrian Wars",
+  description: "The Cantabrian Wars (29-19 BC) (Bellum Cantabricum), sometimes also referred to as the Cantabrian and Asturian Wars (Bellum Cantabricum et Asturicum), were the final stage of the two-century long Roman conquest of Hispania, in what today are the provinces of Cantabria, Asturias and León in northwestern Spain.",
+  start_date: Date.new(-28),
+  end_date: Date.new(-18)
+)
+cantabrianwars.user = testuser
+cantabrianwars.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'wars', 'cantabrianwars.jpg')), filename: 'cantabrianwars.png', content_type: 'cantabrianwars.png')
+cantabrianwars.save!
+
+romanwars.events = [battleofactium, cantabrianwars]
+romanwars.start_date = romanwars.events.first.start_date
+romanwars.end_date = romanwars.events.last.end_date
+romanwars.save!
+
+
+# Emperors' lifetimes
 
 emperorslives = Timeline.new(
   name: "Lifetimes of the Roman Emperors",
