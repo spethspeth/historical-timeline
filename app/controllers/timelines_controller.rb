@@ -60,8 +60,12 @@ class TimelinesController < ApplicationController
   def hasher(timeline)
     eventarray = timeline.events.map do |event|
       {
+        background: {
+          color: "#1B1B19"
+        },
         media: {
-          url: url_for(event.photo)
+          url: url_for(event.photo),
+          thumbnail: url_for(event.photo)
         },
         start_date: {
           month: event.start_date.mon,
@@ -69,9 +73,9 @@ class TimelinesController < ApplicationController
           year: event.start_date.year
         },
         end_date: {
-          month: event.end_date.mon,
-          day: event.end_date.day,
-          year: event.end_date.year
+          month: event.end_date ? event.end_date.mon : event.start_date.mon,
+          day: event.end_date ? event.end_date.day : event.start_date.day,
+          year: event.end_date ? event.end_date.year : event.start_date.year
         },
         text: {
           headline: event.name,

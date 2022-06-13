@@ -10,7 +10,8 @@ export default class extends Controller {
     timenav_height_percentage: 60,
     initial_zoom: 1,
     duration: 500,
-    timenav_position: "top"
+    timenav_position: "top",
+    slide_default_fade: "10%"
   }
 
   connect() {
