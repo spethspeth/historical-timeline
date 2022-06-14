@@ -75,7 +75,15 @@
           box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+  .dashboard-first-box {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-second-box {
+    grid-template-columns: 1fr;
+  }
 
+}
 h1.logo {
   text-align: center;
   margin: 2rem 0 0 -2.25rem;
