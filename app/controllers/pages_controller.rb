@@ -61,25 +61,56 @@ class PagesController < ApplicationController
     end
     return eventarray
   end
-end
 
-# This method exists to combine 2 timelines into a single hash:
 
-def combiner(args)
-  counter = 0
-  totaleventarray = []
-  args.each do |timeline|
-    totaleventarray << eventer(timeline, counter)
-    counter += 1
+  # This helper method iterates over the eras of a user timeline and turns them into an array of hashes
+
+  def eraer(timeline)
+    era_array = timeline.eras.map do |era|
+      {
+        start_date: {
+          month: era.start_date.mon,
+          day: era.start_date.day,
+          year: era.start_date.year
+        },
+        end_date: {
+          month: era.end_date.mon,
+          day: era.end_date.day,
+          year: era.end_date.year
+        },
+        text: {
+          headline: era.name,
+          text: era.description
+        }
+      }.compact
+    end
+    return era_array
   end
-  timelinehash = {
-    title: {
-      text: {
-        headline: "Your timelines",
-        text: "Here you can view events from your chosen timelines! Use the arrow buttons to scroll through events, or click on them for more information."
-      }
-    },
-    events: totaleventarray.flatten
-  }
-  return timelinehash
+
+  # This method exists to combine 2 timelines into a single hash:
+
+  def combiner(args)
+    counter = 0
+    totaleventarray = []
+    totaleraarray = []
+    args.each do |timeline|
+      totaleventarray << eventer(timeline, counter)
+      totaleraarray << eraer(timeline) unless timeline.eras.empty?
+      counter += 1
+    end
+    # args.each do |timeline|
+    #   totaleraarray << eraer(timeline) unless timeline.eras.empty?
+    # end
+    timelinehash = {
+      title: {
+        text: {
+          headline: "Your timelines",
+          text: "Here you can view events from your chosen timelines! Use the arrow buttons to scroll through events, or click on them for more information."
+        }
+      },
+      events: totaleventarray.flatten,
+    }
+    timelinehash[:eras] = totaleraarray.flatten unless totaleraarray.empty?
+    return timelinehash
+  end
 end

@@ -338,7 +338,17 @@ stalin.user = testuser
 stalin.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'sovietleaders', 'stalin.jpg')), filename: 'stalin.png', content_type: 'image.png')
 stalin.save!
 
+russian_communisme = Era.new(
+  name: "Communisme in Russia",
+  description: "From the 27 October 1917, when the  the Bolsheviks and Left Socialist Revolutionaries took the lead of the country. To 26 December 1991, the date of the to the dissolution of the Soviet Union.",
+  start_date: Date.new(1917, 10, 27),
+  end_date: Date.new(1991, 12, 26)
+)
+russian_communisme.user = testuser
+russian_communisme.save!
+
 sovietunion.events = [lenin, stalin]
+sovietunion.eras = [russian_communisme]
 sovietunion.start_date = sovietunion.events.first.start_date
 sovietunion.end_date = sovietunion.events.last.end_date
 sovietunion.save!
