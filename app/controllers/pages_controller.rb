@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @timelines = policy_scope(Timeline)
+    @hometimelines = combiner(Timeline.first(2))
   end
 
   def dashboard
