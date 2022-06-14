@@ -1,5 +1,5 @@
-<div class = "navbar">
-  <div class="navbar-top-container">
+<div class = "d-flex navbar flex-wrap">
+  <div class="d-flex navbar-top-container flex-wrap">
     <div class="nav-searchbar">
       <div class="cntr">
         <div class="cntr-innr">
@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <div class="login-container">
+    <div class="d-flex login-container flex-wrap">
       <div class="social-medias icons">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
           <div id="social-test">
@@ -27,35 +27,43 @@
             </ul>
           </div>
       </div>
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item dropdown">
-            <%if current_user.avatar.present?%>
-              <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <%else%>
-              <%= image_tag "round-avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
-            <%end%>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Timeline Viewer", timelineviewer_path, class: "dropdown-item", data: { turbolinks: false } %>
-              <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
-              <%= link_to "Create Your Timeline", new_timeline_path, class: "dropdown-item", data: { turbolinks: false } %>
-              <%= link_to "Add a new Event", new_event_path, class: "dropdown-item"%>
-              <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
+      <div class="avatar-nav">
+        <ul class="navbar-nav me-auto">
+          <% if user_signed_in? %>
+            <li class="nav-item dropdown">
+              <%if current_user.avatar.present?%>
+                <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%else%>
+                <%= image_tag "round-avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%end%>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
+                <%= link_to "Create Your Timeline", new_timeline_path, class: "dropdown-item", data: { turbolinks: false } %>
+                <%= link_to "Add a new Event", new_event_path, class: "dropdown-item"%>
+                <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </div>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 
-  <div class="navbar-bottom-container">
-    <div class="subhead">
-      <%= date = Date.today.to_s(:long_ordinal) %>
+  <div class="d-flex navbar-bottom-container flex-wrap">
+    <div class="d-flex subhead justify-content-between flew-wrap">
+        <div class="date">
+          <%= date = Date.today.to_s(:long_ordinal) %>
+        </div>
+        <div d-flex >
+          <%= link_to "My Timelines", timelineviewer_path, class: "subhead-nav-link",data: { turbolinks: false } %>
+          <%= link_to "Create my Timeline", new_timeline_path, class: "subhead-nav-link",  data: { turbolinks: false } %>
+          <%= link_to "All Timelines", timelines_path, class: "subhead-nav-link",  data: { turbolinks: false } %>
+        </div>
     </div>
   </div>
 </div>
