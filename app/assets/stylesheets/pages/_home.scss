@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+.homepage-left-container {
+  margin-bottom: 15px;
+}
+
 .homepage-second-big-container {
   margin-top: 40px;
   margin-bottom: 40px;
@@ -11,31 +15,45 @@
 
 .homepage-right-container {
   justify-content: center;
+  //align-items: center;
+}
+
+.homepage-btn {
+  align-self: flex-end;
 }
 
 .homepage-cards-container {
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
   display: flex;
-  flex-wrap: nowrap !important;
+  //flex-wrap: nowrap !important;
   margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: 0px;
-  margin-left: 3px;
   text-transform: uppercase;
   //border-top: 2px solid #959595;
-  padding: 12px 1px 1px 1px;
+  padding: 10px 10px 10px 10px;
   text-align: center;
+  flex-grow: 1;
 }
 
 .card-title-description-homepage {
   height: auto ;
 }
 
-.homepage-quote-podcast-container {
+.homepage-podcast-container {
   border-left: 2px solid #959595;
   margin-left: 6px;
+  padding-left: 10px;
+  width: 40%;
+  flex-grow: 1;
+  //align-self: center;
 }
 .foot-infos {
   display: flex !important;
   justify-content: space-between !important;
+}
+
+.p-quote {
+  width: 50%;
+}
+
+.podcast {
+  width: 100%;
 }
