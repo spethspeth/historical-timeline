@@ -17,15 +17,21 @@ def ebscraper(user)
     doc = Nokogiri::HTML(URI.open(url).read, nil, "utf-8")
     firstquery = doc.at('dt:contains("Born")').next_element.search(".fact-item").first.text.gsub("c.", "").gsub(/\(.*/, "").rstrip unless doc.at('dt:contains("Born")').nil?
     secondquery = doc.at('dt:contains("Died")').next_element.search(".fact-item").first.text.gsub("c.", "").gsub(/\(.*/, "").rstrip unless doc.at('dt:contains("Died")').nil?
+
     firstdate = doc.at('dt:contains("Born")').nil? ? "invalid" : firstquery
     seconddate = doc.at('dt:contains("Died")').nil? ? "invalid" : secondquery
+
     name = doc.search("h1").text
+
     description = doc.search(".topic-paragraph").first.text.gsub("  ", " ")
     picture_url = doc.search(".card-media").attribute("href").nil? ? "invalid" : doc.search(".card-media").attribute("href").value
-    firstdate = firstdate.split[0] if firstdate.include?("or")
-    seconddate = seconddate.split[0] if seconddate.include?("or")
+
+    firstdate = firstdate.split("or")[0] if firstdate.include?("or")
+    seconddate = seconddate.split("or")[0] if seconddate.include?("or")
+
     firstdate = "January 1, #{firstdate}" if (firstdate.split.length == 1 || (firstdate.split.length == 2 || firstdate.split.length[1] == "BCE")) && firstdate != "invalid"
     seconddate = "January 1, #{seconddate}" if (seconddate.split.length == 1 || (seconddate.split.length == 2 || seconddate.split.length[1] == "BCE")) && seconddate != "invalid"
+
     p url
     p name
     p description
