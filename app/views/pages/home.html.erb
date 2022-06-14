@@ -5,11 +5,7 @@
         <div class="d-flex row homepage-first-sub-container col-lg-12 col-md-12 col-sm-xs-12">
           <div class="homepage-text-container">
             <div class="row col-lg-12 col-md-6 col-sm-xs-12">
-              <p>Stephen was very disappointed not to find some historical timelines which could give
-              simultaneously the context in ancient Greece and Holland. This is how is born Almanac.lol. His project was initially
-              developed at the end of a bootcamp with the batch 891 - Le Wagon with 3 other
-              students.Now a huge worldwide success story. Almanac helps every days million of
-              users to get an immediate overview of historical facts. Desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+              <p>Almanac.lol is a place where you can find many historical timelines and compare them. You can explore our many user-created timelines on our <%= link_to "timeline index", timelines_path %>, or <%= link_to "create your own", new_timeline_path %>. You can add then add events or eras to your timeline, and use our <%= link_to "timeline viewer", timelineviewer_path %> to compare different timelines. For a great example, check out the timelines on the right. Enjoy making and comparing timelines on Almanac.
               </p>
             </div>
           </div>
@@ -43,8 +39,9 @@
         </div>
       </div>
       <div class="timeline-knightlab">
-        <div class="row col-lg-12 col-md-12 col-sm-xs-12">
-
+        <div id="timeline-embed">
+          <div data-controller="timeline" data-timeline-dates-value="<%= @hometimelines.to_json %>">
+          </div>
         </div>
       </div>
       <div class="homepage-btn">
