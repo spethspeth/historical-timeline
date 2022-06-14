@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     authorize @review
     if @review.save
-      redirect_to dashboard_path
+      redirect_to timeline_path(@timeline, anchor: "review-#{@review.id}")
     else
       redirect_to timeline_path(@timeline)
     end
