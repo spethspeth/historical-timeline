@@ -68,9 +68,9 @@ class TimelinesController < ApplicationController
           year: era.start_date.year
         },
         end_date: {
-          month: era.end_date.mon,
-          day: era.end_date.day,
-          year: era.end_date.year
+          month: event.end_date ? event.end_date.mon : event.start_date.mon,
+          day: event.end_date ? event.end_date.day : event.start_date.day,
+          year: event.end_date ? event.end_date.year : event.start_date.year
         },
         text: {
           headline: era.name,
