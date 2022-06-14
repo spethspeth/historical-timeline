@@ -204,7 +204,62 @@ commodus.user = testuser
 commodus.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'commodus.jpg')), filename: 'commodus.png', content_type: 'image.png')
 commodus.save!
 
+era_julioc = Era.new(
+  name: "Julio-Claudian dynasty",
+  description: "",
+  start_date: Date.new(-26, 1, 27),
+  end_date: Date.new(68, 6, 9)
+)
+era_julioc.user = testuser
+era_julioc.save!
+
+era_fouremperors = Era.new(
+  name: "Year of the Four Emperors",
+  description: "",
+  start_date: Date.new(68, 6, 8),
+  end_date: Date.new(69, 12, 20)
+)
+era_fouremperors.user = testuser
+era_fouremperors.save!
+
+era_flavian = Era.new(
+  name: "Flavian dynasty",
+  description: "",
+  start_date: Date.new(69, 7, 1),
+  end_date: Date.new(96, 9, 18)
+)
+era_flavian.user = testuser
+era_flavian.save!
+
+era_nerva = Era.new(
+  name: "Nerva–Antonine dynasty",
+  description: "",
+  start_date: Date.new(96, 9, 18),
+  end_date: Date.new(192, 12, 31)
+)
+era_nerva.user = testuser
+era_nerva.save!
+
+era_severan = Era.new(
+  name: "Severan dynasty",
+  description: "",
+  start_date: Date.new(193, 4, 9),
+  end_date: Date.new(235, 3, 21)
+)
+era_severan.user = testuser
+era_severan.save!
+
+era_crisis = Era.new(
+  name: "Crisis of the Third Century",
+  description: "",
+  start_date: Date.new(235, 3, 1),
+  end_date: Date.new(284, 11, 1)
+)
+era_crisis.user = testuser
+era_crisis.save!
+
 romanemperors.events = [augustus, tiberius, caligula, claudius, nero, galba, otho, vitellius, vespasian, titus, domitian, nerva, trajan, hadrian, antoninuspius, marcusaurelius, luciusverus, commodus]
+romanemperors.eras = [era_julioc, era_nerva, era_flavian, era_fouremperors, era_severan, era_crisis]
 romanemperors.start_date = romanemperors.events.first.start_date
 romanemperors.end_date = romanemperors.events.last.end_date
 romanemperors.save!
