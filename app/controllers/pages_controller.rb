@@ -11,7 +11,7 @@ class PagesController < ApplicationController
     @bookmarks = Bookmark.where(user: current_user)
     @reviews = Review.where(user: current_user)
     @eras = Era.where(user: current_user)
-    @era = Era.new if @eras.empty?
+    @era = Era.new
   end
 
   def timelineviewer

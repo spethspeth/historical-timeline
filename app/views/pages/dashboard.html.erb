@@ -113,29 +113,25 @@
   <div>
     <div class="dashboard-card-container">
       <h3 class="d-title-center">My Eras</h3>
-      <div class="dashboard-cards">
+      <div class="dashboard-cards-era">
+        <% if policy(@era).new? %>
+          <div class="new-era" data-controller="dashboard">
+            <button class = "submit-btn" data-action="click->dashboard#display">Create an era</button>
+              <div data-dashboard-target="form" class="d-none">
+                <%= render "eras/new" %>
+              </div>
+          </div>
+        <% end %>
         <% unless @eras.empty? %>
           <% @eras.each do |era| %>
-            <%= link_to era_path(era), :class => 'dashboard-card' do %>
-              <div>
-                <h3> <%= era.name %> </h3>
-                <p> <%= era.start_date %> - <%= era.end_date %> </p>
+            <%= link_to '#', :class => 'd-card-product' do %>
+            <%# era_path(era) %>
+              <div class="d-card-product-infos">
+                <h2> <%= era.name %> </h2>
+                <p> from <%= era.start_date %> to <%= era.end_date %> </p>
               </div>
             <% end %>
           <% end %>
-        <% else %>
-          <div class="dashboard-card">
-            <% if policy(@era).new? %>
-              <div data-controller="newreview">
-                <button class = "submit-btn" data-action="click->newera#display">Create an era.</button>
-                  <div data-newreview-target="form" class="d-none">
-                    <%= render "eras/new" %>
-                  </div>
-              </div>
-            <% else %>
-              <p>You don't have events.</p>
-            <% end %>
-          </div>
         <% end %>
       </div>
     </div>

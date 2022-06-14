@@ -4,7 +4,7 @@ export default class extends Controller {
   static targets = ["form"]
 
   connect() {
-    console.log("Hello Stimulus")
+    console.log("Hello dashboard")
   }
 
   display(){
