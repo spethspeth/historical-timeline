@@ -22,7 +22,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:comment, :ratting)
+    params.require(:review).permit(:comment, :rating)
   end
 
   def set_review
