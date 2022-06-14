@@ -1,42 +1,26 @@
 .container-timeline-actions {
   overflow-x: hidden;
-  border-top: 1px solid #DADCE0;
-  border-bottom: 1px solid #DADCE0;
+  border-top: 16px solid $font-color-second;
+  border-bottom: 16px solid $font-color-second;
+  border-left: 16px solid $font-color-second;
+  border-right: 16px solid $font-color-second;
+  margin-top: 16px;
+  text-align: center;
 }
 
-.timeline-actions{
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 1px;
-  margin: 0;
-  background-color: #DADCE0;
-}
-
-.fp-cell-timeline-actions {
-  background-color: #fff;
-  padding: 16px;
-}
-
-.fp-cell--1-timeline-review {
-  grid-row: 1 / span 2;
-}
-
-.fp-cell--2-timeline-edit {
-  grid-row: 1 / span 2;
-}
-
-.fp-item-timeline-page {
-  color: black;
-  background-color: $background;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 200px;
-  height: 100%;
-}
-
-#reviews {
+.reviews {
   overflow: scroll;
+}
+
+.form-show-container {
+  width: 100%;
+  .form-inputs {
+    box-shadow: none;
+  }
+}
+
+#rating-show {
+  color: $link-color;
+  font-size: small;
+  vertical-align: top;
 }
