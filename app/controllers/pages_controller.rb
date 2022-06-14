@@ -10,6 +10,8 @@ class PagesController < ApplicationController
     @events = Event.where(user: current_user)
     @bookmarks = Bookmark.where(user: current_user)
     @reviews = Review.where(user: current_user)
+    @eras = Era.where(user: current_user)
+    @era = Era.new
   end
 
   def timelineviewer

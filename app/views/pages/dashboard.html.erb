@@ -36,7 +36,7 @@
               <%= link_to timeline_path(bookmark.timeline), :class => 'dashboard-card' do %>
                 <div class="flip-card">
                   <div class="flip-card-inner">
-                     <div class="flip-card-front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path bookmark.timeline.photo.key %>')">
+                    <div class="flip-card-front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path bookmark.timeline.photo.key %>')">
                       <h2 id="card-title"><%=bookmark.timeline.name%></h2>
                     </div>
                     <div class="flip-card-back">
@@ -47,9 +47,9 @@
               <% end %>
             <% end %>
           <% else %>
-          <div class="dashboard-card">
-            <p>You don't have bookmarks.</p>
-          </div>
+            <div class="dashboard-card">
+              <p>You don't have bookmarks.</p>
+            </div>
           <% end %>
         </div>
       </div>
@@ -88,33 +88,50 @@
       <div class="dashboard-cards">
         <% unless @events.empty? %>
           <% @events.each do |event| %>
-              <%= link_to event_path(event), :class => 'dashboard-card' do %>
-                <!-- <% unless event.photo.key %>
-                  <div class="card-3">
-                <% else %>
-                  <div class="card-3">
-                    <div class="card-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path event.photo.key, height: 300, crop: :fill %>')">
-                    </div>
-                <% end %>
-                    <h4><%= event.name %></h4>
-                    <p><%= event.start_date %> <%= event.end_date %></p>
-                  </div> -->
-                  <div class="flip-card">
-                    <div class="flip-card-inner">
-                     <div class="flip-card-front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path event.photo.key %>')">
-                      <h2 id="card-title"><%=event.name%></h2>
-                    </div>
-                    <div class="flip-card-back">
-                      <p id="card-description"><%=event.description%></p>
-                    </div>
+            <%= link_to event_path(event), :class => 'dashboard-card' do %>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path event.photo.key %>')">
+                    <h2 id="card-title"><%=event.name%></h2>
+                  </div>
+                  <div class="flip-card-back">
+                    <p id="card-description"><%=event.description%></p>
                   </div>
                 </div>
-              <% end %>
+              </div>
             <% end %>
-          <% else %>
+          <% end %>
+        <% else %>
           <div class="dashboard-card">
             <p>You don't have events.</p>
           </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <%# Thrid row %>
+  <div>
+    <div class="dashboard-card-container">
+      <h3 class="d-title-center">My Eras</h3>
+      <div class="dashboard-cards-era">
+        <% if policy(@era).new? %>
+          <div class="new-era" data-controller="dashboard">
+            <button class = "submit-btn" data-action="click->dashboard#display">Create an era</button>
+              <div data-dashboard-target="form" class="d-none">
+                <%= render "eras/new" %>
+              </div>
+          </div>
+        <% end %>
+        <% unless @eras.empty? %>
+          <% @eras.each do |era| %>
+            <%= link_to '#', :class => 'd-card-product' do %>
+            <%# era_path(era) %>
+              <div class="d-card-product-infos">
+                <h2> <%= era.name %> </h2>
+                <p> from <%= era.start_date %> to <%= era.end_date %> </p>
+              </div>
+            <% end %>
+          <% end %>
         <% end %>
       </div>
     </div>
