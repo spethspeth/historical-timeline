@@ -1,12 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-# Roman emperors section:
+require_relative "scraper"
 
 testuser = User.new(
   email: "testuser@testuser.com",
@@ -221,7 +213,7 @@ romanwars.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 
 battleofactium = Event.new(
   name: "The Battle of Actium",
   description: "The Battle of Actium was a naval battle fought between a maritime fleet led by Octavian and the combined fleets of both Mark Antony and Cleopatra VII Philopator. The battle took place on 2 September 31 BC in the Ionian Sea, near the former Roman colony of Actium, Greece, and was the climax of over a decade of rivalry between Octavian and Antony.",
-  start_date: Date.new(-30, 9, 2),
+  start_date: Date.new(-30, 9, 2)
 )
 battleofactium.user = testuser
 battleofactium.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'wars', 'battleofactium.jpg')), filename: 'battleofactium.png', content_type: 'battleofactium.png')
@@ -237,7 +229,54 @@ cantabrianwars.user = testuser
 cantabrianwars.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'wars', 'cantabrianwars.jpg')), filename: 'cantabrianwars.png', content_type: 'cantabrianwars.png')
 cantabrianwars.save!
 
-romanwars.events = [battleofactium, cantabrianwars]
+germanicbattles = Event.new(
+  name: "Germanic Battles",
+  description: "Roman forces under Augustus's stepson Drusus win a victory in Germany.",
+  start_date: Date.new(-15),
+  end_date: Date.new(-10)
+)
+germanicbattles.user = testuser
+germanicbattles.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'wars', 'germanicbattles.jpg')), filename: 'germanicbattles.png', content_type: 'germanicbattles.png')
+germanicbattles.save!
+
+bellumbatonianum = Event.new(
+  name: "Bellum Batonianum",
+  description: "An alliance of tribes numbering more than 200,000 people in Illyria rise in rebellion, but are suppressed by Roman legions led by Tiberius and Germanicus.",
+  start_date: Date.new(6),
+  end_date: Date.new(9)
+)
+bellumbatonianum.user = testuser
+bellumbatonianum.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'wars', 'bellumbatonianum.jpg')), filename: 'bellumbatonianum.png', content_type: 'bellumbatonianum.png')
+bellumbatonianum.save!
+
+battleofteutoburgforest = Event.new(
+  name: "Battle of the Teutoburg Forest",
+  description: "The Battle of the Teutoburg Forest, described as the Varian Disaster (Clades Variana) by Roman historians, took place at modern Kalkriese in AD 9, when an alliance of Germanic peoples ambushed Roman legions and their auxiliaries, led by Publius Quinctilius Varus. The alliance was led by Arminius, a Germanic officer of Varus's auxilia. Arminius had acquired Roman citizenship and had received a Roman military education, which enabled him to deceive the Roman commander methodically and anticipate the Roman army's tactical responses.",
+  start_date: Date.new(9)
+)
+battleofteutoburgforest.user = testuser
+battleofteutoburgforest.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'wars', 'battleofteutoburgforest.jpg')), filename: 'battleofteutoburgforest.png', content_type: 'battleofteutoburgforest.png')
+battleofteutoburgforest.save!
+
+battleatponteslongi = Event.new(
+  name: "Battle at Pontes Longi",
+  description: "Indecisive battle between a Roman army under Aulus Caecina Severus and German tribes led by Arminius.",
+  start_date: Date.new(15)
+)
+battleatponteslongi.user = testuser
+battleatponteslongi.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'wars', 'battleatponteslongi.jpg')), filename: 'battleatponteslongi.png', content_type: 'battleatponteslongi.png')
+battleatponteslongi.save!
+
+battleoftheweserriver = Event.new(
+  name: "Battle of the Weser River",
+  description: "Legions under Germanicus defeat German tribes of Arminius.",
+  start_date: Date.new(16)
+)
+battleoftheweserriver.user = testuser
+battleoftheweserriver.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'wars', 'battleoftheweserriver.jpg')), filename: 'battleoftheweserriver.png', content_type: 'battleoftheweserriver.png')
+battleoftheweserriver.save!
+
+romanwars.events = [battleofactium, cantabrianwars, germanicbattles, bellumbatonianum, battleofteutoburgforest, battleatponteslongi, battleoftheweserriver]
 romanwars.start_date = romanwars.events.first.start_date
 romanwars.end_date = romanwars.events.last.end_date
 romanwars.save!
@@ -345,3 +384,5 @@ sovietunion.save!
 # Admin
 
 User.create({ email: "admin@htl.com", password: "123456", password_confirmation: "123456", admin: true })
+
+ebscraper(testuser)
