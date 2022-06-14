@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     # resources 'eventstimelines', only: %i[create destroy]
   end
   resources 'events', only: %i[index new create show edit update destroy]
+  resources 'eras', only: %i[index new create show edit update destroy]
 end
