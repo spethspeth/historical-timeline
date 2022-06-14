@@ -8,6 +8,8 @@ class Timeline < ApplicationRecord
   has_many :users, through: :bookmarks
   has_one_attached :photo
   has_many :reviews, dependent: :destroy
+  has_many :eras_timelines
+  has_many :eras, through: :eras_timelines
 
   pg_search_scope :timeline_search,
                   against: {
