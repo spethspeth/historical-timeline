@@ -1,4 +1,4 @@
-<h2 class="d-title-center">My Dashboard</h2>
+<h2 class="d-title-center"><span class="red-dot">•</span> Dashboard <span class="red-dot">•</span></h2>
 <%# First row  %>
   <div class="dashboard-first-box">
     <%# Your Timeline %>
@@ -67,7 +67,12 @@
                     <div class="d-card-product-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path review.timeline.photo.key %>')" >
                     </div>
                     <div class="d-card-product-infos">
-                      <h2> Ratting : <%= review.ratting %></h2>
+                      <h2> Rating : </h2>
+                        <p>
+                        <% review.ratting.times do  %>
+                          <i id="rating" class="fas fa-star"></i>
+                        <% end %>
+                        </p>
                       <p> <%= review.comment %> </p>
                     </div>
                   </div>

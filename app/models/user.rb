@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many :timelines
   has_many :events
+  has_many :bookmarks
   has_many :timelines, through: :bookmarks
   has_many :reviews
 end

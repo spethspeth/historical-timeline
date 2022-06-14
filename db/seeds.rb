@@ -342,6 +342,17 @@ sovietunion.events = [lenin, stalin]
 sovietunion.start_date = sovietunion.events.first.start_date
 sovietunion.end_date = sovietunion.events.last.end_date
 sovietunion.save!
-# Admin
 
+# seed bookmarks
+bookmark_first = Bookmark.new
+bookmark_first.user = testuser
+bookmark_first.timeline = romanemperors
+bookmark_first.save!
+
+bookmark_second = Bookmark.new
+bookmark_second.user = testuser
+bookmark_second.timeline = romanwars
+bookmark_second.save!
+
+# Admin
 User.create({ email: "admin@htl.com", password: "123456", password_confirmation: "123456", admin: true })
