@@ -5,7 +5,7 @@ export default class extends Controller {
 
   additionalOptions = {
     start_at_end: false,
-    default_bg_color: {r:255, g:255, b:255},
+    default_bg_color: {r:152, g:34, b:38},
     use_bc: true,
     timenav_height_percentage: 60,
     initial_zoom: 1,
