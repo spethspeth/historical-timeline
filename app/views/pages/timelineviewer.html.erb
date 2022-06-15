@@ -1,12 +1,19 @@
+<h2> Timeline comparator </h2>
 <div class="timelineviewerwrapper">
   <div id="timeline-embed">
     <div data-controller="timeline" data-timeline-dates-value="<%=@combinedtimeline.to_json%>">
     </div>
   </div>
 </div>
-<div id="bookmark-selector">
-  <%= simple_form_for(Bookmark.new, url: timelineviewer_path, method: "GET") do |f| %>
-    <%= f.input :bookmarks, collection: @bookmarks.map { |bookmark| [bookmark.timeline.name, bookmark.timeline.id ] }, input_html: { multiple: true, data: { controller: "select2timeline", select2_option_value: {tags:true}} } %>
-    <%= f.button :submit, "Load Timelines", class: "submit-btn" %>
-  <% end %>
+<div class="form-sign-up-container">
+  <div id="bookmark-selector">
+    <%= simple_form_for(Bookmark.new, url: timelineviewer_path, method: "GET") do |f| %>
+      <div class="form-inputs">
+        <%= f.input :bookmarks, collection: @bookmarks.map { |bookmark| [bookmark.timeline.name, bookmark.timeline.id ] }, input_html: { multiple: true, data: { controller: "select2timeline", select2_option_value: {tags:true}} }, label: "Choose timelines to compare :" %>
+        <div class = "text-center m-1">
+          <%= f.submit value: "Load Timelines", class: "submit-btn" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

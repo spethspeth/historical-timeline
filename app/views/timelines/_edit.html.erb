@@ -4,6 +4,7 @@
       <%= f.input :name %>
       <%= f.input :description %>
       <%= f.association :events, input_html: { data: { controller: "select2" } } %>
+      <%= f.association :eras, input_html: { data: { controller: "select2" } } %>
       <%= f.submit class: "submit-btn" %>
     </div>
   <% end %>

@@ -55,7 +55,7 @@ class TimelinesController < ApplicationController
   end
 
   def timeline_params
-    params.require(:timeline).permit(:name, :description, :photo, event_ids: [])
+    params.require(:timeline).permit(:name, :description, :photo, event_ids: [], era_ids: [])
   end
 
 
