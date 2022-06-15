@@ -516,8 +516,8 @@ def ebscraper(user)
         firstquery = firstquery.split("or")[0].rstrip if firstquery.include?("or")
         firstquery.gsub!("?", "")
         # This stuff below checks for a regular date ("October 12, 1406") and sets it
-        if firstquery.match?(/[a-zA-Z]{3,9} \d{1,2}, \d{3,4}/)
-          firstdate = firstquery.match(/[a-zA-Z]{3,9} \d{1,2}, \d{3,4}/)[0]
+        if firstquery.match?(/[a-zA-Z]{3,9} \d{1,2}, \d{2,4}/)
+          firstdate = firstquery.match(/[a-zA-Z]{3,9} \d{1,2}, \d{2,4}/)[0]
         else
           # This is where we check for other conditions
           firstquery.match?(/\A\D/) ? firstdate = "invalid" : firstdate = "January 1, #{firstquery}"
@@ -528,8 +528,8 @@ def ebscraper(user)
         secondquery = doc.at('dt:contains("Died")').next_element.search(".fact-item").first.text.gsub("c.", "").gsub(/\(.*/, "")
         secondquery = secondquery.split("or")[0].rstrip if secondquery.include?("or")
         secondquery.gsub!("?", "")
-        if secondquery.match?(/[a-zA-Z]{3,9} \d{1,2}, \d{3,4}/)
-          seconddate = secondquery.match(/[a-zA-Z]{3,9} \d{1,2}, \d{3,4}/)[0]
+        if secondquery.match?(/[a-zA-Z]{3,9} \d{1,2}, \d{2,4}/)
+          seconddate = secondquery.match(/[a-zA-Z]{3,9} \d{1,2}, \d{2,4}/)[0]
         else
           seconddate = "invalid"
           secondquery.match?(/\A\D/) ? seconddate = "invalid" : seconddate = "January 1, #{secondquery}"
