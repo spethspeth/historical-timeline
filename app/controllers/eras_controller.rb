@@ -14,7 +14,7 @@ class ErasController < ApplicationController
 
   def destroy
     @era.destroy
-    redirect_to timeline_path(@era.timeline)
+    redirect_to dashboard_path
   end
 
   private

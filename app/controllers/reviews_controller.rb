@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review.destroy
-    redirect_to timeline_path(@review.timeline)
+    redirect_to dashboard_path
   end
 
   private
