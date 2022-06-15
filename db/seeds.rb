@@ -208,7 +208,7 @@ era_julioc = Era.new(
   start_date: Date.new(-26, 1, 27),
   end_date: Date.new(68, 6, 9)
 )
-era_julioc.user = testuser
+era_julioc.user = admin
 era_julioc.save!
 
 era_fouremperors = Era.new(
@@ -217,7 +217,7 @@ era_fouremperors = Era.new(
   start_date: Date.new(68, 6, 8),
   end_date: Date.new(69, 12, 20)
 )
-era_fouremperors.user = testuser
+era_fouremperors.user = admin
 era_fouremperors.save!
 
 era_flavian = Era.new(
@@ -226,7 +226,7 @@ era_flavian = Era.new(
   start_date: Date.new(69, 7, 1),
   end_date: Date.new(96, 9, 18)
 )
-era_flavian.user = testuser
+era_flavian.user = admin
 era_flavian.save!
 
 era_nerva = Era.new(
@@ -235,7 +235,7 @@ era_nerva = Era.new(
   start_date: Date.new(96, 9, 18),
   end_date: Date.new(192, 12, 31)
 )
-era_nerva.user = testuser
+era_nerva.user = admin
 era_nerva.save!
 
 era_severan = Era.new(
@@ -244,7 +244,7 @@ era_severan = Era.new(
   start_date: Date.new(193, 4, 9),
   end_date: Date.new(235, 3, 21)
 )
-era_severan.user = testuser
+era_severan.user = admin
 era_severan.save!
 
 era_crisis = Era.new(
@@ -253,7 +253,7 @@ era_crisis = Era.new(
   start_date: Date.new(235, 3, 1),
   end_date: Date.new(284, 11, 1)
 )
-era_crisis.user = testuser
+era_crisis.user = admin
 era_crisis.save!
 
 romanemperors.events = [augustus, tiberius, caligula, claudius, nero, galba, otho, vitellius, vespasian, titus, domitian, nerva, trajan, hadrian, antoninuspius, marcusaurelius, luciusverus, commodus]
@@ -449,7 +449,7 @@ russian_communisme = Era.new(
   start_date: Date.new(1917, 10, 27),
   end_date: Date.new(1991, 12, 26)
 )
-russian_communisme.user = testuser
+russian_communisme.user = admin
 russian_communisme.save!
 
 sovietunion.events = [lenin, stalin]
@@ -458,6 +458,16 @@ sovietunion.start_date = sovietunion.events.first.start_date
 sovietunion.end_date = sovietunion.events.last.end_date
 sovietunion.save!
 
+
+bookmark_first = Bookmark.new
+bookmark_first.user = admin
+bookmark_first.timeline = romanemperors
+bookmark_first.save!
+
+bookmark_second = Bookmark.new
+bookmark_second.user = admin
+bookmark_second.timeline = romanwars
+bookmark_second.save!
 
 # This is the function that is called to scrape EB
 
@@ -641,15 +651,3 @@ end
 
 # The scraper is called here. Comment it out if you do not want to load it (it takes a long time)
 ebscraper(admin)
-
-
-# seed bookmarks
-bookmark_first = Bookmark.new
-bookmark_first.user = testuser
-bookmark_first.timeline = romanemperors
-bookmark_first.save!
-
-bookmark_second = Bookmark.new
-bookmark_second.user = testuser
-bookmark_second.timeline = romanwars
-bookmark_second.save!
