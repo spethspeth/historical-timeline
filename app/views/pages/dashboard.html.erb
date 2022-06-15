@@ -62,21 +62,24 @@
         <div class="dashboard-reviews-cards">
           <% unless @reviews.empty? %>
               <% @reviews.each do |review| %>
-                <%= link_to timeline_path(review.timeline) do  %>
-                  <div class="d-card-product">
+                <div class="d-card-product">
+                  <%= link_to timeline_path(review.timeline), :class  => "review-link-height"  do  %>
                     <div class="d-card-product-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path review.timeline.photo.key %>')" >
                     </div>
-                    <div class="d-card-product-infos">
-                      <h2> Rating : </h2>
-                        <p>
-                        <% review.rating.times do  %>
-                          <i id="rating" class="fas fa-star"></i>
-                        <% end %>
-                        </p>
-                      <p> <%= review.comment %> </p>
-                    </div>
+                  <% end%>
+                  <div class="d-card-product-infos">
+                    <h2> Rating : </h2>
+                      <p>
+                      <% review.rating.times do  %>
+                        <i id="rating" class="fas fa-star"></i>
+                      <% end %>
+                      </p>
+                    <p> <%= review.comment %> </p>
                   </div>
-                <% end%>
+                  <div class="d-card-product-delete">
+                    <button class = "submit-btn"><%= link_to 'Delete', timeline_review_path(review.timeline, review), method: :delete, data: { confirm: 'Are you sure ?' } %></button>
+                  </div>
+                </div>
               <% end %>
           <% else %>
             <p>You don't have reviews.</p>
@@ -124,13 +127,15 @@
         <% end %>
         <% unless @eras.empty? %>
           <% @eras.each do |era| %>
-            <%= link_to '#', :class => 'd-card-product' do %>
-            <%# era_path(era) %>
+            <div class="d-card-era">
               <div class="d-card-product-infos">
                 <h2> <%= era.name %> </h2>
                 <p> from <%= era.start_date %> to <%= era.end_date %> </p>
               </div>
-            <% end %>
+              <div class="d-card-product-infos">
+                <button class = "submit-btn"><%= link_to 'Delete', era, method: :delete, data: { confirm: 'Are you sure ?' } %></button>
+              </div>
+            </div>
           <% end %>
         <% end %>
       </div>

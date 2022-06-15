@@ -353,8 +353,22 @@ h1.logo {
   margin: 2%;
 }
 
+.d-card-era {
+  overflow: hidden;
+  height: 120px;
+  background: $background;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border: 1px solid $border-color;
+  border-radius: 2px;
+  margin: 2%;
+  justify-content: space-between;
+  padding: 2%;
+}
+
 .d-card-product-img {
-  height: 100%;
+  height: inherit;
   width: 120px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -374,7 +388,13 @@ h1.logo {
   margin-top: 8px;
 }
 
-.d-card-product .d-card-product-infos {
+
+.d-card-product-infos {
+  padding: 16px;
+  flex-grow: 1;
+}
+
+.d-card-product-delete {
   padding: 16px;
 }
 
@@ -387,4 +407,8 @@ h1.logo {
   margin: auto;
   padding: 2%;
   width: 100%;
+}
+
+.review-link-height {
+  height: inherit;
 }
