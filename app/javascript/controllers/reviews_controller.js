@@ -23,7 +23,7 @@ export default class extends Controller {
         if (data.inserted_item) {
           this.newreviewsTarget.insertAdjacentHTML("beforeend", data.inserted_item)
         }
-        this.formTarget.outerHTML = data.form
+        // this.formTarget.outerHTML = data.form
       })
   }
 }
