@@ -1,7 +1,70 @@
 // Specific CSS for your home-page
-.homepage-left-container {
-  margin-bottom: 15px;
+.homepage-first-big-container {
+ //width: 100%;
+  justify-content: space-around;
+  //display: flex !important;
+  margin-bottom: 5px;
 }
+
+.homepage-first-big-sub-left-container {
+  width:80%;
+  margin-top: 40px;
+  padding: 10px 10px 10px 10px;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-grow: 1;
+  //border-style:ridge;
+  //border-width: 0,05rem;
+  //border-color: #1B1B19;
+}
+
+.homepage-text-container {
+  width:35%;
+  //flex-grow: 1;
+}
+
+.about-text {
+  font-size: 16px;
+  font-style: normal;
+  font-family: $body-font;
+  color: #1B1B19;
+  text-align:justify;
+  text-transform: none;
+  padding-bottom: 5px;
+}
+
+.p-quote {
+  width: 100%;
+  padding-bottom: 15px;
+}
+
+.homepage-search-gif-container {
+  width: 50%;
+}
+
+.homepage-animated-content {
+  width: 100%;
+}
+
+.homepage-column-cards-btn-container {
+  width: 20%;
+  margin-top: 40px;
+  padding-left: 3px;
+  padding-bottom: 15px;
+  align-items: center;
+  justify-content: start;
+  border-left: 2px solid #959595;
+  //margin-left: 3px;
+}
+
+.homepage-btn {
+  align-self: flex-end;
+  margin-bottom: 10px;
+}
+
+//.homepage-left-container {
+// margin-bottom: 15px;
+// }
 
 .homepage-second-big-container {
   margin-top: 40px;
@@ -13,13 +76,22 @@
   border-top: 1px solid #1B1B19;
 }
 
-.homepage-right-container {
-  justify-content: center;
-  //align-items: center;
+.homepage-timeline-title {
+
 }
 
-.homepage-btn {
-  align-self: flex-end;
+.timeline-knightlab {
+
+}
+
+.homepage-third-big-container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-right: 15px;
+  margin-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #1B1B19;
 }
 
 .homepage-cards-container {
@@ -45,15 +117,22 @@
   flex-grow: 1;
   //align-self: center;
 }
-.foot-infos {
-  display: flex !important;
-  justify-content: space-between !important;
-}
-
-.p-quote {
-  width: 50%;
-}
 
 .podcast {
+  padding-top: 10px;
   width: 100%;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(95%)
 }
+
+.foot-infos {
+  //display: flex !important;
+  border-top: 1px solid #1B1B19;
+  //justify-content: space-between !important;
+}
+
+
+//.homepage-right-container {
+  //justify-content: center;
+  //align-items: center;
+//}
