@@ -64,7 +64,7 @@
 
 <div class="d-flex homepage-second-big-container flex-wrap">
   <div class="homepage-timeline-title">
-     <h2>Try our timeline!</h2>
+     <h2>Here is an example of a timeline you can create here:</h2>
   </div>
   <div class="timeline-knightlab">
     <div id="timeline-embed">
@@ -86,7 +86,8 @@
             </div>
             <div class="card-title-description-homepage">
               <h2 id="card-title-1"><%=timeline.name%></h2>
-                <p id="card-description-homepage-1"><%=timeline.description%></p>
+                <div class="about-text" id="card-description-homepage-1"><%=timeline.description.first(200)%>
+                </div>
             </div>
               <!-- <div class="flip-card-back-1">
                 <h2 id="card-title-1"><%=timeline.name%></h2>
