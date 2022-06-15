@@ -16,7 +16,8 @@ class BookmarksController < ApplicationController
 
   def destroy
     @bookmark.destroy
-    redirect_to timeline_path(@bookmark.timeline)
+    redirect_to dashboard_path
+    # redirect_to timeline_path(@bookmark.timeline)
   end
 
   private
