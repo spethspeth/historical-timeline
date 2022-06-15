@@ -1,57 +1,24 @@
-<div class="d-flex row justify-content-around homepage-first-big-container">
-  <div class="d-flex flex-column homepage-left-container col-6 col-lg-6">
-    <h2> About Almanac.lol</h2>
-      <div class="d-flex row homepage-left-sub-container">
-        <div class="homepage-column-container col-6">
-          <p>Stephen was very disappointed not to find some historical timelines which could give
-          simultaneously the context in ancient Greece and Holland. This is how is born Almanac.lol. His project was initially
-          developed at the end of a bootcamp with the batch 891 - Le Wagon with 3 other
-          students.Now a huge worldwide success story. Almanac helps every days million of
-          users to get an immediate overview of historical facts.
-          <br>
-          What is Lorem Ipsum? orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-          has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
-          to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-          and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          <br>
-          What is Lorem Ipsum? orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-          has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
-          to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-          and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          <br>
-          What is Lorem Ipsum? orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-          has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
-          to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-          and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
-        </div>
-        <div class="d-flex flex-column homepage-column-btn-container col-6">
-          <div class="homepage-column-container">
-            <p>What is Lorem Ipsum? orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-            has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
-            to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            <br></p>
-            <h6>How does Almanac work?</h6>
-            <p>What is Lorem Ipsum? orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-            has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
-            to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            <br>
-            </p>
-          </div>
-          <%=link_to "Discover all the timelines", timelines_path, class: "Hpg-btn"%>
-        </div>
+<div class="d-flex homepage-first-big-container flex-wrap">
+  <div class="d-flex homepage-first-big-sub-left-container flex-wrap">
+    <div class="d-flex flex-column homepage-text-container">
+      <div class="about-title">
+        <h2> About Almanac.lol</h2>
       </div>
-  </div>
-
-  <div class="d-flex flex-column homepage-right-container col-6 col-lg-6">
-    <!-- <div class="row"> -->
+      <div class="about-text" id="p.homepage">
+        Almanac.lol is a place where you can find many historical timelines and compare them. You can explore our many user-created timelines on our <%= link_to "timeline index", timelines_path %>, or <%= link_to "create your own", new_timeline_path %>. You can add then add events or eras to your timeline, and use our <%= link_to "timeline viewer", timelineviewer_path %>
+        to compare different timelines. For a great example, check out the timelines. Enjoy making and comparing timelines on Almanac.
+      </div>
+      <div class="p-quote">
+        <h5> "Thanks to Almanac, my students love history now!" Stephen, Amsterdam Primary School</h5>
+      </div>
+      <div class="about-text" id="p.homepage">
+        <h4> Breaking News!</h4>
+          Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived
+          It has survived It has survived It has survivedIt has survivedIt has survivedIt has survived.
+      </div>
+    </div>
+    <div class="d-flex flex-column homepage-search-gif-container">
       <div class="timeline-search-bar">
         <% if user_signed_in? %>
           <%= form_tag timelines_path, class: "d-flex mb-3", method: :get do %>
@@ -60,61 +27,88 @@
           required: true,
           class: "form-control",
           placeholder: "Find a timeline"
-          %>
+            %>
           <%= submit_tag "Search", class: "click-btn" %>
-        <% end %>
+          <% end %>
         <% end %>
       </div>
       <div class="homepage-animated-content">
-         <div style="width:100%;height:0;padding-bottom:110%;position:relative;">
+        <div style="width:100%;height:0;padding-bottom:110%;position:relative;">
           <iframe src="https://giphy.com/embed/ixblGFHml3TyM" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
         </div>
           <a href="https://giphy.com/gifs/caesar-ixblGFHml3TyM"></a>
       </div>
     </div>
   </div>
-
-<div class="d-flex row justify-content-space-between homepage-second-big-container">
-  <div class="d-flex row justify-content-space-around homepage-cards-container col-6">
-    <% @timelines.sample(3).each do |timeline| %>
-      <div class="d-flex card_3 col-4">
-        <%= link_to timeline_path(timeline) do %>
-          <div class="flip-card-1">
-            <div class="flip-card-inner-1">
-             <div class="flip-card-front-1"
-                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path timeline.photo.key %>')">
-                <!-- <h2 id="card-title"><%=timeline.name%></h2> -->
-              </div>
-              <div class="card-title-description-homepage">
-                <h2 id="card-title-1"><%=timeline.name%></h2>
-                <p id="card-description-homepage-1"><%=timeline.description%></p>
-              </div>
-              <!-- <div class="flip-card-back-1">
-                <h2 id="card-title-1"><%=timeline.name%></h2>
-                 <p id="card-description-1"><%=timeline.description%></p>
-              </div> -->
+  <div class="d-flex flex-column homepage-column-cards-btn-container flex-wrap">
+    <% @timelines.sample(2).each do |timeline| %>
+    <div class="card_3">
+      <%= link_to timeline_path(timeline) do %>
+        <div class="flip-card-1">
+          <div class="flip-card-inner-1">
+            <div class="flip-card-front-1" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path timeline.photo.key %>')">
+            </div>
+            <div class="card-title-description-homepage">
+              <h2 id="card-title-1"><%=timeline.name%></h2>
             </div>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
+    </div>
     <% end %>
+    <div class="homepage-btn">
+      <%=link_to "All Timelines", timelines_path, class: "Hpg-btn"%>
+    </div>
   </div>
+</div>
 
-  <div class="d-flex row homepage-quote-podcast-container col-6 col-lg-6">
-    <div class="d-flex quote col-6">
-      <div class="p-quote">
-        <h5> "Thanks to Almanac, my students love history now!" Stephen, Amsterdam Primary School</h5>
+<div class="d-flex justify-content-betwwen text-align-top homepage-second-big-container flex-wrap">
+  <div class="homepage-timeline-title">
+     <h2>Try our timeline!</h2>
+  </div>
+  <div class="timeline-knightlab">
+    <div id="timeline-embed">
+      <div data-controller="timeline" data-timeline-dates-value="<%= @hometimelines.to_json %>">
       </div>
     </div>
-    <div class="d-flex row podcast col-6">
+  </div>
+</div>
+
+<div class="d-flex justify-content-between homepage-third-big-container flex-wrap">
+  <div class="d-flex justify-content-between homepage-cards-container flex-wrap">
+    <% @timelines.sample(3).each do |timeline| %>
+    <div class="card_3">
+      <%= link_to timeline_path(timeline) do %>
+        <div class="flip-card-1">
+          <div class="flip-card-inner-1">
+            <div class="flip-card-front-1" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path timeline.photo.key %>')">
+              <!-- <h2 id="card-title"><%=timeline.name%></h2> -->
+            </div>
+            <div class="card-title-description-homepage">
+              <h2 id="card-title-1"><%=timeline.name%></h2>
+                <p id="card-description-homepage-1"><%=timeline.description%></p>
+            </div>
+              <!-- <div class="flip-card-back-1">
+                <h2 id="card-title-1"><%=timeline.name%></h2>
+                <p id="card-description-1"><%=timeline.description%></p>
+              </div> -->
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+  <div class="d-flex justify-content-center homepage-podcast-container flex-wrap">
+    <div class="podcast">
+      <h1>PODCAST</h1>
       <iframe style="border-radius:12px" src="https://open.spotify.com/embed/show/4yGc7Y9q3mPdwj3IhIVWDG?utm_source=generator" width="100%" height="232" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
     </div>
   </div>
 </div>
 
-<div class="d-flex justify-content-space-between foot-infos">
+<div class="d-flex justify-content-between foot-infos">
   <div class="f-text">
-    <p>©2022 almanac</p>
+    <p>©2022 Almanac</p>
   </div>
   <br>
   <div class="f-links">
@@ -127,6 +121,9 @@
     </ul>
   </div>
 </div>
+
+ <!--<div class="d-flex flex-column homepage-right-container col-lg-8 col-md-12 col-sm-xs-12">
+       -->
 
 
 

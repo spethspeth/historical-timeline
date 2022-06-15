@@ -1,8 +1,11 @@
 .Hpg-btn {
   color:$font-color-second !important;
-  font-size: 24px;
+  font-size: 20px;
+  width: 75%;
+  text-align: center;
   padding: 8px 24px;
-  border-radius: 4px;
+  //margin-left: 73%;
+  //border-radius: 4px;
   background: $font-color !important;
   transition: background 0.3s ease;
 }

@@ -202,7 +202,62 @@ commodus.user = admin
 commodus.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'commodus.jpg')), filename: 'commodus.png', content_type: 'image.png')
 commodus.save!
 
+era_julioc = Era.new(
+  name: "Julio-Claudian dynasty",
+  description: "",
+  start_date: Date.new(-26, 1, 27),
+  end_date: Date.new(68, 6, 9)
+)
+era_julioc.user = testuser
+era_julioc.save!
+
+era_fouremperors = Era.new(
+  name: "Year of the Four Emperors",
+  description: "",
+  start_date: Date.new(68, 6, 8),
+  end_date: Date.new(69, 12, 20)
+)
+era_fouremperors.user = testuser
+era_fouremperors.save!
+
+era_flavian = Era.new(
+  name: "Flavian dynasty",
+  description: "",
+  start_date: Date.new(69, 7, 1),
+  end_date: Date.new(96, 9, 18)
+)
+era_flavian.user = testuser
+era_flavian.save!
+
+era_nerva = Era.new(
+  name: "Nerva–Antonine dynasty",
+  description: "",
+  start_date: Date.new(96, 9, 18),
+  end_date: Date.new(192, 12, 31)
+)
+era_nerva.user = testuser
+era_nerva.save!
+
+era_severan = Era.new(
+  name: "Severan dynasty",
+  description: "",
+  start_date: Date.new(193, 4, 9),
+  end_date: Date.new(235, 3, 21)
+)
+era_severan.user = testuser
+era_severan.save!
+
+era_crisis = Era.new(
+  name: "Crisis of the Third Century",
+  description: "",
+  start_date: Date.new(235, 3, 1),
+  end_date: Date.new(284, 11, 1)
+)
+era_crisis.user = testuser
+era_crisis.save!
+
 romanemperors.events = [augustus, tiberius, caligula, claudius, nero, galba, otho, vitellius, vespasian, titus, domitian, nerva, trajan, hadrian, antoninuspius, marcusaurelius, luciusverus, commodus]
+romanemperors.eras = [era_julioc, era_nerva, era_flavian, era_fouremperors, era_severan, era_crisis]
 romanemperors.start_date = romanemperors.events.first.start_date
 romanemperors.end_date = romanemperors.events.last.end_date
 romanemperors.save!
@@ -388,10 +443,23 @@ stalin.user = admin
 stalin.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'sovietleaders', 'stalin.jpg')), filename: 'stalin.png', content_type: 'image.png')
 stalin.save!
 
+russian_communisme = Era.new(
+  name: "Communisme in Russia",
+  description: "From the 27 October 1917, when the  the Bolsheviks and Left Socialist Revolutionaries took the lead of the country. To 26 December 1991, the date of the to the dissolution of the Soviet Union.",
+  start_date: Date.new(1917, 10, 27),
+  end_date: Date.new(1991, 12, 26)
+)
+russian_communisme.user = testuser
+russian_communisme.save!
+
 sovietunion.events = [lenin, stalin]
+sovietunion.eras = [russian_communisme]
 sovietunion.start_date = sovietunion.events.first.start_date
 sovietunion.end_date = sovietunion.events.last.end_date
 sovietunion.save!
+
+
+# This is the function that is called to scrape EB
 
 def ebscraper(user)
   philosophersarray = []
@@ -413,7 +481,7 @@ def ebscraper(user)
   # 1900 to present
   contemporaryphil = []
 
-  for a in 1..2 do
+  for a in 1..8 do
     url = "https://www.britannica.com/browse/Philosophers/#{a}"
     html_file = URI.open(url).read
     html_doc = Nokogiri::HTML(html_file)
@@ -571,4 +639,17 @@ def ebscraper(user)
   contemporaryphils.save!
 end
 
+# The scraper is called here. Comment it out if you do not want to load it (it takes a long time)
 ebscraper(admin)
+
+
+# seed bookmarks
+bookmark_first = Bookmark.new
+bookmark_first.user = testuser
+bookmark_first.timeline = romanemperors
+bookmark_first.save!
+
+bookmark_second = Bookmark.new
+bookmark_second.user = testuser
+bookmark_second.timeline = romanwars
+bookmark_second.save!

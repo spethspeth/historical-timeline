@@ -7,10 +7,14 @@ class ReviewsController < ApplicationController
     @review.timeline = @timeline
     @review.user = current_user
     authorize @review
-    if @review.save
-      redirect_to dashboard_path
-    else
-      redirect_to timeline_path(@timeline)
+    respond_to do |format|
+      if @review.save
+        format.html { redirect_to timeline_path(@timeline, anchor: "review-#{@review.id}") }
+        format.json # Follow the classic Rails flow and look for a create.json view
+      else
+        format.html { render "timelines/show" }
+        format.json # Follow the classic Rails flow and look for a create.json view
+      end
     end
   end
 
@@ -22,7 +26,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:comment, :ratting)
+    params.require(:review).permit(:comment, :rating)
   end
 
   def set_review

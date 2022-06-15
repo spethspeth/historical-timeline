@@ -107,9 +107,9 @@
   color: $font-color;
   transform: rotateY(180deg);
   display: flex;
-  align-items: center;
   justify-content: center;
   padding: 10px;
+  overflow-y: scroll;
   }
 
 #card-title {
@@ -118,6 +118,61 @@
 
 #card-description {
   font-size: 16px;
+}
+
+.review-card {
+  background: $font-color-second;
+  color: $font-color;
+
+  padding: 20px;
+  padding-left: 50px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba($black, 0.12);
+
+  position: relative;
+  overflow: hidden;
+  min-height: 120px;
+  max-width: 700px;
+  margin:auto;
+  margin-bottom: 8px;
+
+  p {
+    font-size: 22px;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 80%;
+  }
+
+  cite {
+    font-size: 16px;
+    margin-top: 10px;
+    display: block;
+    font-weight: 200;
+    opacity: 0.8;
+  }
+
+  &:before {
+    font-family: Georgia, serif;
+    content: "“";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 5em;
+    color: rgba($link-color, 0.8);
+    font-weight: normal;
+  }
+
+  &:after {
+    font-family: Georgia, serif;
+    content: "”";
+    position: absolute;
+    bottom: -110px;
+    line-height: 100px;
+    right: -32px;
+    font-size: 25em;
+    color: rgba($link-color, 0.8);
+    font-weight: normal;
+  }
 }
 
 .flip-card-1 {
@@ -162,11 +217,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  filter: grayscale(100%);
+    -webkit-filter: grayscale(90%)
 }
 
 #card-title-1 {
   color: $font-color;
-  font-size: 12px;
+  font-size: 14px;
+  text-align: center;
 }
 
 //.flip-card-back-1 {
@@ -180,4 +238,8 @@
 
 #card-description-homepage-1 {
   font-size: 10px;
+}
+
+#rating {
+  color: $link-color;
 }

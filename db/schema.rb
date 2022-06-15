@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_13_124629) do
+ActiveRecord::Schema.define(version: 2022_06_14_085331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,26 @@ ActiveRecord::Schema.define(version: 2022_06_13_124629) do
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
+  create_table "eras", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.date "start_date"
+    t.date "end_date"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_eras_on_user_id"
+  end
+
+  create_table "eras_timelines", force: :cascade do |t|
+    t.bigint "era_id", null: false
+    t.bigint "timeline_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["era_id"], name: "index_eras_timelines_on_era_id"
+    t.index ["timeline_id"], name: "index_eras_timelines_on_timeline_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -74,7 +94,7 @@ ActiveRecord::Schema.define(version: 2022_06_13_124629) do
 
   create_table "reviews", force: :cascade do |t|
     t.text "comment"
-    t.integer "ratting"
+    t.integer "rating"
     t.bigint "user_id", null: false
     t.bigint "timeline_id"
     t.datetime "created_at", precision: 6, null: false
@@ -111,6 +131,9 @@ ActiveRecord::Schema.define(version: 2022_06_13_124629) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookmarks", "timelines"
   add_foreign_key "bookmarks", "users"
+  add_foreign_key "eras", "users"
+  add_foreign_key "eras_timelines", "eras"
+  add_foreign_key "eras_timelines", "timelines"
   add_foreign_key "events", "users"
   add_foreign_key "events_timelines", "events"
   add_foreign_key "events_timelines", "timelines"

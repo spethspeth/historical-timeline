@@ -14,6 +14,7 @@ class TimelinesController < ApplicationController
     @timelinejson = hasher(set_timeline)
     @bookmark = Bookmark.where(user: current_user, timeline: @timeline)
     @review = Review.new
+    @reviews = Review.all
   end
 
   def new
@@ -57,7 +58,32 @@ class TimelinesController < ApplicationController
     params.require(:timeline).permit(:name, :description, :photo, event_ids: [])
   end
 
+
+  def eraer(timeline)
+    era_array = timeline.eras.map do |era|
+      {
+        start_date: {
+          month: era.start_date.mon,
+          day: era.start_date.day,
+          year: era.start_date.year
+        },
+        end_date: {
+          month: era.end_date.mon,
+          day: era.end_date.day,
+          year: era.end_date.year
+        },
+        text: {
+          headline: era.name,
+          text: era.description
+        }
+      }.compact
+    end
+    return era_array
+  end
+
   def hasher(timeline)
+    era_array = []
+    era_array = eraer(timeline) unless timeline.eras.empty?
     eventarray = timeline.events.map do |event|
       {
         background: {
@@ -92,6 +118,7 @@ class TimelinesController < ApplicationController
       },
       events: eventarray
     }
+    timelinehash[:eras] = era_array unless era_array.empty?
     return timelinehash
   end
 end

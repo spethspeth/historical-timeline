@@ -1,0 +1,27 @@
+.container-timeline-actions {
+  overflow-x: hidden;
+  border-top: 16px solid $font-color-second;
+  border-bottom: 16px solid $font-color-second;
+  border-left: 16px solid $font-color-second;
+  border-right: 16px solid $font-color-second;
+  margin-top: 16px;
+  text-align: center;
+  background-color: white;
+}
+
+.reviews {
+  // overflow: scroll;
+}
+
+.form-show-container {
+  width: 100%;
+  .form-inputs {
+    box-shadow: none;
+  }
+}
+
+#rating-show {
+  color: $link-color;
+  font-size: small;
+  vertical-align: top;
+}

@@ -1,0 +1,14 @@
+<div class="form-sign-up-container">
+  <%= simple_form_for(@event) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :start_date, as: :date, start_year: Date.today.year - 4000, end_year: Date.today.year - 12, html5: true %>
+      <%= f.input :end_date, as: :date, start_year: Date.today.year - 4000, end_year: Date.today.year - 12, html5: true %>
+      <%= f.input :photo, as: :file%>
+      <div>
+        <%= f.submit class: "submit-btn", value:  "Create an event" %>
+      </div>
+    </div>
+  <% end %>
+</div>

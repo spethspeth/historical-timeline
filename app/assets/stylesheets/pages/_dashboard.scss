@@ -31,6 +31,18 @@
   border-radius: 2px;
 }
 
+.dashboard-cards-era {
+  flex-grow: 1;
+  height: fit-content;
+  margin: 2.5%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  background-color: $background;
+  border: 1px solid $border-color;
+  border-radius: 2px;
+}
+
 .dashboard-reviews-cards {
   flex-grow: 1;
   height: fit-content;
@@ -75,6 +87,15 @@
           box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+  .dashboard-first-box {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-second-box {
+    grid-template-columns: 1fr;
+  }
+
+}
 
 h1.logo {
   text-align: center;
@@ -172,9 +193,9 @@ h1.logo {
     top: 0;
     left: 0;
     width: 100%;
-  color:#fff;
-  text-align:left;
-  font-weight: 600;
+    color:#fff;
+    text-align:left;
+    font-weight: 600;
 
 }
 .d-back:after{
@@ -187,7 +208,7 @@ h1.logo {
     content: '';
     display: block;
     opacity: .5;
-    background-color: #000;
+    background-color: $background;
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
     border-radius: 7px;
@@ -354,4 +375,15 @@ h1.logo {
 
 .d-card-product .d-card-product-infos {
   padding: 16px;
+}
+
+#d-inner-title {
+  color: white;
+}
+
+.new-era {
+  text-align: center;
+  margin: auto;
+  padding: 2%;
+  width: 100%;
 }
