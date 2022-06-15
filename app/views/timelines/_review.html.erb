@@ -1,0 +1,9 @@
+<blockquote class="review-card">
+  <p>
+    <%= review.comment %>
+    <% review.rating.times do %>
+      <i id="rating-show" class="fas fa-star"></i>
+    <%end%>
+  </p>
+  <cite> ~ <%=review.user.email%> </cite>
+</blockquote>

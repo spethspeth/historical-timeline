@@ -1,5 +1,5 @@
-<div class="form-sign-up-container">
-  <%= simple_form_for([@timeline, @review]) do |f| %>
+<div class="form-show-container">
+  <%= simple_form_for([@timeline, @review], data: { reviews_target: "form", action: "submit->reviews#send"}) do |f| %>
     <div class="form-inputs">
       <%= f.input :comment %>
       <%= f.input :rating, collection: ['0', '1', '2', '3', '4', '5'] %>
