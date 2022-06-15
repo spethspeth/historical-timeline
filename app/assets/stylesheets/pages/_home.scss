@@ -30,7 +30,7 @@
   color: #1B1B19;
   text-align:justify;
   text-transform: none;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
 }
 
 .p-quote {
@@ -40,6 +40,11 @@
 
 .homepage-search-gif-container {
   width: 50%;
+  align-items: flex-end;
+}
+
+.timeline-search-bar {
+  width: 60%;
 }
 
 .homepage-animated-content {
@@ -58,7 +63,8 @@
 }
 
 .homepage-btn {
-  align-self: flex-end;
+  margin-top: 15px;
+  align-self: center;
   margin-bottom: 10px;
 }
 
@@ -128,7 +134,18 @@
 .foot-infos {
   //display: flex !important;
   border-top: 1px solid #1B1B19;
+  padding: 1rem 1rem;
+  color: $link-color-h1;
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
   //justify-content: space-between !important;
+}
+
+.copyright {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 
