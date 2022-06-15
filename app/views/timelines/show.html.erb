@@ -8,7 +8,7 @@
   <% if @bookmark.empty? %>
     <td> <%= link_to 'Bookmark it', timeline_bookmarks_path(@timeline), method: :post, class: "submit-btn"  %> </td>
   <% else %>
-    <td> <%= link_to 'Unbookmark it', timeline_bookmark_path(@timeline), method: :delete, class: "submit-btn" %> </td>
+    <td> <%= link_to 'Unbookmark it', timeline_bookmark_path(@timeline,@bookmark[0]), method: :delete, class: "submit-btn" %> </td>
   <% end%>
   <div class = "mt-3">
       <% if policy(@timeline).edit? %>
