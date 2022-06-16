@@ -4,7 +4,18 @@
       <div class="cntr">
         <div class="cntr-innr">
           <label class="search" for="inpt_search">
-            <input id="inpt_search" type="text"/>
+            <%# <input id="inpt_search" type="text"/> %>
+            <% if user_signed_in? %>
+              <%= form_tag timelines_path, id: "inpt_search", method: :get do %>
+                <%= text_field_tag :query,
+                params[:query],
+                required: true,
+                class: "form-control-navbar",
+                placeholder: "Find a timeline"
+                  %>
+                <%#= submit_tag "Search", class: "click-btn" %>
+              <% end %>
+            <% end %>
           </label>
         </div>
       </div>

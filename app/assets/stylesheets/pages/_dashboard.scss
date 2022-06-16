@@ -7,7 +7,17 @@
 
 .d-title-center {
   text-align: center;
+  margin-top: 35px;
+  margin-bottom: 35px;
 }
+
+.d-title-start {
+  //text-align: center;
+  text-align: start;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
 
 .dashboard-card-container {
   display: flex;

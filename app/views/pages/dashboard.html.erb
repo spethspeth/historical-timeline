@@ -1,4 +1,79 @@
-<h2 class="d-title-center"><span class="red-dot">•</span> Dashboard <span class="red-dot">•</span></h2>
+<h6 class="d-title-start"> Dashboard </h6>
+
+<div class="dashboard-navtabs">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="timelines-tab" data-bs-toggle="tab" data-bs-target="#timelines" type="button" role="tab" aria-controls="home" aria-selected="true">My Timelines</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="bookmarks-tab" data-bs-toggle="tab" data-bs-target="#bookmarks" type="button" role="tab" aria-controls="profile" aria-selected="false">My Bookmarks</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="events-tab" data-bs-toggle="tab" data-bs-target="#events" type="button" role="tab" aria-controls="contact" aria-selected="false">My Events</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="eras-tab" data-bs-toggle="tab" data-bs-target="#eras" type="button" role="tab" aria-controls="contact" aria-selected="false">My Eras</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="comments-tab" data-bs-toggle="tab" data-bs-target="#comments" type="button" role="tab" aria-controls="contact" aria-selected="false">My Comments</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="timelines" role="tabpanel" aria-labelledby="timelines-tab">
+      <div class="d-flex justify-content-start timelines-tab-global-container flex-wrap">
+        <div class="d-flex justify-content-between timelines-tab-container flex-wrap">
+          <% unless @timelines.empty? %>
+            <% @timelines.each do |timeline| %>
+              <div class="d-flex flex-column timelines-tab-text-container">
+                <%= link_to timeline_path(timeline) do %>
+                  <div class="card-title-1">
+                    <h2 id="card-title-dashboard"><%=timeline.name%></h2>
+                  </div>
+                  <div class="card-description-dasboard "><%=timeline.description%>
+                  </div>
+                  <div class="timeline-creation-date">
+                  </div>
+              </div>
+              <div class="dashboard-tab-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path timeline.photo.key %>')">
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+          <% else %>
+            <div class="dashboard-tab-timeline-message">
+              <p>You don't have timelines.</p>
+            </div>
+          <% end %>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="bookmarks" role="tabpanel" aria-labelledby="bookmarks-tab">...</div>
+    <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="events-tab">...</div>
+    <div class="tab-pane fade" id="eras" role="tabpanel" aria-labelledby="eras-tab">...</div>
+    <div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="comments-tab">...</div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h2 class="d-title-center"><span class="red-dot">•</span> Dashboard <span class="red-dot">•</span></h2>
 <%# First row  %>
   <div class="dashboard-first-box">
     <%# Your Timeline %>
@@ -68,12 +143,6 @@
                     </div>
                   <% end%>
                   <div class="d-card-product-infos">
-                    <h2> Rating : </h2>
-                      <p>
-                      <% review.rating.times do  %>
-                        <i id="rating" class="fas fa-star"></i>
-                      <% end %>
-                      </p>
                     <p> <%= review.comment %> </p>
                   </div>
                   <div class="d-card-product-delete">
@@ -140,4 +209,4 @@
         <% end %>
       </div>
     </div>
-  </div>
+  </div>-->
