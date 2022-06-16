@@ -6,7 +6,19 @@
   border-right: 16px solid $font-color-second;
   margin-top: 16px;
   text-align: center;
-  background-color: white;
+  background-color: transparent;
+}
+
+.container-timeline-actions-grey {
+  overflow-x: hidden;
+  border-top: 1px solid #1B1B19;
+  //border-bottom: 1px solid $border-color;
+  //border-left: 1px solid $border-color;
+  //border-right: 1px solid $border-color;
+  margin-top: 16px;
+  text-align: end;
+  justify-content: flex-end;
+  background-color: transparent;
 }
 
 .reviews {

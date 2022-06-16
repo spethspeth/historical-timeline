@@ -20,7 +20,7 @@
     <div data-controller="timeline" data-timeline-dates-value="<%= @timelinejson.to_json%>">
     </div>
   </div>
-    <div class="container-timeline-actions"data-controller="reviews">
+    <div class="container-timeline-actions-grey"data-controller="reviews">
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-12 col-xs-12">
@@ -35,7 +35,7 @@
                 <div class = "text-center m-3">
                   <% if policy(@review).new? %>
                     <div data-controller="newreview">
-                      <button class = "submit-btn" data-action="click->newreview#display">Write a review</button>
+                      <button class = "submit-btn" data-action="click->newreview#display">Write a comment</button>
                       <div data-newreview-target="form" class="d-none">
                         <%= render "reviews/new" %>
                       </div>
@@ -68,7 +68,7 @@
               <div class = "text-center m-3">
                 <% if policy(@review).new? %>
                   <div data-controller="newreview">
-                    <button class = "submit-btn" data-action="click->newreview#display">Write a review</button>
+                    <button class = "submit-btn" data-action="click->newreview#display">Write a comment</button>
                     <div data-newreview-target="form" class="d-none">
                       <%= render "reviews/new" %>
                     </div>
