@@ -4,15 +4,27 @@
       <div class="cntr">
         <div class="cntr-innr">
           <label class="search" for="inpt_search">
-            <input id="inpt_search" type="text"/>
+            <%# <input id="inpt_search" type="text"/> %>
+            <% if user_signed_in? %>
+              <%= form_tag timelines_path, id: "inpt_search", method: :get do %>
+                <%= text_field_tag :query,
+                params[:query],
+                required: true,
+                class: "form-control-navbar",
+                placeholder: "Find a timeline"
+                  %>
+                <%#= submit_tag "Search", class: "click-btn" %>
+              <% end %>
+            <% end %>
           </label>
         </div>
       </div>
     </div>
 
-    <div class="head">
-      <div class="nav-header"><h1><%= link_to "Almanac.lol", root_path, class: "nav-link" %><h1>
-      </div>
+    <div class="nav-header">
+      <%= link_to root_path do %>
+        <%= image_tag "logo.png", class: "nav-link" %>
+      <% end %>
     </div>
 
     <div class="d-flex login-container flex-wrap">
@@ -20,10 +32,10 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
           <div id="social-test">
             <ul class="social">
-              <li><a href="https://facebook.com/natgeo"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-              <li><a href="https://twitter.com/natgeo"><i class="fa fa-twitter" aria-hidden="true"></a></i></li>
-              <li><a href="https://instagram.com/natgeo"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-              <li><a href="https://www.youtube.com/c/NaTGeo"><i class="fa fa-youtube" aria-hidden="true"></a></i></li>
+              <li><a href="https://facebook.com/natgeo"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+              <li><a href="https://twitter.com/natgeo"><i class="fab fa-twitter" aria-hidden="true"></a></i></li>
+              <li><a href="https://instagram.com/natgeo"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.youtube.com/c/NaTGeo"><i class="fab fa-youtube" aria-hidden="true"></a></i></li>
             </ul>
           </div>
       </div>
@@ -37,7 +49,7 @@
                 <%= image_tag "round-avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <%end%>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "My Dashboard", dashboard_path, class: "dropdown-item" %>
+                <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
                 <%= link_to "Create my Timeline", new_timeline_path, class: "dropdown-item", data: { turbolinks: false } %>
                 <%= link_to "Create a new Historical Event", new_event_path, class: "dropdown-item"%>
                 <%= link_to "Edit my profile", edit_user_registration_path, class: "dropdown-item" %>

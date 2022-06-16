@@ -6,11 +6,15 @@
   <div class="col-md-3 col-sm-12 col-xs-12">
     <% if @bookmark.empty? %>
       <div class = "text-center">
-        <button class = "submit-btn"><%= link_to 'Bookmark it', timeline_bookmarks_path(@timeline), method: :post  %></button>
+        <%= link_to timeline_bookmarks_path(@timeline), method: :post do %>
+          <i class = "far fa-bookmark" style="font-size: 40px;"></i>
+        <% end %>
       </div>
     <% else %>
       <div class = "text-center">
-        <button class = "submit-btn"><%= link_to 'Unbookmark it', timeline_bookmark_path(@timeline,@bookmark[0]), method: :delete  %></button>
+        <%= link_to timeline_bookmark_path(@timeline,@bookmark[0]), method: :delete do %>
+          <i class = "fas fa-bookmark" style="font-size: 40px;"></i>
+        <% end %>
       </div>
     <% end%>
   </div>
@@ -40,7 +44,7 @@
                 <div class = "text-center m-3">
                   <% if policy(@review).new? %>
                     <div data-controller="newreview">
-                      <button class = "submit-btn" data-action="click->newreview#display">Write a comment</button>
+                      <button class = "submit-btn" data-action="click->newreview#display">Reply</button>
 
                       <div data-newreview-target="form" class="d-none">
                         <%= render "reviews/new" %>

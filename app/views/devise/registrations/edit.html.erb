@@ -21,6 +21,7 @@
                   hint: "we need your current password to confirm your changes",
                   required: true,
                   input_html: { autocomplete: "current-password" } %>
+      <%= f.input :username, hint: "Do you want to change your username?"%>
       <%= f.input :avatar, as: :file%>
     </div>
 

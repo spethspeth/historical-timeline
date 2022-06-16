@@ -7,8 +7,10 @@ admin = User.new(
   email: "admin@htl.com",
   password: "123456",
   password_confirmation: "123456",
+  username: "adminofdoom",
   admin: true
 )
+admin.avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'skeletor.webp')), filename: 'skeletor.webp', content_type: 'skeletor.png')
 admin.save!
 
 # Roman emperors (reigns):
