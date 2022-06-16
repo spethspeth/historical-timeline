@@ -43,7 +43,7 @@ class PagesController < ApplicationController
           color: colorarray[counter]
         },
         media: {
-          url: url_for(event.photo),
+          url: event.photo ? url_for(event.photo) : nil,
           thumbnail: url_for(event.photo)
         },
         start_date: {
