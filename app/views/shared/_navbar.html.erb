@@ -21,9 +21,10 @@
       </div>
     </div>
 
-    <div class="head">
-      <div class="nav-header"><h1><%= link_to "Almanac.lol", root_path, class: "nav-link" %><h1>
-      </div>
+    <div class="nav-header">
+      <%= link_to root_path do %>
+        <%= image_tag "logo.png", class: "nav-link" %>
+      <% end %>
     </div>
 
     <div class="d-flex login-container flex-wrap">
