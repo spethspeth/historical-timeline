@@ -2,7 +2,7 @@
   <%= simple_form_for([@timeline, @review], data: { reviews_target: "form", action: "submit->reviews#send"}) do |f| %>
     <div class="form-inputs">
       <%= f.input :comment %>
-      <%= f.submit value: "Add a Comment", class: "submit-btn" %>
+      <%= f.submit value: "Comment", class: "submit-btn" %>
     </div>
   <% end %>
 </div>

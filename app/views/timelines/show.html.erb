@@ -44,7 +44,7 @@
                 <div class = "text-center m-3">
                   <% if policy(@review).new? %>
                     <div data-controller="newreview">
-                      <button class = "submit-btn" data-action="click->newreview#display">Write a comment</button>
+                      <button class = "submit-btn" data-action="click->newreview#display">Reply</button>
 
                       <div data-newreview-target="form" class="d-none">
                         <%= render "reviews/new" %>
