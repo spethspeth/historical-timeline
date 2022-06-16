@@ -138,11 +138,11 @@
           <% unless @eras.empty? %>
             <% @eras.each do |era| %>
               <div class="d-flex flex-column timelines-tab-text-container">
-                <!-- <%= link_to era_path(eras) do %> -->
                   <div class="card-title-1">
                     <h2 id="card-title-dashboard"><%=era.name%></h2>
                   </div>
-                  <div class="card-description-dasboard"><%=era.description%> <%= era.start_date %> to <%= era.end_date %>
+                  <div class="card-description-dasboard">
+                    <%=era.description%> <%= era.start_date %> to <%= era.end_date %>
                   </div>
                   <div class="timeline-creation-date">
                     <%=era.created_at.to_s(:long_ordinal)%>
@@ -152,14 +152,11 @@
                        <%= link_to 'Edit', edit_era_path(era)%>
                     <% end %>
                     <% if policy(era).destroy? %>
-                    <%= link_to 'Delete', era, method: :delete, data: { confirm: 'Are you sure ?' } %>
+                      <%= link_to 'Delete', era, method: :delete, data: { confirm: 'Are you sure ?' } %>
                     <% end %>
                   </div>
               </div>
-              <div class="dashboard-tab-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path era.photo.key %>')">
-              </div>
             <% end %>
-          <% end %>
           <% else %>
             <div class="dashboard-tab-timeline-message">
               <p>You don't have Eras.</p>
@@ -174,21 +171,24 @@
         <div class="d-flex justify-content-around timelines-tab-container flex-wrap">
           <% unless @reviews.empty? %>
               <% @reviews.each do |review| %>
-              <div class="d-flex flex-column timelines-tab-text-container">
-                <%= link_to timeline_path(review.timeline) do %>
-                  <div class="card-title-1">
-                    <h2 id="card-title-dashboard"><%=review.timeline.name%></h2>
-                  </div>
-                  <div class="card-description-dasboard "><%= review.comment %>
-                  </div>
-                  <div class="timeline-creation-date">
-                    <%=review.created_at.to_s(:long_ordinal)%>
-                  </div>
-                  <div class="dashboard-action-links">
-                  </div>
-              </div>
-              <div class="dashboard-tab-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path review.timeline.photo.key %>')">
-              </div>
+                <div class="d-flex flex-column timelines-tab-text-container">
+                  <%= link_to timeline_path(review.timeline) do %>
+                    <div class="card-title-1">
+                      <h2 id="card-title-dashboard"><%=review.timeline.name%></h2>
+                    </div>
+                    <div class="card-description-dasboard "><%= review.comment %>
+                    </div>
+                    <div class="timeline-creation-date">
+                      <%=review.created_at.to_s(:long_ordinal)%>
+                    </div>
+                    <div class="dashboard-action-links">
+                      <% if policy(review).destroy? %>
+                        <%= link_to 'Delete', timeline_reviews_path(review), method: :delete, data: { confirm: 'Are you sure ?' } %>
+                      <% end %>
+                    </div>
+                </div>
+                <div class="dashboard-tab-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path review.timeline.photo.key %>')">
+                </div>
             <% end %>
           <% end %>
         </div>
