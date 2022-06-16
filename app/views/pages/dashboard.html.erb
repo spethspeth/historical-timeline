@@ -179,7 +179,7 @@
                     </div>
                     <div class="dashboard-action-links">
                       <% if policy(review).destroy? %>
-                        <%= link_to 'Delete', timeline_reviews_path(review), method: :delete, data: { confirm: 'Are you sure ?' } %>
+                        <%= link_to 'Delete', timeline_review_path(review.timeline,review), method: :delete, data: { confirm: 'Are you sure ?' } %>
                       <% end %>
                     </div>
                 </div>
