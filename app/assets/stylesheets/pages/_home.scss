@@ -12,10 +12,11 @@
   width: 80%;
   height: fit-content;
   margin-top: 40px;
-  padding: 10px 10px 10px 10px;
   align-items: flex-start;
   justify-content: space-around;
   flex-grow: 1;
+  padding-left: 10px;
+  padding-right: 10px;
   //border-style:ridge;
   //border-width: 0,05rem;
   //border-color: #1B1B19;
@@ -68,7 +69,6 @@
 .homepage-column-cards-btn-container {
   width: 20%;
   margin-top: 40px;
-  padding-left: 3px;
   padding-bottom: 15px;
   align-items: center;
   justify-content: start;
