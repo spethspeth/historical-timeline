@@ -56,6 +56,15 @@ p {
   text-transform: none;
 }
 
+li {
+  font-size: 12px;
+  font-style: normal;
+  font-family: $body-font;
+  color: #1B1B19;
+  text-align: start;
+  text-transform: none;
+}
+
 h5 {
   font-size: 52px;
   font-style: italic;
@@ -77,6 +86,28 @@ h6 {
 
 a {
   color: #982226;
+}
+
+.bold {
+  font-weight: bold;
+  color: #982226;
+}
+
+.red {
+  color: #982226;
+}
+
+ul {
+  list-style: none; /* Remove default bullets */
+}
+
+.tips li::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #982226; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
 }
 
 // To use a font file (.woff) uncomment following lines

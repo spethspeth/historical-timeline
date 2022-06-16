@@ -1,12 +1,30 @@
 <h2 class="text-center"><span class="red-dot">•</span> New Timeline <span class="red-dot">•</span></h2>
-<div class="form-sign-up-container">
-  <%= simple_form_for @timeline do |f| %>
-    <div class="form-inputs">
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.association :events, input_html: { data: { controller: "select2" } } %>
-      <%= f.input :photo, as: :file %>
-      <%= f.button :submit, "Save Timeline", class: "submit-btn" %>
+<div class="formandtips">
+  <div class="container mt-3">
+    <div class="row">
+      <div class="explanation col-6">
+        <p>Create a new timeline by entering a <span class="bold">name</span> and <span class="bold">description</span>. You will also have to add <span class="bold">at least one event</span> to your timeline, and a nice <span class="bold">cover photo</span>.</p>
+        <div class="tips">
+          <h6>Tips<span class="red">:</span></h6>
+          <ul>
+            <li>Choose a <span class="bold">central theme</span> for your timeline, this makes for better comparisons! For example "Franz Kafka's life", or "Kings of Egypt".</li>
+            <li>Try not to put <span class="bold">too many events</span> too close together, try to organize your events in different timelines</li>
+            <li>Write a concise <span class="bold">description</span> that makes it immediately clear what your timeline is about. Your description has a maximum length of <span class="bold">150 characters</span>.</li>
+            <li>Attach a <span class="bold">photo</span> that is not too big or small and which summarizes your timeline's topic.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="newtimelineform col-6">
+        <%= simple_form_for @timeline do |f| %>
+          <div class="form-inputs">
+            <%= f.input :name %>
+            <%= f.input :description %>
+            <%= f.association :events, input_html: { data: { controller: "select2" } } %>
+            <%= f.input :photo, as: :file %>
+            <%= f.button :submit, "Save Timeline", class: "submit-btn" %>
+          </div>
+        <% end %>
+      </div>
     </div>
-<% end %>
+  </div>
 </div>
