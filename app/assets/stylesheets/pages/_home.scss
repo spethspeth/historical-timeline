@@ -36,6 +36,17 @@
   padding-bottom: 15px;
 }
 
+.about-readmore {
+  font-size: 16px;
+  font-style: normal;
+  font-family: $body-font;
+  color: #1B1B19;
+  text-align: end;
+  justify-content: flex-end;
+  text-transform: none;
+  padding-bottom: 2px;
+}
+
 .p-quote {
   width: 100%;
   padding-bottom: 15px;
@@ -153,6 +164,7 @@
 .f-links {
   text-align: end;
   justify-content: flex-end;
+  color: $link-color-h1;
 }
 
 .f-text {

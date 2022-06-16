@@ -88,9 +88,13 @@
             <div class="flip-card-front-1" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path timeline.photo.key %>')">
               <!-- <h2 id="card-title"><%=timeline.name%></h2> -->
             </div>
+      <% end %>
             <div class="card-title-description-homepage">
               <h2 id="card-title-1"><%=timeline.name%></h2>
                 <div class="about-text" id="card-description-homepage-1"><%=timeline.description.first(200)%>
+                </div>
+                <div class="about-readmore">
+                  <%= link_to "Read more...", timeline_path(timeline), style:"color:#982226"%>
                 </div>
             </div>
               <!-- <div class="flip-card-back-1">
@@ -99,7 +103,7 @@
               </div> -->
           </div>
         </div>
-      <% end %>
+
     </div>
     <% end %>
   </div>
@@ -114,11 +118,11 @@
 <div class="d-flex flex-column foot-infos">
   <div class="f-links">
     <ul>
-      <%= link_to "Contact us", "/"%>
-      <%= link_to "Work with us", "/"%>
-      <%= link_to "Help", "/"%>
-      <%= link_to "Privacy Policy", "/"%>
-      <%= link_to "Terms of Service","/"%>
+      <%= link_to "Contact us", "/", style:"color:#1B1B19"%>
+      <%= link_to "Work with us", "/", style:"color:#1B1B19"%>
+      <%= link_to "Help", "/", style:"color:#1B1B19"%>
+      <%= link_to "Privacy Policy", "/", style:"color:#1B1B19"%>
+      <%= link_to "Terms of Service","/", style:"color:#1B1B19"%>
     </ul>
   </div>
   <div class="f-text">
