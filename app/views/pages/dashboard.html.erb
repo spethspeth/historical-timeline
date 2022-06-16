@@ -115,8 +115,12 @@
                     <% end %>
                   </div>
               </div>
-              <div class="dashboard-tab-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path event.photo.key %>')">
-              </div>
+              <% @image = event.photo.key %>
+              <% if @image %>
+                <div class="dashboard-tab-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path event.photo.key %>')"></div>
+              <% else %>
+                <div class="dashboard-tab-card"></div>
+              <% end %>
             <% end %>
           <% end %>
           <% else %>

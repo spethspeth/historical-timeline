@@ -2,7 +2,12 @@
   <div class="frontpage">
     <div class="fp-cell fp-cell--1">
       <div class="fp-item">
-        <div class="image-event" style="background-image: url('<%= cl_image_path @event.photo.key %>');"></div>
+        <% @image = @event.photo.key %>
+        <% if @image %>
+          <div class="image-event" style="background-image: url('<%= cl_image_path @event.photo.key %>');"></div>
+        <% else %>
+          <div class="image-event"></div>
+        <% end %>
       </div>
     </div>
     <div class="fp-cell fp-cell--2">

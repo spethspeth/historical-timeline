@@ -83,14 +83,11 @@ class TimelinesController < ApplicationController
   def hasher(timeline)
     era_array = []
     era_array = eraer(timeline) unless timeline.eras.empty?
-    eventarray = timeline.events.map do |event|
-      {
+    eventarray = []
+    timeline.events.each do |event|
+      eventhash = {
         background: {
           color: "#1B1B19"
-        },
-        media: {
-          url: url_for(event.photo),
-          thumbnail: url_for(event.photo)
         },
         start_date: {
           month: event.start_date.mon,
@@ -107,6 +104,13 @@ class TimelinesController < ApplicationController
           text: event.description
         }
       }
+      if event.photo.key
+        eventhash[:media] = {
+          url: url_for(event.photo),
+          thumbnail: url_for(event.photo)
+        }
+      end
+      eventarray << eventhash
     end
     timelinehash = {
       title: {
