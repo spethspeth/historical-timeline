@@ -12,6 +12,14 @@
   border-radius: 3px;
 }
 
+.newtimelineform {
+  padding: 10px;
+  background-color: white;
+  border-radius: 3px;
+  border: solid 1px $border-color;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
 .form-padding {
   padding-top: 10px;
 }
@@ -31,9 +39,7 @@
   border-radius: 3px;
   box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
   border-color: $border-color;
-  width: 95%;
   margin: auto;
-  margin-top: 10px;
   div {
     text-align: center;
     width: 100%;
@@ -62,4 +68,30 @@
   appearance: none;
   border-radius: 2px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+
+.tips {
+  padding: 8px;
+  border: solid 1px $border-color;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.form-control-navbar {
+  text-align: center;
+  // display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $font-color;
+  background-color: transparent;
+  // background-clip: padding-box;
+  // border: 1px solid $border-color;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 2px;
+  // transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }

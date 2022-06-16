@@ -1,15 +1,30 @@
 <h2 class="text-center"><span class="red-dot">•</span> New Event <span class="red-dot">•</span></h2>
-<div class="form-sign-up-container">
-  <%= simple_form_for(@event) do |f| %>
-    <div class="form-inputs">
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input :start_date, as: :date, start_year: Date.today.year - 4000, end_year: Date.today.year - 12, html5: true %>
-      <%= f.input :end_date, as: :date, start_year: Date.today.year - 4000, end_year: Date.today.year - 12, html5: true %>
-      <%= f.input :photo, as: :file%>
-      <div>
-        <%= f.submit class: "submit-btn", value:  "Create an event" %>
+<div class="container mt-3">
+  <div class="row">
+    <div class="explanation col-6">
+      <p>Create a new event by adding a <span class="bold">name</span>, <span class="bold">description</span>, <span class="bold">start date</span> and <span class="bold">end date</span>. You should also add a <span class="bold">photo</span> to the event.</p>
+      <div class="tips">
+        <h6>Tips<span class="red">:</span></h6>
+        <ul>
+          <li>Events should have a <span class="bold">start date</span> but <span class="bold">do not need an end date</span>. Only add an end date if your event was longer than a month, at minimum.</li>
+          <li>Give a <span class="bold">clear name</span>, and keep it as short as possible.</li>
+          <li>Write a concise <span class="bold">description</span> of your event that is no longer than <span class="bold">150 characters</span>.</li>
+        </ul>
       </div>
     </div>
-  <% end %>
+    <div class="newtimelineform col-6">
+      <%= simple_form_for(@event) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :name %>
+          <%= f.input :description %>
+          <%= f.input :start_date, as: :date, start_year: Date.today.year - 4000, end_year: Date.today.year - 12, html5: true %>
+          <%= f.input :end_date, as: :date, start_year: Date.today.year - 4000, end_year: Date.today.year - 12, html5: true %>
+          <%= f.input :photo, as: :file%>
+          <div>
+            <%= f.submit class: "submit-btn", value:  "Create an event" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

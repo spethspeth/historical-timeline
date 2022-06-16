@@ -123,10 +123,13 @@
 
 .review-card {
   background: $font-color-second;
-  color: $font-color;
+  background: $font-color-second;
+  //background: $font-color-second;
+  //color: #959595;
 
   padding: 20px;
   padding-left: 50px;
+  padding: 10px 10px 10px 10px;
   box-sizing: border-box;
   box-shadow: 0 2px 4px rgba($black, 0.12);
 
@@ -241,7 +244,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  //border-radius: 10px;
+  border-radius: 10px;
 }
 
 .flip-card-inner-1 {
@@ -250,8 +253,8 @@
   height: min-content;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  //box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  //border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
   color: $font-color-second;
 }
 
@@ -263,7 +266,7 @@
   width: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  //border-radius: 10px;
+  border-radius: 10px;
 }
 
 .flip-card-front-1 {
@@ -272,7 +275,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  //text-align: center;
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -299,6 +302,32 @@
 
 #card-description-homepage-1 {
   font-size: 14px;
+}
+
+#card-title-dashboard {
+  color: $font-color;
+  font-size: 24px;
+  text-align: start;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.card-description-dasboard {
+  color: $font-color;
+  font-size: 12px;
+  text-align: start;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.dashboard-tab-card {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #rating {

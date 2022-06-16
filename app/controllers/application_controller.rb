@@ -14,6 +14,11 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
 
+  # TODO heroku config:set DOMAIN=www.almanac.lol
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
   private
 
   def skip_pundit?
