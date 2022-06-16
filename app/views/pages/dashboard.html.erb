@@ -35,9 +35,6 @@
                     <%=timeline.created_at.to_s(:long_ordinal)%>
                   </div>
                   <div class="dashboard-action-links">
-                    <% if policy(timeline).edit? %>
-                       <%= link_to 'Edit', edit_timeline_path(timeline)%>
-                    <% end %>
                     <% if policy(timeline).destroy? %>
                     <%= link_to 'Delete', timeline, method: :delete, style:"margin-left:5px", data: { confirm: 'Are you sure ?' } %>
                     <% end %>
@@ -107,9 +104,6 @@
                     <%=event.created_at.to_s(:long_ordinal)%>
                   </div>
                   <div class="dashboard-action-links">
-                    <% if policy(event).edit? %>
-                       <%= link_to 'Edit', edit_event_path(event)%>
-                    <% end %>
                     <% if policy(event).destroy? %>
                     <%= link_to 'Delete', event, method: :delete, style:"margin-left:5px", data: { confirm: 'Are you sure ?' } %>
                     <% end %>
