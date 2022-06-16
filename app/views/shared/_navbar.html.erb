@@ -52,6 +52,7 @@
                 <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
                 <%= link_to "Create my Timeline", new_timeline_path, class: "dropdown-item", data: { turbolinks: false } %>
                 <%= link_to "Create a new Historical Event", new_event_path, class: "dropdown-item"%>
+                <%= link_to "Create a new Historical Era", new_era_path, class: "dropdown-item"%>
                 <%= link_to "Edit my profile", edit_user_registration_path, class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
@@ -75,6 +76,7 @@
           <%= link_to "Compare Timelines", timelineviewer_path, class: "subhead-nav-link",data: { turbolinks: false } %>
           <%= link_to "Create my Timeline", new_timeline_path, class: "subhead-nav-link",  data: { turbolinks: false } %>
           <%= link_to "Create an Historical Event", new_event_path, class: "subhead-nav-link",  data: { turbolinks: false } %>
+          <%= link_to "Create a new Historical Era", new_era_path, class: "subhead-nav-link",  data: { turbolinks: false } %>
           <%= link_to "All Timelines", timelines_path, class: "subhead-nav-link",  data: { turbolinks: false } %>
         </div>
     </div>

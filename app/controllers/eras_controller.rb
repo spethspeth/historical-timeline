@@ -1,6 +1,11 @@
 class ErasController < ApplicationController
   before_action :set_era, only: :destroy
 
+  def new
+    @era = Era.new
+    authorize @era
+  end
+
   def create
     @era = Era.new(era_params)
     @era.user = current_user
