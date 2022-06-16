@@ -3,5 +3,5 @@
 meta_product_name: "Almanac.lol"
 meta_title: "Almanac.lol - Historical Timelines"
 meta_description: "Almanac.lol is a place where you can find many historical timelines and compare them. You can explore our many user-created timelines on our timeline index, or create your own. You can add then add events or eras to your timeline, and use our timeline viewer to compare different timelines. For a great example, check out the timelines. Enjoy making and comparing timelines on Almanac."
-meta_image: "emperors/roman_empire.jpg" # should exist in `app/assets/images/`
+meta_image: "image_fb_cesear_death.jpg" # should exist in `app/assets/images/`
 # twitter_account: "@product_twitter_account"   # required for Twitter Cards
