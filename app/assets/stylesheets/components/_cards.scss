@@ -239,7 +239,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 10px;
+  //border-radius: 10px;
 }
 
 .flip-card-inner-1 {
@@ -248,8 +248,8 @@
   height: min-content;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border-radius: 10px;
+  //box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  //border-radius: 10px;
   color: $font-color-second;
 }
 
@@ -261,7 +261,7 @@
   width: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius: 10px;
+  //border-radius: 10px;
 }
 
 .flip-card-front-1 {
@@ -309,7 +309,7 @@
 
 .card-description-dasboard {
   color: $font-color;
-  font-size: 12px;
+  font-size: 14px;
   text-align: start;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -323,6 +323,9 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 #rating {

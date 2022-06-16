@@ -1,5 +1,6 @@
 .nav-tabs {
-  border-bottom: 1px solid #dee2e6;
+  font-family: $body-font;
+  border-bottom: 1px solid #FFFF;
 }
 
 .nav {
@@ -17,7 +18,8 @@
 
 .timelines-tab-container {
   width: 100%;
-  height: 200px;
+  height: 100%;
+  padding-top: 15px;
   //justify-content: flex-start;
   //flex-direction: row;
 }
@@ -27,10 +29,24 @@
   width: 70%;
   height: 200px;
   justify-content: flex-start;
+  text-align: start;
+  //margin-bottom: 15px;
+  border-bottom: 1px solid #959595;
 }
 
 .timeline-creation-date {
+  color: #1B1B19;
+  font-size: 10px;
+  padding-top: 5px;
+}
 
+.dashboard-action-links {
+  color: #1B1B19;
+  text-transform: uppercase;
+  justify-items: space-around;
+  font-size: 10px;
+  padding-top: 5px;
+  text-align: end;
 }
 
 .timelines-tab-content-cards-container {

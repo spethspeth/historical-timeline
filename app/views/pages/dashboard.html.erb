@@ -21,7 +21,7 @@
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="timelines" role="tabpanel" aria-labelledby="timelines-tab">
       <div class="d-flex justify-content-start timelines-tab-global-container flex-wrap">
-        <div class="d-flex justify-content-between timelines-tab-container flex-wrap">
+        <div class="d-flex justify-content-around timelines-tab-container flex-wrap">
           <% unless @timelines.empty? %>
             <% @timelines.each do |timeline| %>
               <div class="d-flex flex-column timelines-tab-text-container">
@@ -32,25 +32,169 @@
                   <div class="card-description-dasboard "><%=timeline.description%>
                   </div>
                   <div class="timeline-creation-date">
+                    <%=timeline.created_at.to_s(:long_ordinal)%>
+                  </div>
+                  <div class="dashboard-action-links">
+                    <% if policy(timeline).edit? %>
+                       <%= link_to 'Edit', edit_timeline_path(timeline)%>
+                    <% end %>
+                    <% if policy(timeline).destroy? %>
+                    <%= link_to 'Delete', timeline, method: :delete, data: { confirm: 'Are you sure ?' } %>
+                    <% end %>
                   </div>
               </div>
               <div class="dashboard-tab-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path timeline.photo.key %>')">
               </div>
             <% end %>
           <% end %>
-        </div>
-          <% else %>
+           <% else %>
             <div class="dashboard-tab-timeline-message">
               <p>You don't have timelines.</p>
             </div>
           <% end %>
+        </div>
       </div>
     </div>
 
-    <div class="tab-pane fade" id="bookmarks" role="tabpanel" aria-labelledby="bookmarks-tab">...</div>
-    <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="events-tab">...</div>
-    <div class="tab-pane fade" id="eras" role="tabpanel" aria-labelledby="eras-tab">...</div>
-    <div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="comments-tab">...</div>
+    <div class="tab-pane fade" id="bookmarks" role="tabpanel" aria-labelledby="bookmarks-tab">
+      <div class="d-flex justify-content-start timelines-tab-global-container flex-wrap">
+        <div class="d-flex justify-content-around timelines-tab-container flex-wrap">
+          <% unless @bookmarks.empty? %>
+            <% @bookmarks.each do |bookmark| %>
+              <div class="d-flex flex-column timelines-tab-text-container">
+                <%= link_to timeline_path(bookmark.timeline) do %>
+                  <div class="card-title-1">
+                    <h2 id="card-title-dashboard"><%=bookmark.timeline.name%></h2>
+                  </div>
+                  <div class="card-description-dasboard "><%=bookmark.timeline.description%>
+                  </div>
+                  <div class="timeline-creation-date">
+                    <%=bookmark.created_at.to_s(:long_ordinal)%>
+                  </div>
+                  <div class="dashboard-action-links">
+
+                    <% if bookmark.present?%>
+                      <%= link_to 'Unbookmark', timeline_bookmark_path(bookmark.timeline,bookmark), method: :delete %>
+                    <% end %>
+                  </div>
+              </div>
+              <div class="dashboard-tab-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path bookmark.timeline.photo.key %>')">
+              </div>
+            <% end %>
+          <% end %>
+          <% else %>
+            <div class="dashboard-tab-timeline-message">
+              <p>You don't have bookmarks.</p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="events-tab">
+      <div class="d-flex justify-content-start timelines-tab-global-container flex-wrap">
+        <div class="d-flex justify-content-around timelines-tab-container flex-wrap">
+          <% unless @events.empty? %>
+            <% @events.each do |event| %>
+              <div class="d-flex flex-column timelines-tab-text-container">
+                <%= link_to event_path(event) do %>
+                  <div class="card-title-1">
+                    <h2 id="card-title-dashboard"><%=event.name%></h2>
+                  </div>
+                  <div class="card-description-dasboard "><%=event.description%>
+                  </div>
+                  <div class="timeline-creation-date">
+                    <%=event.created_at.to_s(:long_ordinal)%>
+                  </div>
+                  <div class="dashboard-action-links">
+                    <% if policy(event).edit? %>
+                       <%= link_to 'Edit', edit_event_path(event)%>
+                    <% end %>
+                    <% if policy(event).destroy? %>
+                    <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure ?' } %>
+                    <% end %>
+                  </div>
+              </div>
+              <div class="dashboard-tab-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path event.photo.key %>')">
+              </div>
+            <% end %>
+          <% end %>
+          <% else %>
+            <div class="dashboard-tab-timeline-message">
+              <p>You don't have events.</p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="eras" role="tabpanel" aria-labelledby="eras-tab">
+      <div class="d-flex justify-content-start timelines-tab-global-container flex-wrap">
+        <div class="d-flex justify-content-around timelines-tab-container flex-wrap">
+          <% unless @eras.empty? %>
+            <% @eras.each do |era| %>
+              <div class="d-flex flex-column timelines-tab-text-container">
+                <!-- <%= link_to era_path(eras) do %> -->
+                  <div class="card-title-1">
+                    <h2 id="card-title-dashboard"><%=era.name%></h2>
+                  </div>
+                  <div class="card-description-dasboard"><%=era.description%> <%= era.start_date %> to <%= era.end_date %>
+                  </div>
+                  <div class="timeline-creation-date">
+                    <%=era.created_at.to_s(:long_ordinal)%>
+                  </div>
+                  <div class="dashboard-action-links">
+                    <% if policy(era).edit? %>
+                       <%= link_to 'Edit', edit_era_path(era)%>
+                    <% end %>
+                    <% if policy(era).destroy? %>
+                    <%= link_to 'Delete', era, method: :delete, data: { confirm: 'Are you sure ?' } %>
+                    <% end %>
+                  </div>
+              </div>
+              <div class="dashboard-tab-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path era.photo.key %>')">
+              </div>
+            <% end %>
+          <% end %>
+          <% else %>
+            <div class="dashboard-tab-timeline-message">
+              <p>You don't have Eras.</p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="comments-tab">
+      <div class="d-flex justify-content-start timelines-tab-global-container flex-wrap">
+        <div class="d-flex justify-content-around timelines-tab-container flex-wrap">
+          <% unless @reviews.empty? %>
+              <% @reviews.each do |review| %>
+              <div class="d-flex flex-column timelines-tab-text-container">
+                <%= link_to timeline_path(review.timeline) do %>
+                  <div class="card-title-1">
+                    <h2 id="card-title-dashboard"><%=review.timeline.name%></h2>
+                  </div>
+                  <div class="card-description-dasboard "><%= review.comment %>
+                  </div>
+                  <div class="timeline-creation-date">
+                    <%=review.created_at.to_s(:long_ordinal)%>
+                  </div>
+                  <div class="dashboard-action-links">
+                  </div>
+              </div>
+              <div class="dashboard-tab-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path review.timeline.photo.key %>')">
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+          <% else %>
+            <div class="dashboard-tab-timeline-message">
+              <p>You don't have comments.</p>
+            </div>
+          <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -72,8 +216,8 @@
 
 
 
-
-<!-- <h2 class="d-title-center"><span class="red-dot">•</span> Dashboard <span class="red-dot">•</span></h2>
+<!-- FORMER DASHBOARD DESIGN
+<h2 class="d-title-center"><span class="red-dot">•</span> Dashboard <span class="red-dot">•</span></h2>
 <%# First row  %>
   <div class="dashboard-first-box">
     <%# Your Timeline %>
