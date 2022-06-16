@@ -49,7 +49,7 @@
                 <%= image_tag "round-avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <%end%>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "My Dashboard", dashboard_path, class: "dropdown-item" %>
+                <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
                 <%= link_to "Create my Timeline", new_timeline_path, class: "dropdown-item", data: { turbolinks: false } %>
                 <%= link_to "Create a new Historical Event", new_event_path, class: "dropdown-item"%>
                 <%= link_to "Edit my profile", edit_user_registration_path, class: "dropdown-item" %>
