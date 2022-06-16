@@ -3,14 +3,21 @@
   border: solid 1px $border-color;
 }
 
-#popup {
-  height: 50px;
+.popup {
+  height: 20px;
   width: 200px;
   text-align: center;
-  vertical-align: right;
-  background-color: cornflowerblue;
-  color: white;
-  display: none;
-  padding-top: 8px;
+  color: $link-color;
+  font-size: 15px;
+  margin: 0;
   position: absolute;
+  top: 5px;
+  left: -5%;
+  display: inline;
+}
+
+@media (max-width: 480px) {
+  .popup {
+    left: -20%;
+  }
 }

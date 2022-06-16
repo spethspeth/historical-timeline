@@ -5,15 +5,24 @@
   <%# BOOKMARK %>
   <div class="col-md-3 col-sm-12 col-xs-12">
     <% if @bookmark.empty? %>
-      <div class = "text-center">
+    <div data-controller="popoverbookmark">
+      <div class = "text-center" style="position: relative;">
         <%= link_to timeline_bookmarks_path(@timeline), method: :post do %>
-          <i class = "far fa-bookmark" style="font-size: 40px;"></i>
+          <i class = "far fa-bookmark" style="font-size: 40px;" data-action="mouseover->popoverbookmark#show mouseout->popoverbookmark#hide"></i>
+          <div class="d-none" data-popoverbookmark-target="bookmark">
+             <p class="popup">Bookmark?</p>
+          </div>
         <% end %>
       </div>
+      </div>
     <% else %>
-      <div class = "text-center">
+    <div data-controller="popoverunbookmark">
+      <div class = "text-center" style="position: relative;">
         <%= link_to timeline_bookmark_path(@timeline,@bookmark[0]), method: :delete do %>
-          <i class = "fas fa-bookmark" style="font-size: 40px;"></i>
+          <i class = "fas fa-bookmark" style="font-size: 40px;" data-action="mouseover->popoverunbookmark#show mouseout->popoverunbookmark#hide"></i>
+          <div class="d-none" data-popoverunbookmark-target="unbookmark">
+            <p class="popup">Unbookmark?</p>
+          </div>
         <% end %>
       </div>
     <% end%>
