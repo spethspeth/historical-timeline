@@ -1,5 +1,6 @@
 .nav-tabs {
   font-family: $body-font;
+  font-size: 14px;
   border-bottom: 1px solid #FFFF;
 }
 
@@ -10,6 +11,10 @@
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+}
+
+.nav-tabs .nav-link.active {
+  font-size: 14px !important;
 }
 
 .timelines-tab-global-container {
@@ -44,8 +49,8 @@
   color: #1B1B19;
   text-transform: uppercase;
   justify-items: space-around;
-  font-size: 10px;
-  padding-top: 5px;
+  font-size: 13px;
+  padding: 2px;
   text-align: end;
 }
 
@@ -62,5 +67,5 @@
   color: #1B1B19;
   text-align:justify;
   text-transform: none;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
 }

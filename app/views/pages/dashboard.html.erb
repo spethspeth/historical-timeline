@@ -39,7 +39,7 @@
                        <%= link_to 'Edit', edit_timeline_path(timeline)%>
                     <% end %>
                     <% if policy(timeline).destroy? %>
-                    <%= link_to 'Delete', timeline, method: :delete, data: { confirm: 'Are you sure ?' } %>
+                    <%= link_to 'Delete', timeline, method: :delete, style:"margin-left:5px", data: { confirm: 'Are you sure ?' } %>
                     <% end %>
                   </div>
               </div>
@@ -111,7 +111,7 @@
                        <%= link_to 'Edit', edit_event_path(event)%>
                     <% end %>
                     <% if policy(event).destroy? %>
-                    <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure ?' } %>
+                    <%= link_to 'Delete', event, method: :delete, style:"margin-left:5px", data: { confirm: 'Are you sure ?' } %>
                     <% end %>
                   </div>
               </div>
@@ -148,7 +148,7 @@
                        <%= link_to 'Edit', edit_era_path(era)%>
                     <% end %>
                     <% if policy(era).destroy? %>
-                      <%= link_to 'Delete', era, method: :delete, data: { confirm: 'Are you sure ?' } %>
+                    <%= link_to 'Delete', era, method: :delete, style:"margin-left:5px", data: { confirm: 'Are you sure ?' } %>
                     <% end %>
                   </div>
               </div>
