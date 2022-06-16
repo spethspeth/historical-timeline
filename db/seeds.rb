@@ -546,11 +546,7 @@ def ebscraper(user)
         event.user = user
         event.end_date = Date.parse(seconddate, false) unless seconddate == "invalid"
         counter += 1
-        if picture_url == "invalid"
-          event.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'philosophers', 'cover.jpg')), filename: 'cover.png', content_type: 'image.png')
-        else
-          event.photo.attach(io: URI.open(picture_url), filename: "#{name.downcase.gsub(" ", "_").gsub(/\W/, "")}.png", content_type: "#{name.downcase.gsub(" ", "_").gsub(/\W/, "")}.png")
-        end
+        event.photo.attach(io: URI.open(picture_url), filename: "#{name.downcase.gsub(" ", "_").gsub(/\W/, "")}.png", content_type: "#{name.downcase.gsub(" ", "_").gsub(/\W/, "")}.png") unless picture_url == "invalid"
       end
 
       if event.save
