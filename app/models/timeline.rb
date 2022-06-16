@@ -25,6 +25,6 @@ class Timeline < ApplicationRecord
                   using: { tsearch: { prefix: true } }
 
   validates :name, presence: true
-  validates :description, presence: true
+  validates :description, presence: true, length: { maximum: 150 }
   validates :photo, presence: true
 end

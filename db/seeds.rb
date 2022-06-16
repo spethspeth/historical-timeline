@@ -17,7 +17,7 @@ p "Seeding Emperors section"
 
 romanemperors = Timeline.new(
   name: "Roman emperors",
-  description: "The Roman emperors were the rulers of the Roman Empire from the granting of the name and title Augustus to Octavian by the Roman Senate in 27 BC onwards. Augustus maintained a facade of Republican rule, rejecting monarchical titles but calling himself princeps senatus (first man of the Senate) and princeps civitatis (first citizen of the state). The title of Augustus was conferred on his successors to the imperial position, and emperors gradually grew more monarchical and authoritarian."
+  description: "This timeline contains all the Roman Emperors from Augustus to Commodus."
 )
 romanemperors.user = admin
 romanemperors.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'roman_empire.jpg')), filename: 'roman_empire.jpg', content_type: 'romanempire.png')
