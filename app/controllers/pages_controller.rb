@@ -35,16 +35,13 @@ class PagesController < ApplicationController
 
   def eventer(timeline, counter)
     colorarray = ["#1B1B19", "#982226", "#959595"]
-    eventarray = timeline.events.map do |event|
-      {
+    eventarray = []
+    timeline.events.each do |event|
+      eventhash = {
         group: "#{timeline.name}",
         unique_id: "color#{counter + 1}",
         background: {
           color: colorarray[counter]
-        },
-        media: {
-          url: event.photo ? url_for(event.photo) : nil,
-          thumbnail: url_for(event.photo)
         },
         start_date: {
           month: event.start_date.mon,
@@ -61,6 +58,13 @@ class PagesController < ApplicationController
           text: event.description
         }
       }.compact
+      if event.photo.key
+        eventhash[:media] = {
+          url: url_for(event.photo),
+          thumbnail: url_for(event.photo)
+        }
+      end
+      eventarray << eventhash
     end
     return eventarray
   end
