@@ -9,4 +9,7 @@ class User < ApplicationRecord
   has_many :bookmarks
   has_many :timelines, through: :bookmarks
   has_many :reviews
+
+  validates :email, uniqueness: true
+  validates :username, presence: true, uniqueness: true
 end

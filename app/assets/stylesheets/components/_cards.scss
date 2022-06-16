@@ -124,12 +124,9 @@
 .review-card {
   background: $font-color-second;
   background: $font-color-second;
-  //background: $font-color-second;
-  //color: #959595;
-
   padding: 20px;
-  padding-left: 50px;
-  padding: 10px 10px 10px 10px;
+  padding-right: 30px;
+  padding-left: 60px;
   box-sizing: border-box;
   box-shadow: 0 2px 4px rgba($black, 0.12);
 
@@ -183,9 +180,7 @@
 .reply-card {
   background: $font-color-second;
   color: $font-color;
-
   padding: 20px;
-  padding-left: 50px;
   box-sizing: border-box;
   box-shadow: 0 2px 4px rgba($black, 0.12);
 
@@ -200,7 +195,7 @@
     font-size: 18px;
     line-height: 1.5;
     margin: 0;
-    max-width: 80%;
+    max-width: 92%;
     text-align: end;
   }
 
