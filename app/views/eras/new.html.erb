@@ -1,0 +1,27 @@
+<h2 class="text-center"><span class="red-dot">•</span> New Era <span class="red-dot">•</span></h2>
+<div class="container mt-3">
+  <div class="row">
+    <div class="explanation col-6">
+      <p>Create a new era by adding a <span class="bold">name</span>, <span class="bold">description</span>, <span class="bold">start date</span> and <span class="bold">end date</span>.</p>
+      <div class="tips">
+        <h6>Tips<span class="red">:</span></h6>
+        <ul>
+          <li>Eras should have a <span class="bold">start date</span> and <span class="bold"> an end date</span>.</li>
+          <li>Give a <span class="bold">clear name</span>, and keep it as short as possible.</li>
+          <li>Write a concise <span class="bold">description</span> of your era that is no longer than <span class="bold">150 characters</span>.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="newtimelineform col-6">
+      <%= simple_form_for([ @era]) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :name %>
+          <%= f.input :description %>
+          <%= f.input :start_date, as: :date%>
+          <%= f.input :end_date,as: :date %>
+          <%= f.submit class: "submit-btn", value: "Create" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
