@@ -73,6 +73,16 @@
   position: relative;
 }
 
+.underlinered {
+  text-decoration: underline;
+  text-decoration-color: $link-color;
+  text-decoration-thickness: 3px;
+  &:hover {
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    color: $link-color;
+  }
+}
+
 /*MEDIAQUERIES*/
 @media only all and (max-width: 1300px) {
   .navbar-date-box{
