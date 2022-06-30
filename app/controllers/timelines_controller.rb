@@ -90,14 +90,14 @@ class TimelinesController < ApplicationController
           color: "#1B1B19"
         },
         start_date: {
-          month: event.start_date.mon,
-          day: event.start_date.day,
-          year: event.start_date.year
+          day: event.start_day,
+          month: event.start_month,
+          year: event.start_year
         },
         end_date: {
-          month: event.end_date ? event.end_date.mon : event.start_date.mon,
-          day: event.end_date ? event.end_date.day : event.start_date.day,
-          year: event.end_date ? event.end_date.year : event.start_date.year
+          day: event.end_day,
+          month: event.end_month,
+          year: event.end_year
         },
         text: {
           headline: event.name,
