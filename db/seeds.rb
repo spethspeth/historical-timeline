@@ -27,8 +27,12 @@ romanemperors.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'image
 augustus = Event.new(
   name: "Augustus",
   description: "Grandnephew and adopted son of Julius Caesar. Gradually acquired further power through grants from, and constitutional settlements with, the Roman Senate. Born as Gaius Octavius; first elected Roman consul on 19 August 43 BC. Died of natural causes",
-  start_date: Date.new(-26, 1, 27),
-  end_date: Date.new(14, 8, 19)
+  start_day: 16,
+  start_month: 1,
+  start_year: -27,
+  end_day: 19,
+  end_month: 8,
+  end_year: 14
 )
 augustus.user = admin
 augustus.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'augustus.jpg')), filename: 'augustus.png', content_type: 'image.png')
@@ -37,8 +41,12 @@ augustus.save!
 tiberius = Event.new(
   name: "Tiberius",
   description: "Stepson, former son-in-law and adopted son of Augustus. Died probably of natural causes, allegedly murdered at the instigation of Caligula",
-  start_date: Date.new(14, 9, 17),
-  end_date: Date.new(37, 3, 16)
+  start_day: 17,
+  start_month: 9,
+  start_year: 14,
+  end_day: 16,
+  end_month: 3,
+  end_year: 37
 )
 tiberius.user = admin
 tiberius.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'tiberius.jpg')), filename: 'tiberius.png', content_type: 'image.png')
@@ -47,8 +55,12 @@ tiberius.save!
 caligula = Event.new(
   name: "Caligula",
   description: "Grandnephew and adopted heir of Tiberius, great-grandson of Augustus. Murdered in a conspiracy involving the Praetorian Guard and senators",
-  start_date: Date.new(37, 3, 18),
-  end_date: Date.new(41, 1, 24)
+  start_day: 18,
+  start_month: 3,
+  start_year: 37,
+  end_day: 24,
+  end_month: 1,
+  end_year: 41
 )
 caligula.user = admin
 caligula.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'caligula.jpg')), filename: 'caligula.png', content_type: 'image.png')
@@ -57,8 +69,12 @@ caligula.save!
 claudius = Event.new(
   name: "Claudius",
   description: "Uncle of Caligula, grandnephew of Augustus, proclaimed emperor by the Praetorian Guard and accepted by the Senate. Probably poisoned by his wife Agrippina, in favor of her son Nero",
-  start_date: Date.new(41, 1, 24),
-  end_date: Date.new(54, 10, 13)
+  start_day: 24,
+  start_month: 1,
+  start_year: 41,
+  end_day: 13,
+  end_month: 10,
+  end_year: 54
 )
 claudius.user = admin
 claudius.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'claudius.jpg')), filename: 'claudius.png', content_type: 'image.png')
@@ -67,8 +83,12 @@ claudius.save!
 nero = Event.new(
   name: "Nero",
   description: "Grandnephew, stepson, son-in-law and adopted son of Claudius, great-great-grandson of Augustus. Committed suicide after being deserted by the Praetorian Guard and sentenced to death by the Senate",
-  start_date: Date.new(54, 10, 13),
-  end_date: Date.new(68, 6, 9)
+  start_day: 13,
+  start_month: 10,
+  start_year: 54,
+  end_day: 9,
+  end_month: 6,
+  end_year: 68
 )
 nero.user = admin
 nero.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'nero.jpg')), filename: 'nero.png', content_type: 'image.png')
@@ -77,8 +97,12 @@ nero.save!
 galba = Event.new(
   name: "Galba",
   description: "Governor of Hispania Tarraconensis, revolted against Nero and seized power after his suicide, with support of the Senate and Praetorian Guard. Murdered by soldiers of the Praetorian Guard in a coup led by Otho",
-  start_date: Date.new(68, 6, 8),
-  end_date: Date.new(69, 1, 15)
+  start_day: 8,
+  start_month: 6,
+  start_year: 68,
+  end_day: 15,
+  end_month: 1,
+  end_year: 69
 )
 galba.user = admin
 galba.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'galba.jpg')), filename: 'galba.png', content_type: 'image.png')
@@ -87,8 +111,12 @@ galba.save!
 otho = Event.new(
   name: "Otho",
   description: "Seized power through a coup against Galba. Committed suicide after losing the Battle of Bedriacum to Vitellius",
-  start_date: Date.new(69, 1, 15),
-  end_date: Date.new(69, 4, 16)
+  start_day: 15,
+  start_month: 1,
+  start_year: 69,
+  end_day: 16,
+  end_month: 4,
+  end_year: 69
 )
 otho.user = admin
 otho.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'otho.jpg')), filename: 'otho.png', content_type: 'image.png')
@@ -97,8 +125,12 @@ otho.save!
 vitellius = Event.new(
   name: "Vitellius",
   description: "Governor of Germania Inferior, proclaimed emperor by the Rhine legions on 2 January in opposition to Galba and Otho, later recognized by the Senate. Murdered by Vespasian's troops",
-  start_date: Date.new(69, 4, 19),
-  end_date: Date.new(69, 12, 20)
+  start_day: 19,
+  start_month: 4,
+  start_year: 69,
+  end_day: 20,
+  end_month: 12,
+  end_year: 69
 )
 vitellius.user = admin
 vitellius.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'vitellius.png')), filename: 'vitellius.png', content_type: 'image.png')
@@ -107,8 +139,12 @@ vitellius.save!
 vespasian = Event.new(
   name: "Vespasian",
   description: "Seized power with support of the eastern legions, in opposition to Vitellius. Died of natural causes",
-  start_date: Date.new(69, 7, 1),
-  end_date: Date.new(79, 6, 23)
+  start_day: 1,
+  start_month: 7,
+  start_year: 69,
+  end_day: 23,
+  end_month: 6,
+  end_year: 79
 )
 vespasian.user = admin
 vespasian.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'vespasian.jpg')), filename: 'vespasian.png', content_type: 'image.png')
@@ -117,8 +153,12 @@ vespasian.save!
 titus = Event.new(
   name: "Titus",
   description: "Son of Vespasian. Died of natural causes",
-  start_date: Date.new(79, 6, 24),
-  end_date: Date.new(81, 9, 13)
+  start_day: 24,
+  start_month: 6,
+  start_year: 79,
+  end_day: 13,
+  end_month: 9,
+  end_year: 81
 )
 titus.user = admin
 titus.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'titus.jpg')), filename: 'titus.png', content_type: 'image.png')
@@ -127,8 +167,12 @@ titus.save!
 domitian = Event.new(
   name: "Domitian",
   description: "Brother of Titus and son of Vespasian. Assassinated in a conspiracy of court officials, possibly involving Nerva",
-  start_date: Date.new(81, 9, 14),
-  end_date: Date.new(96, 9, 18)
+  start_day: 14,
+  start_month: 9,
+  start_year: 81,
+  end_day: 18,
+  end_month: 9,
+  end_year: 96
 )
 domitian.user = admin
 domitian.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'domitian.jpg')), filename: 'domitian.png', content_type: 'image.png')
@@ -137,8 +181,12 @@ domitian.save!
 nerva = Event.new(
   name: "Nerva",
   description: "Proclaimed emperor after the murder of Domitian. First of the 'Five Good Emperors'. Died of natural causes.",
-  start_date: Date.new(96, 9, 18),
-  end_date: Date.new(98, 1, 27)
+  start_day: 18,
+  start_month: 9,
+  start_year: 96,
+  end_day: 27,
+  end_month: 1,
+  end_year: 98
 )
 nerva.user = admin
 nerva.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'nerva.jpg')), filename: 'nerva.png', content_type: 'image.png')
@@ -147,8 +195,12 @@ nerva.save!
 trajan = Event.new(
   name: "Trajan",
   description: "Adopted son of Nerva. First non-Italian emperor. His reign marked the geographical peak of the empire. Died of natural causes.",
-  start_date: Date.new(98, 1, 28),
-  end_date: Date.new(117, 8, 11)
+  start_day: 28,
+  start_month: 1,
+  start_year: 98,
+  end_day: 11,
+  end_month: 8,
+  end_year: 117
 )
 trajan.user = admin
 trajan.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'trajan.jpg')), filename: 'trajan.png', content_type: 'image.png')
@@ -157,8 +209,12 @@ trajan.save!
 hadrian = Event.new(
   name: "Hadrian",
   description: "Cousin of Trajan, allegedly adopted on his deathbed. Ended Roman expansionism. Died of natural causes.",
-  start_date: Date.new(117, 8, 11),
-  end_date: Date.new(138, 7, 10)
+  start_day: 11,
+  start_month: 8,
+  start_year: 117,
+  end_day: 10,
+  end_month: 7,
+  end_year: 138
 )
 hadrian.user = admin
 hadrian.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'hadrian.jpg')), filename: 'hadrian.png', content_type: 'image.png')
@@ -167,8 +223,12 @@ hadrian.save!
 antoninuspius = Event.new(
   name: "Antoninus Pius",
   description: "Adopted son of Hadrian. Died of natural causes.",
-  start_date: Date.new(138, 7, 10),
-  end_date: Date.new(161, 3, 7)
+  start_day: 10,
+  start_month: 7,
+  start_year: 138,
+  end_day: 7,
+  end_month: 3,
+  end_year: 161
 )
 antoninuspius.user = admin
 antoninuspius.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'antoninuspius.jpg')), filename: 'antoninuspius.png', content_type: 'image.png')
@@ -177,8 +237,12 @@ antoninuspius.save!
 marcusaurelius = Event.new(
   name: "Marcus Aurelius",
   description: "Son-in-law and adopted son of Antoninus Pius. Reigned jointly with his adoptive brother, Lucius Verus, the first time multiple emperors shared power. Last of the 'Five Good Emperors'; also one of the most representative Stoic philosophers. Died of natural causes.",
-  start_date: Date.new(161, 3, 7),
-  end_date: Date.new(180, 3, 17)
+  start_day: 7,
+  start_month: 3,
+  start_year: 161,
+  end_day: 17,
+  end_month: 3,
+  end_year: 180
 )
 marcusaurelius.user = admin
 marcusaurelius.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'marcusaurelius.jpg')), filename: 'marcusaurelius.png', content_type: 'image.png')
@@ -187,8 +251,12 @@ marcusaurelius.save!
 luciusverus = Event.new(
   name: "Lucius Verus",
   description: "Adopted son of Antoninus Pius, joint emperor with his adoptive brother, Marcus Aurelius. Died of natural causes.",
-  start_date: Date.new(161, 3, 7),
-  end_date: Date.new(169, 1, 31)
+  start_day: 7,
+  start_month: 3,
+  start_year: 161,
+  end_day: 31,
+  end_month: 1,
+  end_year: 169
 )
 luciusverus.user = admin
 luciusverus.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'luciusverus.jpg')), filename: 'luciusverus.png', content_type: 'image.png')
@@ -197,8 +265,12 @@ luciusverus.save!
 commodus = Event.new(
   name: "Commodus",
   description: "Son of Marcus Aurelius. First emperor to be elevated during predecessor's lifetime. Strangled to death in a conspiracy involving his praetorian prefect, Laetus, and mistress, Marcia.",
-  start_date: Date.new(176, 11, 27),
-  end_date: Date.new(192, 12, 31)
+  start_day: 27,
+  start_month: 11,
+  start_year: 176,
+  end_day: 31,
+  end_month: 12,
+  end_year: 192
 )
 commodus.user = admin
 commodus.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'commodus.jpg')), filename: 'commodus.png', content_type: 'image.png')
@@ -278,7 +350,9 @@ romanwars.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 
 battleofactium = Event.new(
   name: "The Battle of Actium",
   description: "The Battle of Actium was a naval battle fought between a maritime fleet led by Octavian and the combined fleets of both Mark Antony and Cleopatra VII Philopator. The battle took place on 2 September 31 BC in the Ionian Sea, near the former Roman colony of Actium, Greece, and was the climax of over a decade of rivalry between Octavian and Antony.",
-  start_date: Date.new(-30, 9, 2)
+  start_day: 2,
+  start_month: 9,
+  start_year: -31
 )
 battleofactium.user = admin
 battleofactium.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'wars', 'battleofactium.jpg')), filename: 'battleofactium.png', content_type: 'battleofactium.png')
@@ -287,8 +361,8 @@ battleofactium.save!
 cantabrianwars = Event.new(
   name: "Cantabrian Wars",
   description: "The Cantabrian Wars (29-19 BC) (Bellum Cantabricum), sometimes also referred to as the Cantabrian and Asturian Wars (Bellum Cantabricum et Asturicum), were the final stage of the two-century long Roman conquest of Hispania, in what today are the provinces of Cantabria, Asturias and León in northwestern Spain.",
-  start_date: Date.new(-28),
-  end_date: Date.new(-18)
+  start_year: -29,
+  end_year: -19
 )
 cantabrianwars.user = admin
 cantabrianwars.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'wars', 'cantabrianwars.jpg')), filename: 'cantabrianwars.png', content_type: 'cantabrianwars.png')
@@ -297,8 +371,8 @@ cantabrianwars.save!
 germanicbattles = Event.new(
   name: "Germanic Battles",
   description: "Roman forces under Augustus's stepson Drusus win a victory in Germany.",
-  start_date: Date.new(-15),
-  end_date: Date.new(-10)
+  start_year: -16,
+  end_year: -11
 )
 germanicbattles.user = admin
 germanicbattles.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'wars', 'germanicbattles.jpg')), filename: 'germanicbattles.png', content_type: 'germanicbattles.png')
@@ -307,8 +381,8 @@ germanicbattles.save!
 bellumbatonianum = Event.new(
   name: "Bellum Batonianum",
   description: "An alliance of tribes numbering more than 200,000 people in Illyria rise in rebellion, but are suppressed by Roman legions led by Tiberius and Germanicus.",
-  start_date: Date.new(6),
-  end_date: Date.new(9)
+  start_year: 6,
+  end_year: 9
 )
 bellumbatonianum.user = admin
 bellumbatonianum.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'wars', 'bellumbatonianum.jpg')), filename: 'bellumbatonianum.png', content_type: 'bellumbatonianum.png')
@@ -317,7 +391,7 @@ bellumbatonianum.save!
 battleofteutoburgforest = Event.new(
   name: "Battle of the Teutoburg Forest",
   description: "The Battle of the Teutoburg Forest, described as the Varian Disaster (Clades Variana) by Roman historians, took place at modern Kalkriese in AD 9, when an alliance of Germanic peoples ambushed Roman legions and their auxiliaries, led by Publius Quinctilius Varus. The alliance was led by Arminius, a Germanic officer of Varus's auxilia. Arminius had acquired Roman citizenship and had received a Roman military education, which enabled him to deceive the Roman commander methodically and anticipate the Roman army's tactical responses.",
-  start_date: Date.new(9)
+  start_year: 9
 )
 battleofteutoburgforest.user = admin
 battleofteutoburgforest.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'wars', 'battleofteutoburgforest.jpg')), filename: 'battleofteutoburgforest.png', content_type: 'battleofteutoburgforest.png')
@@ -326,7 +400,7 @@ battleofteutoburgforest.save!
 battleatponteslongi = Event.new(
   name: "Battle at Pontes Longi",
   description: "Indecisive battle between a Roman army under Aulus Caecina Severus and German tribes led by Arminius.",
-  start_date: Date.new(15)
+  start_year: 15
 )
 battleatponteslongi.user = admin
 battleatponteslongi.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'wars', 'battleatponteslongi.jpg')), filename: 'battleatponteslongi.png', content_type: 'battleatponteslongi.png')
@@ -335,7 +409,7 @@ battleatponteslongi.save!
 battleoftheweserriver = Event.new(
   name: "Battle of the Weser River",
   description: "Legions under Germanicus defeat German tribes of Arminius.",
-  start_date: Date.new(16)
+  start_year: 16
 )
 battleoftheweserriver.user = admin
 battleoftheweserriver.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'wars', 'battleoftheweserriver.jpg')), filename: 'battleoftheweserriver.png', content_type: 'battleoftheweserriver.png')
@@ -347,118 +421,118 @@ romanwars.end_date = romanwars.events.last.end_date
 romanwars.save!
 
 
-# Emperors' lifetimes
-p "Seeding Emperors' lives section"
-
-emperorslives = Timeline.new(
-  name: "Lifetimes of the Roman Emperors",
-  description: "This timeline chronicles the lifetimes of the Roman Emperors"
-)
-emperorslives.user = admin
-
-augustuslife = Event.new(
-  name: "Augustus",
-  description: "Born as Gaius Octavius; first elected Roman consul on 19 August 43 BC. Died of natural causes",
-  start_date: Date.new(-62, 9, 23),
-  end_date: Date.new(14, 8, 19)
-)
-augustuslife.user = admin
-augustuslife.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'augustus.jpg')), filename: 'augustus.png', content_type: 'image.png')
-augustuslife.save!
-
-tiberiuslife = Event.new(
-  name: "Tiberius",
-  description: "Died probably of natural causes, allegedly murdered at the instigation of Caligula",
-  start_date: Date.new(-41, 11, 16),
-  end_date: Date.new(37, 3, 16)
-)
-tiberiuslife.user = admin
-tiberiuslife.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'tiberius.jpg')), filename: 'tiberius.png', content_type: 'image.png')
-tiberiuslife.save!
-
-caligulalife = Event.new(
-  name: "Caligula",
-  description: "Murdered in a conspiracy involving the Praetorian Guard and senators",
-  start_date: Date.new(12, 8, 31),
-  end_date: Date.new(41, 1, 24)
-)
-caligulalife.user = admin
-caligulalife.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'caligula.jpg')), filename: 'caligula.png', content_type: 'image.png')
-caligulalife.save!
-
-claudiuslife = Event.new(
-  name: "Claudius",
-  description: "Probably poisoned by his wife Agrippina, in favor of her son Nero",
-  start_date: Date.new(-9, 8, 1),
-  end_date: Date.new(54, 10, 13)
-)
-claudiuslife.user = admin
-claudiuslife.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'claudius.jpg')), filename: 'claudius.png', content_type: 'image.png')
-claudiuslife.save!
-
-nerolife = Event.new(
-  name: "Nero",
-  description: "Committed suicide after being deserted by the Praetorian Guard and sentenced to death by the Senate",
-  start_date: Date.new(37, 12, 15),
-  end_date: Date.new(68, 6, 9)
-)
-nerolife.user = admin
-nerolife.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'nero.jpg')), filename: 'nero.png', content_type: 'image.png')
-nerolife.save!
-
-emperorslives.events = [augustuslife, tiberiuslife, caligulalife, claudiuslife, nerolife]
-emperorslives.start_date = emperorslives.events.first.start_date
-emperorslives.end_date = emperorslives.events.last.end_date
-emperorslives.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'nero.jpg')), filename: 'nero.png', content_type: 'image.png')
-emperorslives.save!
-
-
-# Soviet union section:
-
-p "Seeding Soviet Union section"
-
-sovietunion = Timeline.new(
-  name: "Leaders of Soviet Union (1922-1991)",
-  description: "This timeline includes persons who held the top leadership position of the Soviet Union from its founding in 1922 until its 1991 dissolution."
-)
-
-sovietunion.user = admin
-sovietunion.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'sovietleaders', 'urss.jpg')), filename: 'urss.jpgg', content_type: 'iurss.jpg')
-
-lenin = Event.new(
-  name: "Vladimir Lenin",
-  description: "Ever since the Bolsheviks inception, Lenin had served as their de facto leader. After the Russian Revolution, Lenin became leader of the Russian Soviet Federative Socialist Republic (RSFSR) from 1917 and leader of the Union of Soviet Socialist Republics (USSR) from 1922 until his death.",
-  start_date: Date.new(1922, 12, 30),
-  end_date: Date.new(1924, 1, 21)
-)
-lenin.user = admin
-lenin.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'sovietleaders', 'lenin.jpg')), filename: 'lenin.png', content_type: 'image.png')
-lenin.save!
-
-stalin = Event.new(
-  name: "Iosif Stalin",
-  description: "Following the death of Lenin, Stalin initially ruled as part of a troika alongside Grigory Zinoviev and Lev Kamenev. However, by April 1925, this arrangement broke down as Stalin consolidated power to become the Soviet Union's absolute dictator. He also held the post of the Minister of Defence from 19 July 1941 to 3 March 1947 and chaired the State Defense Committee during World War II.",
-  start_date: Date.new(1924, 1, 21),
-  end_date: Date.new(1953, 3, 5)
-)
-stalin.user = admin
-stalin.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'sovietleaders', 'stalin.jpg')), filename: 'stalin.png', content_type: 'image.png')
-stalin.save!
-
-russian_communisme = Era.new(
-  name: "Communisme in Russia",
-  description: "From the 27 October 1917, when the  the Bolsheviks and Left Socialist Revolutionaries took the lead of the country. To 26 December 1991, the date of the to the dissolution of the Soviet Union.",
-  start_date: Date.new(1917, 10, 27),
-  end_date: Date.new(1991, 12, 26)
-)
-russian_communisme.user = admin
-russian_communisme.save!
-
-sovietunion.events = [lenin, stalin]
-sovietunion.eras = [russian_communisme]
-sovietunion.start_date = sovietunion.events.first.start_date
-sovietunion.end_date = sovietunion.events.last.end_date
-sovietunion.save!
+# # Emperors' lifetimes
+# p "Seeding Emperors' lives section"
+#
+# emperorslives = Timeline.new(
+#   name: "Lifetimes of the Roman Emperors",
+#   description: "This timeline chronicles the lifetimes of the Roman Emperors"
+# )
+# emperorslives.user = admin
+#
+# augustuslife = Event.new(
+#   name: "Augustus",
+#   description: "Born as Gaius Octavius; first elected Roman consul on 19 August 43 BC. Died of natural causes",
+#   start_date: Date.new(-62, 9, 23),
+#   end_date: Date.new(14, 8, 19)
+# )
+# augustuslife.user = admin
+# augustuslife.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'augustus.jpg')), filename: 'augustus.png', content_type: 'image.png')
+# augustuslife.save!
+#
+# tiberiuslife = Event.new(
+#   name: "Tiberius",
+#   description: "Died probably of natural causes, allegedly murdered at the instigation of Caligula",
+#   start_date: Date.new(-41, 11, 16),
+#   end_date: Date.new(37, 3, 16)
+# )
+# tiberiuslife.user = admin
+# tiberiuslife.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'tiberius.jpg')), filename: 'tiberius.png', content_type: 'image.png')
+# tiberiuslife.save!
+#
+# caligulalife = Event.new(
+#   name: "Caligula",
+#   description: "Murdered in a conspiracy involving the Praetorian Guard and senators",
+#   start_date: Date.new(12, 8, 31),
+#   end_date: Date.new(41, 1, 24)
+# )
+# caligulalife.user = admin
+# caligulalife.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'caligula.jpg')), filename: 'caligula.png', content_type: 'image.png')
+# caligulalife.save!
+#
+# claudiuslife = Event.new(
+#   name: "Claudius",
+#   description: "Probably poisoned by his wife Agrippina, in favor of her son Nero",
+#   start_date: Date.new(-9, 8, 1),
+#   end_date: Date.new(54, 10, 13)
+# )
+# claudiuslife.user = admin
+# claudiuslife.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'claudius.jpg')), filename: 'claudius.png', content_type: 'image.png')
+# claudiuslife.save!
+#
+# nerolife = Event.new(
+#   name: "Nero",
+#   description: "Committed suicide after being deserted by the Praetorian Guard and sentenced to death by the Senate",
+#   start_date: Date.new(37, 12, 15),
+#   end_date: Date.new(68, 6, 9)
+# )
+# nerolife.user = admin
+# nerolife.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'nero.jpg')), filename: 'nero.png', content_type: 'image.png')
+# nerolife.save!
+#
+# emperorslives.events = [augustuslife, tiberiuslife, caligulalife, claudiuslife, nerolife]
+# emperorslives.start_date = emperorslives.events.first.start_date
+# emperorslives.end_date = emperorslives.events.last.end_date
+# emperorslives.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'nero.jpg')), filename: 'nero.png', content_type: 'image.png')
+# emperorslives.save!
+#
+#
+# # Soviet union section:
+#
+# p "Seeding Soviet Union section"
+#
+# sovietunion = Timeline.new(
+#   name: "Leaders of Soviet Union (1922-1991)",
+#   description: "This timeline includes persons who held the top leadership position of the Soviet Union from its founding in 1922 until its 1991 dissolution."
+# )
+#
+# sovietunion.user = admin
+# sovietunion.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'sovietleaders', 'urss.jpg')), filename: 'urss.jpgg', content_type: 'iurss.jpg')
+#
+# lenin = Event.new(
+#   name: "Vladimir Lenin",
+#   description: "Ever since the Bolsheviks inception, Lenin had served as their de facto leader. After the Russian Revolution, Lenin became leader of the Russian Soviet Federative Socialist Republic (RSFSR) from 1917 and leader of the Union of Soviet Socialist Republics (USSR) from 1922 until his death.",
+#   start_date: Date.new(1922, 12, 30),
+#   end_date: Date.new(1924, 1, 21)
+# )
+# lenin.user = admin
+# lenin.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'sovietleaders', 'lenin.jpg')), filename: 'lenin.png', content_type: 'image.png')
+# lenin.save!
+#
+# stalin = Event.new(
+#   name: "Iosif Stalin",
+#   description: "Following the death of Lenin, Stalin initially ruled as part of a troika alongside Grigory Zinoviev and Lev Kamenev. However, by April 1925, this arrangement broke down as Stalin consolidated power to become the Soviet Union's absolute dictator. He also held the post of the Minister of Defence from 19 July 1941 to 3 March 1947 and chaired the State Defense Committee during World War II.",
+#   start_date: Date.new(1924, 1, 21),
+#   end_date: Date.new(1953, 3, 5)
+# )
+# stalin.user = admin
+# stalin.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'sovietleaders', 'stalin.jpg')), filename: 'stalin.png', content_type: 'image.png')
+# stalin.save!
+#
+# russian_communisme = Era.new(
+#   name: "Communisme in Russia",
+#   description: "From the 27 October 1917, when the  the Bolsheviks and Left Socialist Revolutionaries took the lead of the country. To 26 December 1991, the date of the to the dissolution of the Soviet Union.",
+#   start_date: Date.new(1917, 10, 27),
+#   end_date: Date.new(1991, 12, 26)
+# )
+# russian_communisme.user = admin
+# russian_communisme.save!
+#
+# sovietunion.events = [lenin, stalin]
+# sovietunion.eras = [russian_communisme]
+# sovietunion.start_date = sovietunion.events.first.start_date
+# sovietunion.end_date = sovietunion.events.last.end_date
+# sovietunion.save!
 
 
 bookmark_first = Bookmark.new
@@ -648,4 +722,4 @@ def ebscraper(user)
 end
 
 # The scraper is called here. Comment it out if you do not want to load it (it takes a long time)
-ebscraper(admin)
+# ebscraper(admin)

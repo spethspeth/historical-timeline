@@ -94,16 +94,18 @@ class TimelinesController < ApplicationController
           month: event.start_month,
           year: event.start_year
         },
-        end_date: {
-          day: event.end_day,
-          month: event.end_month,
-          year: event.end_year
-        },
         text: {
           headline: event.name,
           text: event.description
         }
       }
+      if event.end_year
+        eventhash[:end_date] = {
+          day: event.end_day,
+          month: event.end_month,
+          year: event.end_year
+        }.compact
+      end
       if event.photo.key
         eventhash[:media] = {
           url: url_for(event.photo),
