@@ -44,20 +44,22 @@ class PagesController < ApplicationController
           color: colorarray[counter]
         },
         start_date: {
-          month: event.start_date.mon,
-          day: event.start_date.day,
-          year: event.start_date.year
-        },
-        end_date: {
-          month: event.end_date ? event.end_date.mon : event.start_date.mon,
-          day: event.end_date ? event.end_date.day : event.start_date.day,
-          year: event.end_date ? event.end_date.year : event.start_date.year
+          day: event.start_day,
+          month: event.start_month,
+          year: event.start_year
         },
         text: {
           headline: event.name,
           text: event.description
         }
       }.compact
+      if event.end_year
+        eventhash[:end_date] = {
+          day: event.end_day,
+          month: event.end_month,
+          year: event.end_year
+        }.compact
+      end
       if event.photo.key
         eventhash[:media] = {
           url: url_for(event.photo),
