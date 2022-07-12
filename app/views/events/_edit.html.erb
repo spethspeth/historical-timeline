@@ -2,8 +2,16 @@
   <%= simple_form_for(@event) do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
-    <%= f.input :start_date, as: :date%>
-    <%= f.input :end_date,as: :date %>
+    <div class="dateform">
+      <%= f.input :start_year %>
+      <%= f.input :start_month, collection: (1..12).map{|i| [I18n.t("date.month_names")[i], i]} %>
+      <%= f.input :start_day %>
+    </div>
+    <div class="dateform">
+      <%= f.input :end_year %>
+      <%= f.input :end_month, collection: (1..12).map{|i| [I18n.t("date.month_names")[i], i]} %>
+      <%= f.input :end_day %>
+    </div>
     <%= f.input :photo, as: :file%>
     <%= f.submit class: "submit-btn" %>
   <% end %>
