@@ -276,6 +276,34 @@ commodus.user = admin
 commodus.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'commodus.jpg')), filename: 'commodus.png', content_type: 'image.png')
 commodus.save!
 
+pertinax = Event.new(
+  name: "Pertinax",
+  description: "City prefect of Rome at Commodus's death, set up as emperor by the praetorian prefect, Laetus, with consent of the Senate. Murdered by mutinous soldiers of the Praetorian Guard.",
+  start_day: 1,
+  start_month: 1,
+  start_year: 193,
+  end_day: 28,
+  end_month: 3,
+  end_year: 193
+)
+pertinax.user = admin
+pertinax.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'pertinax.jpg')), filename: 'pertinax.png', content_type: 'image.png')
+pertinax.save!
+
+didiusjulianus = Event.new(
+  name: "Didius Julianus",
+  description: "Won auction held by the Praetorian Guard for the position of emperor. Killed on order of the Senate, at the behest of Septimius Severus.",
+  start_day: 28,
+  start_month: 3,
+  start_year: 193,
+  end_day: 1,
+  end_month: 6,
+  end_year: 193
+)
+didiusjulianus.user = admin
+didiusjulianus.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'didiusjulianus.jpg')), filename: 'didiusjulianus.png', content_type: 'image.png')
+didiusjulianus.save!
+
 era_julioc = Era.new(
   name: "Julio-Claudian dynasty",
   description: "",
@@ -330,7 +358,7 @@ era_crisis = Era.new(
 era_crisis.user = admin
 era_crisis.save!
 
-romanemperors.events = [augustus, tiberius, caligula, claudius, nero, galba, otho, vitellius, vespasian, titus, domitian, nerva, trajan, hadrian, antoninuspius, marcusaurelius, luciusverus, commodus]
+romanemperors.events = [augustus, tiberius, caligula, claudius, nero, galba, otho, vitellius, vespasian, titus, domitian, nerva, trajan, hadrian, antoninuspius, marcusaurelius, luciusverus, commodus, pertinax, didiusjulianus]
 romanemperors.eras = [era_julioc, era_nerva, era_flavian, era_fouremperors, era_severan, era_crisis]
 romanemperors.start_date = romanemperors.events.first.start_date
 romanemperors.end_date = romanemperors.events.last.end_date
