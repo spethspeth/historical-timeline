@@ -15,19 +15,19 @@
     <div class="newtimelineform col-6">
       <%= simple_form_for(@event) do |f| %>
         <div class="form-inputs">
-          <%= f.input :name %>
-          <%= f.input :description %>
+          <%= f.input :name, error: false %>
+          <%= f.input :description, error: false %>
           <div class="dateform">
-            <%= f.input :start_year %>
-            <%= f.input :start_month, collection: (1..12).map{|i| [I18n.t("date.month_names")[i], i]} %>
-            <%= f.input :start_day %>
+            <%= f.input :start_year, error: false %>
+            <%= f.input :start_month, collection: (1..12).map{|i| [I18n.t("date.month_names")[i], i]}, error: false %>
+            <%= f.input :start_day, error: false %>
           </div>
           <div class="dateform">
-            <%= f.input :end_year %>
-            <%= f.input :end_month, collection: (1..12).map{|i| [I18n.t("date.month_names")[i], i]} %>
-            <%= f.input :end_day %>
+            <%= f.input :end_year, error: false %>
+            <%= f.input :end_month, collection: (1..12).map{|i| [I18n.t("date.month_names")[i], i]}, error: false %>
+            <%= f.input :end_day, error: false %>
           </div>
-          <%= f.input :photo, as: :file%>
+          <%= f.input :photo, as: :file, error: false %>
           <div>
             <%= f.submit class: "submit-btn", value:  "Create an event" %>
           </div>

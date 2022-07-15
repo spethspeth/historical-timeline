@@ -19,6 +19,9 @@ class EventsController < ApplicationController
     authorize @event
     if @event.save
       redirect_to event_path(@event)
+    else
+      flash[:error] = @event.errors.full_messages
+      render :new
     end
   end
 
@@ -26,8 +29,12 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event.update(event_params)
-    redirect_to event_path(@event)
+    # TODO: implement flash messages for when the input is invalid
+    if @event.update(event_params)
+      redirect_to event_path(@event)
+    else
+      flash[:error] = @event.errors.full_messages
+    end
   end
 
   def destroy
