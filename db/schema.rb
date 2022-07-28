@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_28_093424) do
+ActiveRecord::Schema.define(version: 2022_07_28_190643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,12 @@ ActiveRecord::Schema.define(version: 2022_07_28_093424) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "start_year"
+    t.integer "start_month"
+    t.integer "start_day"
+    t.integer "end_year"
+    t.integer "end_month"
+    t.integer "end_day"
     t.index ["user_id"], name: "index_eras_on_user_id"
   end
 

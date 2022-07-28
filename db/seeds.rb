@@ -307,8 +307,12 @@ didiusjulianus.save!
 era_julioc = Era.new(
   name: "Julio-Claudian dynasty",
   description: "",
-  start_date: Date.new(-26, 1, 27),
-  end_date: Date.new(68, 6, 9)
+  start_day: 27,
+  start_month: 1,
+  start_year: -26,
+  end_day: 9,
+  end_month: 6,
+  end_year: 68
 )
 era_julioc.user = admin
 era_julioc.save!
@@ -316,8 +320,12 @@ era_julioc.save!
 era_fouremperors = Era.new(
   name: "Year of the Four Emperors",
   description: "",
-  start_date: Date.new(68, 6, 8),
-  end_date: Date.new(69, 12, 20)
+  start_day: 8,
+  start_month: 6,
+  start_year: 68,
+  end_day: 20,
+  end_month: 12,
+  end_year: 69
 )
 era_fouremperors.user = admin
 era_fouremperors.save!
@@ -325,8 +333,12 @@ era_fouremperors.save!
 era_flavian = Era.new(
   name: "Flavian dynasty",
   description: "",
-  start_date: Date.new(69, 7, 1),
-  end_date: Date.new(96, 9, 18)
+  start_day: 1,
+  start_month: 7,
+  start_year: 69,
+  end_day: 18,
+  end_month: 9,
+  end_year: 96
 )
 era_flavian.user = admin
 era_flavian.save!
@@ -334,8 +346,12 @@ era_flavian.save!
 era_nerva = Era.new(
   name: "Nerva–Antonine dynasty",
   description: "",
-  start_date: Date.new(96, 9, 18),
-  end_date: Date.new(192, 12, 31)
+  start_day: 18,
+  start_month: 9,
+  start_year: 96,
+  end_day: 31,
+  end_month: 12,
+  end_year: 192
 )
 era_nerva.user = admin
 era_nerva.save!
@@ -343,8 +359,12 @@ era_nerva.save!
 era_severan = Era.new(
   name: "Severan dynasty",
   description: "",
-  start_date: Date.new(193, 4, 9),
-  end_date: Date.new(235, 3, 21)
+  start_day: 9,
+  start_month: 4,
+  start_year: 193,
+  end_day: 21,
+  end_month: 3,
+  end_year: 235
 )
 era_severan.user = admin
 era_severan.save!
@@ -352,8 +372,12 @@ era_severan.save!
 era_crisis = Era.new(
   name: "Crisis of the Third Century",
   description: "",
-  start_date: Date.new(235, 3, 1),
-  end_date: Date.new(284, 11, 1)
+  start_day: 1,
+  start_month: 3,
+  start_year: 235,
+  end_day: 1,
+  end_month: 11,
+  end_year: 284
 )
 era_crisis.user = admin
 era_crisis.save!
@@ -565,7 +589,7 @@ bookmark_second.user = admin
 bookmark_second.timeline = romanwars
 bookmark_second.save!
 
-# This is the function that is called to scrape EB
+# This is the function that is called to scrape EB, it does not currently work, it needs to be changed to work with the new system of start_year, start_month, etc
 
 def ebscraper(user)
   philosophersarray = []

@@ -30,6 +30,6 @@ class ErasController < ApplicationController
   end
 
   def era_params
-    params.require(:era).permit(:name, :description, :start_date, :end_date)
+    params.require(:era).permit(:name, :description, :start_year, :start_month, :start_day, :end_year, :end_month, :end_day)
   end
 end
