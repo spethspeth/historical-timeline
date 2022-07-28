@@ -17,8 +17,16 @@
         <div class="form-inputs">
           <%= f.input :name %>
           <%= f.input :description %>
-          <%= f.input :start_date, as: :date%>
-          <%= f.input :end_date,as: :date %>
+          <div class="dateform">
+            <%= f.input :start_year, error: false %>
+            <%= f.input :start_month, collection: (1..12).map{|i| [I18n.t("date.month_names")[i], i]}, error: false %>
+            <%= f.input :start_day, error: false %>
+          </div>
+          <div class="dateform">
+            <%= f.input :end_year, error: false %>
+            <%= f.input :end_month, collection: (1..12).map{|i| [I18n.t("date.month_names")[i], i]}, error: false %>
+            <%= f.input :end_day, error: false %>
+          </div>
           <%= f.submit class: "submit-btn", value: "Create" %>
         </div>
       <% end %>

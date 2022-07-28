@@ -26,9 +26,9 @@ class Event < ApplicationRecord
     err = false
     days = 0
     case
-    when start_month.odd?
+    when [1, 3, 5, 7, 8, 10, 12].include?(start_month)
       err, days = true, 31 unless start_day.in? 1..31
-    when start_month.even? && start_month != 2
+    when [4, 6, 9, 11].include?(start_month) && start_month != 2
       err, days = true, 30 unless start_day.in? 1..30
     when start_month == 2
       if Date.leap?(start_year)
@@ -44,9 +44,9 @@ class Event < ApplicationRecord
     err = false
     days = 0
     case
-    when end_month.odd?
+    when [1, 3, 5, 7, 8, 10, 12].include?(end_month)
       err, days = true, 31 unless end_day.in? 1..31
-    when end_month.even? && end_month != 2
+    when [4, 6, 9, 11].include?(end_month) && end_month != 2
       err, days = true, 30 unless end_day.in? 1..30
     when end_month == 2
       if Date.leap?(end_year)

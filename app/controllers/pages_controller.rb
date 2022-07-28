@@ -78,14 +78,14 @@ class PagesController < ApplicationController
     era_array = timeline.eras.map do |era|
       {
         start_date: {
-          month: era.start_date.mon,
-          day: era.start_date.day,
-          year: era.start_date.year
+          year: era.start_year,
+          month: era.start_month,
+          day: era.start_day
         },
         end_date: {
-          month: era.end_date.mon,
-          day: era.end_date.day,
-          year: era.end_date.year
+          year: era.end_year,
+          month: era.end_month,
+          day: era.end_day
         },
         text: {
           headline: era.name,
