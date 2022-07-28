@@ -360,8 +360,6 @@ era_crisis.save!
 
 romanemperors.events = [augustus, tiberius, caligula, claudius, nero, galba, otho, vitellius, vespasian, titus, domitian, nerva, trajan, hadrian, antoninuspius, marcusaurelius, luciusverus, commodus, pertinax, didiusjulianus]
 romanemperors.eras = [era_julioc, era_nerva, era_flavian, era_fouremperors, era_severan, era_crisis]
-romanemperors.start_date = romanemperors.events.first.start_date
-romanemperors.end_date = romanemperors.events.last.end_date
 romanemperors.save!
 
 # Wars of the Roman Empire
@@ -444,8 +442,6 @@ battleoftheweserriver.photo.attach(io: File.open(Rails.root.join('app', 'assets'
 battleoftheweserriver.save!
 
 romanwars.events = [battleofactium, cantabrianwars, germanicbattles, bellumbatonianum, battleofteutoburgforest, battleatponteslongi, battleoftheweserriver]
-romanwars.start_date = romanwars.events.first.start_date
-romanwars.end_date = romanwars.events.last.end_date
 romanwars.save!
 
 
@@ -509,8 +505,6 @@ romanwars.save!
 # nerolife.save!
 #
 # emperorslives.events = [augustuslife, tiberiuslife, caligulalife, claudiuslife, nerolife]
-# emperorslives.start_date = emperorslives.events.first.start_date
-# emperorslives.end_date = emperorslives.events.last.end_date
 # emperorslives.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'emperors', 'nero.jpg')), filename: 'nero.png', content_type: 'image.png')
 # emperorslives.save!
 #
@@ -558,8 +552,6 @@ romanwars.save!
 #
 # sovietunion.events = [lenin, stalin]
 # sovietunion.eras = [russian_communisme]
-# sovietunion.start_date = sovietunion.events.first.start_date
-# sovietunion.end_date = sovietunion.events.last.end_date
 # sovietunion.save!
 
 
