@@ -100,8 +100,11 @@
                   </div>
                   <div class="card-description-dasboard "><%=event.description%>
                   </div>
+                  <div class="event-dates">
+                    <p><%=event.start_day.nil? ? "" : event.start_day %>/<%=event.start_month.nil? ? "" : event.start_month %>/<%=event.start_year%> - <%=event.end_day.nil? ? "" : event.end_day %>/<%=event.end_month.nil? ? "" : event.end_month %>/<%=event.end_year.nil? ? "" : event.end_year %></p>
+                  </div>
                   <div class="timeline-creation-date">
-                    <%=event.created_at.to_s(:long_ordinal)%>
+                    <p>Created at: <%=event.created_at.to_s(:long_ordinal)%></p>
                   </div>
                   <div class="dashboard-action-links">
                     <% if policy(event).destroy? %>

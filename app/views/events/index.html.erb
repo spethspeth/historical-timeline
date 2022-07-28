@@ -1,4 +1,4 @@
-<h1>My event</h1>
+<h1>My events</h1>
 
 <ul>
   <% @events.each do |event|%>
@@ -6,8 +6,8 @@
     <tr>
       <td> <%=event.name %></td>
       <td> <%=event.description %></td>
-      <td> <%=event.start_date %></td>
-      <td> <%=event.end_date %></td>
+      <td> <%=@event.start_day.nil? ? "" : @event.start_day %>/<%=@event.start_month.nil? ? "" : @event.start_month %>/<%=@event.start_year%></td>
+      <td> <%=@event.end_day.nil? ? "" : @event.end_day %>/<%=@event.end_month.nil? ? "" : @event.end_month %>/<%=@event.end_year.nil? ? "" : @event.end_year %></td>
       <td> <%= link_to 'Show', event_path(event) %></td>
       <% if policy(event).edit? %>
         <td><%= link_to 'Edit', edit_event_path(event)  %></td>
