@@ -29,7 +29,7 @@
                   <div class="card-title-1">
                     <h2 id="card-title-dashboard"><%=timeline.name%></h2>
                   </div>
-                  <div class="card-description-dasboard "><%=timeline.description%>
+                  <div class="card-description-dashboard "><%=timeline.description%>
                   </div>
                   <div class="timeline-creation-date">
                     <%=timeline.created_at.to_s(:long_ordinal)%>
@@ -63,7 +63,7 @@
                   <div class="card-title-1">
                     <h2 id="card-title-dashboard"><%=bookmark.timeline.name%></h2>
                   </div>
-                  <div class="card-description-dasboard "><%=bookmark.timeline.description%>
+                  <div class="card-description-dashboard "><%=bookmark.timeline.description%>
                   </div>
                   <div class="timeline-creation-date">
                     <%=bookmark.created_at.to_s(:long_ordinal)%>
@@ -96,12 +96,16 @@
               <div class="d-flex flex-column timelines-tab-text-container">
                 <%= link_to event_path(event) do %>
                   <div class="card-title-1">
+                    <div class="eventtitlebar">
                     <h2 id="card-title-dashboard"><%=event.name%></h2>
+                      <div class="datebox">
+                        <p><%=event.start_day.nil? ? "" : "#{event.start_day} /" %> <%=event.start_month.nil? ? "" : "#{event.start_month} /" %> <%=event.start_year.abs%> <%=event.start_year.negative? ? "B.C." : "A.D." %></p>
+                        <p><%= event.end_year.nil? ? "" : "-" %></p>
+                        <p><%=event.end_day.nil? ? "" : "#{event.end_day} /" %> <%=event.end_month.nil? ? "" : "#{event.end_month} /" %> <%=event.end_year.nil? ? "" : event.end_year.abs %> <%=event.end_year.nil? ? "" : (event.end_year.negative? ? "B.C." : "A.D.") %></p>
+                      </div>
+                    </div>
                   </div>
-                  <div class="card-description-dasboard "><%=event.description%>
-                  </div>
-                  <div class="event-dates">
-                    <p><%=event.start_day.nil? ? "" : event.start_day %>/<%=event.start_month.nil? ? "" : event.start_month %>/<%=event.start_year%> - <%=event.end_day.nil? ? "" : event.end_day %>/<%=event.end_month.nil? ? "" : event.end_month %>/<%=event.end_year.nil? ? "" : event.end_year %></p>
+                  <div class="card-description-dashboard "><%=event.description%>
                   </div>
                   <div class="timeline-creation-date">
                     <p>Created at: <%=event.created_at.to_s(:long_ordinal)%></p>
@@ -138,7 +142,7 @@
                   <div class="card-title-1">
                     <h2 id="card-title-dashboard"><%=era.name%></h2>
                   </div>
-                  <div class="card-description-dasboard">
+                  <div class="card-description-dashboard">
                     <%=era.description%> <%= era.start_date %> to <%= era.end_date %>
                   </div>
                   <div class="timeline-creation-date">
@@ -173,7 +177,7 @@
                     <div class="card-title-1">
                       <h2 id="card-title-dashboard"><%=review.timeline.name%></h2>
                     </div>
-                    <div class="card-description-dasboard "><%= review.comment %>
+                    <div class="card-description-dashboard "><%= review.comment %>
                     </div>
                     <div class="timeline-creation-date">
                       <%=review.created_at.to_s(:long_ordinal)%>

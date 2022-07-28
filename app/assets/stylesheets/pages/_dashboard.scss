@@ -422,3 +422,19 @@ h1.logo {
 .review-link-height {
   height: inherit;
 }
+
+.datebox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  p {
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+.eventtitlebar {
+  display: flex;
+  justify-content: space-between;
+}
