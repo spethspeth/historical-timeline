@@ -326,8 +326,13 @@
   padding-top: 5px;
   padding-bottom: 5px;
   margin-bottom: 15px;
+  border: solid #959595 1px;
   filter: grayscale(100%);
-    -webkit-filter: grayscale(90%)
+  transition: filter .3s ease-in-out;
+  &:hover {
+    filter: none;
+    border: solid #982226 1px;
+  }
 }
 
 #rating {
