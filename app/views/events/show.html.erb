@@ -18,8 +18,9 @@
     </div>
     <div class="fp-cell fp-cell--3">
       <div class="fp-item">
-      <h4><%=@event.start_day.nil? ? "" : "#{@event.start_day} /" %> <%=@event.start_month.nil? ? "" : "#{@event.start_month} /" %> <%=@event.start_year.abs%> <%=@event.start_year.negative? ? "B.C." : "A.D." %></h4>
-      <h4><%=@event.end_day.nil? ? "" : "#{@event.end_day} /" %> <%=@event.end_month.nil? ? "" : "#{@event.end_month} /" %> <%=@event.end_year.nil? ? "" : @event.end_year.abs %> <%=@event.end_year.nil? ? "" : (@event.end_year.negative? ? "B.C." : "A.D.") %></h4>
+      <h4>Timespan:</h4>
+      <h4><%=@event.end_day.nil? ? "Occurred on: " : "From: " %><%=@event.start_day.nil? ? "" : "#{@event.start_day} /" %> <%=@event.start_month.nil? ? "" : "#{@event.start_month} /" %> <%=@event.start_year.abs%> <%=@event.start_year.negative? ? "B.C." : "A.D." %></h4>
+      <h4><%=@event.end_day.nil? ? "" : "Until: " %><%=@event.end_day.nil? ? "" : "#{@event.end_day} /" %> <%=@event.end_month.nil? ? "" : "#{@event.end_month} /" %> <%=@event.end_year.nil? ? "" : @event.end_year.abs %> <%=@event.end_year.nil? ? "" : (@event.end_year.negative? ? "B.C." : "A.D.") %></h4>
       </div>
     </div>
     <div class="fp-cell fp-cell--4">
