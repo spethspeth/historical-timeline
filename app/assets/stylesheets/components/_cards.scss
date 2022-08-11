@@ -329,10 +329,7 @@
   border: solid #959595 1px;
   filter: grayscale(100%);
   transition: filter .3s ease-in-out;
-  &:hover {
-    filter: none;
-    border: solid #982226 1px;
-  }
+
 }
 
 #rating {
