@@ -2,9 +2,9 @@
 <h2 class="text-center"><span class="red-dot">•</span> Sign up <span class="red-dot">•</span></h2>
 <div class="container mt-3">
   <div class="row">
-    <div class="col-3">
+    <div class="col-lg-3 col-md-2 col-sm-0">
     </div>
-    <div class="form-sign-up-container col-6">
+    <div class="form-sign-up-container col-lg-6 col-md-8 col-sm-12">
       <%= simple_form_for(resource, as: resource_name, class: "form-padding", url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
 
@@ -30,7 +30,7 @@
         </div>
       <% end %>
     </div>
-    <div class="col-3">
+    <div class="col-lg-3 col-md-2 col-sm-0">
     </div>
   </div>
 </div>
